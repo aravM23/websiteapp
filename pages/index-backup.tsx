@@ -250,7 +250,7 @@ const Home: React.FC = () => {
                 marginBottom: '32px',
                 fontStyle: 'italic'
               }}>
-                I'm probably working on building something I find cool :)
+                I&apos;m probably working on building something I find cool :)
               </p>
             </div>
             
@@ -265,7 +265,7 @@ const Home: React.FC = () => {
                 maxWidth: '800px',
                 margin: '0 auto 32px auto'
               }}>
-                I just wrapped up a SWE internship at Aview International, a Toronto startup for AI translations and content dubbing (projects with brands like Marvel and creators like Logan Paul). I also founded TurtleShell, a tourism safety app backed with $26,000 from Microsoft plus support from the Government of Canada. I'm now a first-year CS student at Waterloo and just shipped my latest project GrayPass, a passwordless auth engine that uses cognitive and behavioral signals to verify your identity, helping us get away from infinite authentication loops and captcha bs. Most of my free time is spent deep researching the online shopping space for my next dope idea 😎
+                I just wrapped up a SWE internship at Aview International, a Toronto startup for AI translations and content dubbing (projects with brands like Marvel and creators like Logan Paul). I also founded TurtleShell, a tourism safety app backed with $26,000 from Microsoft plus support from the Government of Canada. I&apos;m now a first-year CS student at Waterloo and just shipped my latest project GrayPass, a passwordless auth engine that uses cognitive and behavioral signals to verify your identity, helping us get away from infinite authentication loops and captcha bs. Most of my free time is spent deep researching the online shopping space for my next dope idea 😎
               </p>
               
               <Link 
@@ -315,7 +315,7 @@ const Home: React.FC = () => {
                 maxWidth: '900px',
                 margin: '0 auto'
               }}>
-                i've published two dystopian novels on kindle. i'm a research assistant at u of t with dr. brad bass (ipcc nobel peace prize team). i also started positive powers, my nonprofit that's raised $15,000 to run positivity projects across two continents.
+                i&apos;ve published two dystopian novels on kindle. i&apos;m a research assistant at u of t with dr. brad bass (ipcc nobel peace prize team). i also started positive powers, my nonprofit that&apos;s raised $15,000 to run positivity projects across two continents.
               </p>
             </div>
           </div>

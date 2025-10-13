@@ -786,7 +786,7 @@ const Home: React.FC = () => {
                     position: 'relative',
                     zIndex: '10'
                   }}>
-                    I am an <strong style={{ color: '#60a5fa', textShadow: '0 0 10px rgba(96, 165, 250, 0.3)' }}>18-year-old</strong> from <strong style={{ color: '#f59e0b', textShadow: '0 0 10px rgba(245, 158, 11, 0.3)' }}>Toronto, Ontario</strong>, interested in making and shipping <strong style={{ color: '#10b981', textShadow: '0 0 10px rgba(16, 185, 129, 0.3)' }}>cool shit</strong>. My goals with each of my projects is to ensure that each project delivers <strong style={{ color: '#ef4444', textShadow: '0 0 10px rgba(239, 68, 68, 0.3)' }}>value to society</strong>, and if it doesn't, its probably just something I really really want to use myself <span style={{ fontSize: '1.2em' }}>😄</span>
+                    I am an <strong style={{ color: '#60a5fa', textShadow: '0 0 10px rgba(96, 165, 250, 0.3)' }}>18-year-old</strong> from <strong style={{ color: '#f59e0b', textShadow: '0 0 10px rgba(245, 158, 11, 0.3)' }}>Toronto, Ontario</strong>, interested in making and shipping <strong style={{ color: '#10b981', textShadow: '0 0 10px rgba(16, 185, 129, 0.3)' }}>cool shit</strong>. My goals with each of my projects is to ensure that each project delivers <strong style={{ color: '#ef4444', textShadow: '0 0 10px rgba(239, 68, 68, 0.3)' }}>value to society</strong>, and if it doesn&apos;t, its probably just something I really really want to use myself <span style={{ fontSize: '1.2em' }}>😄</span>
                   </p>
                   
                   <p style={{ 
@@ -1019,7 +1019,7 @@ const Home: React.FC = () => {
                 color: '#ffffff', 
                 marginBottom: '24px',
                 fontWeight: '800',
-                fontFamily: '"SF Pro Display", "Helvetica Neue", "Arial Black", sans-serif',
+                fontFamily: '&quot;SF Pro Display&quot;, &quot;Helvetica Neue&quot;, &quot;Arial Black&quot;, sans-serif',
                 letterSpacing: '0.05em',
                 display: 'flex',
                 alignItems: 'center',
@@ -1043,7 +1043,7 @@ const Home: React.FC = () => {
                 marginBottom: '32px',
                 fontStyle: 'italic',
                 fontWeight: '400',
-                fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
+                fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
                 lineHeight: '1.5',
                 letterSpacing: '-0.005em'
               }}>
@@ -1226,7 +1226,7 @@ const Home: React.FC = () => {
                   <span style={{
                     color: '#00ff00',
                     fontSize: '16px',
-                    fontFamily: 'Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
+                    fontFamily: 'Monaco, &quot;Cascadia Code&quot;, &quot;Roboto Mono&quot;, Consolas, &quot;Courier New&quot;, monospace',
                     whiteSpace: 'nowrap',
                     textShadow: '0 0 10px rgba(0, 255, 0, 0.6)',
                     display: 'block',
@@ -1311,7 +1311,7 @@ const Home: React.FC = () => {
                       fontSize: '1rem',
                       color: '#000000',
                       lineHeight: '1.6',
-                      fontFamily: '"Press Start 2P", "Courier New", monospace',
+                      fontFamily: '&quot;Press Start 2P&quot;, &quot;Courier New&quot;, monospace',
                       fontWeight: 'bold',
                       position: 'relative',
                       zIndex: 2,
@@ -1333,7 +1333,7 @@ const Home: React.FC = () => {
                         }}>TURTLESHELL</span>, a tourism safety app backed with <span style={{
                           color: '#000000',
                           fontWeight: 'bold'
-                        }}>$26,000</span> from Microsoft plus support from the Government of Canada. I'm now a first-year CS student at <span style={{
+                        }}>$26,000</span> from Microsoft plus support from the Government of Canada. I&apos;m now a first-year CS student at <span style={{
                           color: '#000000',
                           fontWeight: 'bold'
                         }}>WATERLOO</span> and just shipped my latest project <span style={{
@@ -1347,7 +1347,7 @@ const Home: React.FC = () => {
                       </span>
                     </div>
                     
-                    {/* Comic Book "POW!" style accent */}
+                    {/* Comic Book &quot;POW!&quot; style accent */}
                     <div style={{
                       position: 'absolute',
                       top: '-8px',
@@ -1356,7 +1356,7 @@ const Home: React.FC = () => {
                       color: '#ff0000',
                       padding: '2px 8px',
                       border: '2px solid #000000',
-                      fontFamily: '"Press Start 2P", monospace',
+                      fontFamily: '&quot;Press Start 2P&quot;, monospace',
                       fontSize: '8px',
                       fontWeight: 'bold',
                       animation: 'powBlink 1.5s ease-in-out infinite',
@@ -1390,7 +1390,7 @@ const Home: React.FC = () => {
                     boxShadow: '0 10px 30px rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
                     animation: 'fadeInUp 1s ease-out 2s both',
                     border: '1px solid rgba(255, 255, 255, 0.2)',
-                    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
+                    fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
                     letterSpacing: '0.025em',
                     backdropFilter: 'blur(10px)'
                   }}
@@ -1462,11 +1462,11 @@ const Home: React.FC = () => {
                 maxWidth: '1000px',
                 margin: '0 auto',
                 fontWeight: '500',
-                fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
+                fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
                 letterSpacing: '0.01em',
                 textAlign: 'center'
               }}>
-                i've published two dystopian novels on kindle. i'm a research assistant at u of t with dr. brad bass (ipcc nobel peace prize team). i also started positive powers, my nonprofit that's raised $15,000 to run positivity projects across two continents.
+                i&apos;ve published two dystopian novels on kindle. i&apos;m a research assistant at u of t with dr. brad bass (ipcc nobel peace prize team). i also started positive powers, my nonprofit that&apos;s raised $15,000 to run positivity projects across two continents.
               </p>
             </div>
           </div>
@@ -1523,7 +1523,7 @@ const Home: React.FC = () => {
                 maxWidth: '800px',
                 margin: '0 auto 32px auto',
                 fontWeight: '400',
-                fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
+                fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
                 letterSpacing: '0.01em',
                 textAlign: 'center'
               }}>
@@ -1544,7 +1544,7 @@ const Home: React.FC = () => {
                   alignItems: 'center',
                   gap: '12px',
                   fontSize: '18px',
-                  fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
+                  fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
                   letterSpacing: '0.025em',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   transform: 'translateY(0)',
@@ -1633,7 +1633,7 @@ const Home: React.FC = () => {
                 alignItems: 'center',
                 gap: '10px',
                 fontSize: '16px',
-                fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
+                fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
                 letterSpacing: '0.025em',
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 transform: 'translateY(0)',

@@ -71,7 +71,7 @@ const Services: React.FC = () => {
                   AI Voice Assistant
                 </h3>
                 <p style={{ color: '#666', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  Inspired by Iron Man's JARVIS, I created my own AI based voice assistant called "Ronaldo." This voice assistant can be activated by using the command terms "Ronaldo" or "Hi Ronaldo" followed by a question/prompt.
+                  Inspired by Iron Man's JARVIS, I created my own AI based voice assistant called &quot;Ronaldo.&quot; This voice assistant can be activated by using the command terms &quot;Ronaldo&quot; or &quot;Hi Ronaldo&quot; followed by a question/prompt.
                 </p>
               </div>
 
@@ -101,7 +101,7 @@ const Services: React.FC = () => {
                   COVID-19 Mask Detection
                 </h3>
                 <p style={{ color: '#666', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  During the COVID-19 pandemic, I created a real-time mask detection system for use in public places. Connected to a live broadcasting camera, this detection system displays a bright red "no mask" text if a maskless person walks by, accompanied by a repeating siren until the mask is put on.
+                  During the COVID-19 pandemic, I created a real-time mask detection system for use in public places. Connected to a live broadcasting camera, this detection system displays a bright red &quot;no mask&quot; text if a maskless person walks by, accompanied by a repeating siren until the mask is put on.
                 </p>
               </div>
 
@@ -175,7 +175,7 @@ const Services: React.FC = () => {
                   Founder @ Positive Powers
                 </h3>
                 <p style={{ color: '#666', fontSize: '0.95rem', lineHeight: '1.6' }}>
-                  Positive Powers is a nonprofit dedicated to uplifting vulnerable community members by spreading hope and positivity. The organization has launched several initiatives in Canada and internationally in India. It is recognized by Ontario Solicitor General Sylvia Jones, Mayor Alan Thompson, the local newspaper "The Caledon Citizen," and the Delhi RWA. I have raised around $15,000 in funds so far, with a goal of positively impacting over 100,000 people by 2030. Our initiatives include sending positivity-driven cards to senior homes, partnering with small businesses across Canada to provide essentials to children in foster homes, and running a program called "Bag to School" to assist underprivileged children in getting school necessities. Most recently, I worked in New Delhi, helping underprivileged individuals that live under the global poverty line receive basic essential items for survival.
+                  Positive Powers is a nonprofit dedicated to uplifting vulnerable community members by spreading hope and positivity. The organization has launched several initiatives in Canada and internationally in India. It is recognized by Ontario Solicitor General Sylvia Jones, Mayor Alan Thompson, the local newspaper &quot;The Caledon Citizen,&quot; and the Delhi RWA. I have raised around $15,000 in funds so far, with a goal of positively impacting over 100,000 people by 2030. Our initiatives include sending positivity-driven cards to senior homes, partnering with small businesses across Canada to provide essentials to children in foster homes, and running a program called &quot;Bag to School&quot; to assist underprivileged children in getting school necessities. Most recently, I worked in New Delhi, helping underprivileged individuals that live under the global poverty line receive basic essential items for survival.
                 </p>
               </div>
 

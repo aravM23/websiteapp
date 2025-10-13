@@ -5,24 +5,24 @@ import Link from 'next/link';
 const Projects: React.FC = () => {
   const projects = [
     {
-      title: "Project 1",
-      description: "A description of your first technical project and what problems it solves.",
-      technologies: ["React", "Node.js", "MongoDB"],
-      github: "https://github.com/aravM23/project1",
+      title: &quot;Project 1&quot;,
+      description: &quot;A description of your first technical project and what problems it solves.&quot;,
+      technologies: [&quot;React&quot;, &quot;Node.js&quot;, &quot;MongoDB&quot;],
+      github: &quot;https://github.com/aravM23/project1&quot;,
       demo: "https://project1-demo.com"
     },
     {
-      title: "Project 2", 
-      description: "A description of your second technical project and its impact.",
-      technologies: ["Python", "TensorFlow", "Flask"],
-      github: "https://github.com/aravM23/project2",
+      title: &quot;Project 2&quot;, 
+      description: &quot;A description of your second technical project and its impact.&quot;,
+      technologies: [&quot;Python&quot;, &quot;TensorFlow&quot;, &quot;Flask&quot;],
+      github: &quot;https://github.com/aravM23/project2&quot;,
       demo: "https://project2-demo.com"
     },
     {
-      title: "Project 3",
-      description: "A description of your third technical project and how it helps society.",
-      technologies: ["Next.js", "TypeScript", "PostgreSQL"],
-      github: "https://github.com/aravM23/project3",
+      title: &quot;Project 3&quot;,
+      description: &quot;A description of your third technical project and how it helps society.&quot;,
+      technologies: [&quot;Next.js&quot;, &quot;TypeScript&quot;, &quot;PostgreSQL&quot;],
+      github: &quot;https://github.com/aravM23/project3&quot;,
       demo: "https://project3-demo.com"
     }
   ];
