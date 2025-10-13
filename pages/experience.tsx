@@ -4,38 +4,38 @@ import Layout from '../src/components/Layout';
 const Experience: React.FC = () => {
   const experiences = [
     {
-      title: &quot;Software Engineering Intern&quot;,
-      company: &quot;Tech Company&quot;,
-      duration: &quot;Summer 2024&quot;,
-      description: &quot;Developed full-stack web applications using React and Node.js. Collaborated with senior engineers to implement new features and optimize application performance.&quot;,
-      technologies: [&quot;React&quot;, &quot;Node.js&quot;, &quot;TypeScript&quot;, &quot;MongoDB&quot;]
+      title: "Software Engineering Intern",
+      company: "Tech Company",
+      duration: "Summer 2024",
+      description: "Developed full-stack web applications using React and Node.js. Collaborated with senior engineers to implement new features and optimize application performance.",
+      technologies: ["React", "Node.js", "TypeScript", "MongoDB"]
     },
     {
-      title: &quot;Freelance Developer&quot;, 
-      company: &quot;Various Clients&quot;,
-      duration: &quot;2023 - Present&quot;,
-      description: &quot;Built custom websites and web applications for small businesses and startups. Focused on responsive design and user experience optimization.&quot;,
-      technologies: [&quot;Next.js&quot;, &quot;React&quot;, &quot;Python&quot;, &quot;PostgreSQL&quot;]
+      title: "Freelance Developer", 
+      company: "Various Clients",
+      duration: "2023 - Present",
+      description: "Built custom websites and web applications for small businesses and startups. Focused on responsive design and user experience optimization.",
+      technologies: ["Next.js", "React", "Python", "PostgreSQL"]
     },
     {
-      title: &quot;Research Assistant&quot;,
-      company: &quot;University Lab&quot;,
-      duration: &quot;2023 - 2024&quot;, 
-      description: &quot;Conducted research on machine learning applications in healthcare. Developed data processing pipelines and implemented ML models for medical data analysis.&quot;,
-      technologies: [&quot;Python&quot;, &quot;TensorFlow&quot;, &quot;Pandas&quot;, &quot;Scikit-learn&quot;]
+      title: "Research Assistant",
+      company: "University Lab",
+      duration: "2023 - 2024", 
+      description: "Conducted research on machine learning applications in healthcare. Developed data processing pipelines and implemented ML models for medical data analysis.",
+      technologies: ["Python", "TensorFlow", "Pandas", "Scikit-learn"]
     }
   ];
 
   const skills = [
-    &quot;JavaScript/TypeScript&quot;,
-    &quot;React/Next.js&quot;, 
-    &quot;Node.js&quot;,
-    &quot;Python&quot;,
-    &quot;Machine Learning&quot;,
-    &quot;PostgreSQL/MongoDB&quot;,
-    &quot;Git/GitHub&quot;,
-    &quot;AWS/Cloud Services&quot;,
-    &quot;UI/UX Design&quot;,
+    "JavaScript/TypeScript",
+    "React/Next.js", 
+    "Node.js",
+    "Python",
+    "Machine Learning",
+    "PostgreSQL/MongoDB",
+    "Git/GitHub",
+    "AWS/Cloud Services",
+    "UI/UX Design",
     "Data Analysis"
   ];
 

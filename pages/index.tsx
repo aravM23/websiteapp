@@ -1019,7 +1019,7 @@ const Home: React.FC = () => {
                 color: '#ffffff', 
                 marginBottom: '24px',
                 fontWeight: '800',
-                fontFamily: '&quot;SF Pro Display&quot;, &quot;Helvetica Neue&quot;, &quot;Arial Black&quot;, sans-serif',
+                fontFamily: '"SF Pro Display", "Helvetica Neue", "Arial Black", sans-serif',
                 letterSpacing: '0.05em',
                 display: 'flex',
                 alignItems: 'center',
@@ -1043,7 +1043,7 @@ const Home: React.FC = () => {
                 marginBottom: '32px',
                 fontStyle: 'italic',
                 fontWeight: '400',
-                fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
+                fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
                 lineHeight: '1.5',
                 letterSpacing: '-0.005em'
               }}>
@@ -1226,7 +1226,7 @@ const Home: React.FC = () => {
                   <span style={{
                     color: '#00ff00',
                     fontSize: '16px',
-                    fontFamily: 'Monaco, &quot;Cascadia Code&quot;, &quot;Roboto Mono&quot;, Consolas, &quot;Courier New&quot;, monospace',
+                    fontFamily: 'Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace',
                     whiteSpace: 'nowrap',
                     textShadow: '0 0 10px rgba(0, 255, 0, 0.6)',
                     display: 'block',
@@ -1311,7 +1311,7 @@ const Home: React.FC = () => {
                       fontSize: '1rem',
                       color: '#000000',
                       lineHeight: '1.6',
-                      fontFamily: '&quot;Press Start 2P&quot;, &quot;Courier New&quot;, monospace',
+                      fontFamily: '"Press Start 2P", "Courier New", monospace',
                       fontWeight: 'bold',
                       position: 'relative',
                       zIndex: 2,
@@ -1347,7 +1347,7 @@ const Home: React.FC = () => {
                       </span>
                     </div>
                     
-                    {/* Comic Book &quot;POW!&quot; style accent */}
+                    {/* Comic Book "POW!" style accent */}
                     <div style={{
                       position: 'absolute',
                       top: '-8px',
@@ -1356,7 +1356,7 @@ const Home: React.FC = () => {
                       color: '#ff0000',
                       padding: '2px 8px',
                       border: '2px solid #000000',
-                      fontFamily: '&quot;Press Start 2P&quot;, monospace',
+                      fontFamily: '"Press Start 2P", monospace',
                       fontSize: '8px',
                       fontWeight: 'bold',
                       animation: 'powBlink 1.5s ease-in-out infinite',
@@ -1390,7 +1390,7 @@ const Home: React.FC = () => {
                     boxShadow: '0 10px 30px rgba(255, 255, 255, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
                     animation: 'fadeInUp 1s ease-out 2s both',
                     border: '1px solid rgba(255, 255, 255, 0.2)',
-                    fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
+                    fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
                     letterSpacing: '0.025em',
                     backdropFilter: 'blur(10px)'
                   }}
@@ -1462,7 +1462,7 @@ const Home: React.FC = () => {
                 maxWidth: '1000px',
                 margin: '0 auto',
                 fontWeight: '500',
-                fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
+                fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
                 letterSpacing: '0.01em',
                 textAlign: 'center'
               }}>
@@ -1523,7 +1523,7 @@ const Home: React.FC = () => {
                 maxWidth: '800px',
                 margin: '0 auto 32px auto',
                 fontWeight: '400',
-                fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
+                fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
                 letterSpacing: '0.01em',
                 textAlign: 'center'
               }}>
@@ -1544,7 +1544,7 @@ const Home: React.FC = () => {
                   alignItems: 'center',
                   gap: '12px',
                   fontSize: '18px',
-                  fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
+                  fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
                   letterSpacing: '0.025em',
                   transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                   transform: 'translateY(0)',
@@ -1633,7 +1633,7 @@ const Home: React.FC = () => {
                 alignItems: 'center',
                 gap: '10px',
                 fontSize: '16px',
-                fontFamily: '&quot;Inter&quot;, -apple-system, BlinkMacSystemFont, sans-serif',
+                fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, sans-serif',
                 letterSpacing: '0.025em',
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 transform: 'translateY(0)',
