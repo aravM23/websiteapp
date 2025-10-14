@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Layout from '../src/components/Layout';
+
 const Services: React.FC = () => {
   // Debounce function for search
   const debounce = (func: Function, wait: number) => {
@@ -68,203 +69,43 @@ const Services: React.FC = () => {
       const title = (card.querySelector('h3')?.textContent || '').toLowerCase();
       const content = card.textContent?.toLowerCase() || '';
       
+      // More flexible search - split search terms by spaces for multi-word searches
       const searchTerms = searchTerm.split(' ').filter(term => term.length > 0);
       const matches = searchTerm === '' || searchTerms.every(term => 
         tags.includes(term) || 
         title.includes(term) || 
         content.includes(term)
       );
-                <div className="project-details">
-                  <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '20px', fontWeight: '400' }}>
-                    GrayPass is a passwordless authentication engine that builds a per-user brainprint from cognitive and behavioral signals (Stroop reaction times, keystroke dynamics, eye-tracking). A FastAPI backend extracts 15-dimensional features, calibrates confidence, derives a SHA-256 brainprint, and stores encrypted vectors. A lightweight web client captures gaze and typing data, performs live quality checks, and sends signed payloads to the API. The system supports fuzzy matching with tunable thresholds, nonce protection, rate limiting, and encrypted at-rest storage. Achieved sub-100 ms end-to-end auth on calibrated sessions.
-                  </p>
-                  <div style={{ marginBottom: '20px' }}>
-                    <h4 style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: '600', marginBottom: '12px' }}>Languages</h4>
-                    <div style={{ color: '#b0b0b0', fontSize: '0.85rem', lineHeight: '1.6' }}>
-                      <p style={{ marginBottom: '8px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>Python</span> – backend, ML features
-                      </p>
-                      <p style={{ marginBottom: '8px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>JavaScript</span> – frontend capture
-                      </p>
-                      <p style={{ marginBottom: '8px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>HTML/CSS</span> – responsive UI
-                      </p>
-                      <p style={{ marginBottom: '0px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>SQL</span> – PostgreSQL and SQLite
-                      </p>
-                    </div>
-                  </div>
-                  <div style={{ marginBottom: '20px' }}>
-                    <h4 style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: '600', marginBottom: '12px' }}>Frameworks & Tools</h4>
-                    <div style={{ color: '#b0b0b0', fontSize: '0.85rem', lineHeight: '1.6', marginBottom: '16px' }}>
-                      <p style={{ marginBottom: '8px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>FastAPI</span> – high-performance async web framework for real-time authentication APIs
-                      </p>
-                      <p style={{ marginBottom: '8px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>PyTorch</span> – deep learning framework for neural network-based behavioral pattern recognition
-                      </p>
-                      <p style={{ marginBottom: '8px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>WebGazer.js</span> – eye-tracking library for capturing gaze patterns and cognitive load metrics
-                      </p>
-                      <p style={{ marginBottom: '8px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>Docker</span> – containerization for consistent deployment across environments
-                      </p>
-                      <p style={{ marginBottom: '8px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>PostgreSQL</span> – robust relational database for secure user profile and biometric data storage
-                      </p>
-                      <p style={{ marginBottom: '0px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>scikit-learn</span> – machine learning algorithms for feature extraction and classification
-                      </p>
-                    </div>
-                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
-                      {['FastAPI', 'PyTorch', 'WebGazer.js', 'Docker', 'PostgreSQL', 'scikit-learn'].map(tech => 
-                        <span key={tech} style={{ 
-                          backgroundColor: 'rgba(255, 193, 7, 0.2)', 
-                          color: '#FFC107', 
-                          padding: '4px 8px', 
-                          borderRadius: '12px', 
-                          fontSize: '0.75rem',
-                          border: '1px solid rgba(255, 193, 7, 0.3)'
-                        }}>
-                          {tech}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  <button style={{ 
-                    backgroundColor: 'transparent',
-                    border: '1px solid #FFC107',
-                    color: '#FFC107',
-                    padding: '8px 16px',
-                    borderRadius: '20px',
-                    fontSize: '0.85rem',
-                    fontWeight: '500',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    marginTop: '12px'
-                  }}>
-                    View Details
-                  </button>
-                </div>
-      card.style.transform = 'translateY(30px)';
       
-<<<<<<< ours
-=======
       cardMatches[index] = matches;
       if (matches) visibleCount++;
       
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
+      // Add staggered animation delay
       setTimeout(() => {
-        card.style.opacity = '1';
-        card.style.transform = 'translateY(0)';
-        card.style.transition = 'all 0.6s ease-out';
-      }, index * 100 + 200);
+        if (matches) {
+          card.style.display = 'block';
+          card.style.opacity = '1';
+          card.style.transform = 'scale(1)';
+        } else {
+          card.style.opacity = '0';
+          card.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            if (card.style.opacity === '0') {
+              card.style.display = 'none';
+            }
+          }, 200);
+        }
+      }, index * 30);
     });
-<<<<<<< ours
-=======
     
+    // Update UI elements after animation
     setTimeout(() => {
+      // Hide loading indicator
       if (searchLoading) {
         searchLoading.style.display = 'none';
       }
       
+      // Update results counter
       if (resultsCount && searchResults) {
         resultsCount.textContent = visibleCount.toString();
         if (searchTerm !== '' && visibleCount > 0) {
@@ -274,10 +115,12 @@ const Services: React.FC = () => {
         }
       }
       
+      // Show/hide clear button
       if (clearButton) {
         clearButton.style.display = searchTerm !== '' ? 'flex' : 'none';
       }
       
+      // Show/hide no results message and container
       if (noResults && projectContainer) {
         if (visibleCount === 0 && searchTerm !== '') {
           noResults.style.display = 'block';
@@ -288,7 +131,6 @@ const Services: React.FC = () => {
         }
       }
     }, projectCards.length * 30 + 100);
->>>>>>> theirs
   };
 
   const debouncedSearch = debounce(performSearch, 200);
@@ -296,333 +138,11 @@ const Services: React.FC = () => {
   const scatterCards = () => {
     const container = document.getElementById('projectContainer');
     if (!container) return;
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
-=======
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
     
     // Switch to clean grid layout with simple animations
     container.className = 'clean-grid-layout';
     const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
     
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
-=======
-
-    container.className = 'clean-grid-layout';
-    const cards = document.querySelectorAll('.project-card') as NodeListOf<HTMLElement>;
-
->>>>>>> theirs
     cards.forEach((card, index) => {
       card.classList.remove('scattered');
       card.classList.add('grid-card');
@@ -630,333 +150,11 @@ const Services: React.FC = () => {
       card.style.left = 'auto';
       card.style.top = 'auto';
       card.style.width = 'auto';
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
-=======
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
       
       // Simple entrance animation
       card.style.opacity = '0';
       card.style.transform = 'translateY(30px)';
       
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
-=======
-
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(30px)';
-
->>>>>>> theirs
       setTimeout(() => {
         card.style.opacity = '1';
         card.style.transform = 'translateY(0)';
@@ -1001,8 +199,8 @@ const Services: React.FC = () => {
       <style jsx>{`
         .clean-grid-layout {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-          gap: 2rem;
+          grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+          gap: 3rem;
           padding: 1rem 3rem 3rem 3rem;
           max-width: 1600px;
           margin: 0 auto;
@@ -1017,76 +215,58 @@ const Services: React.FC = () => {
           width: 100vw;
           height: 100vh;
           background: 
-            linear-gradient(135deg, 
-              rgba(255, 240, 245, 0.3) 0%,
-              rgba(240, 255, 255, 0.2) 30%,
-              rgba(255, 250, 240, 0.3) 60%,
-              rgba(245, 255, 240, 0.2) 100%
-            ),
-            radial-gradient(circle at 20% 30%, rgba(255, 102, 204, 0.15) 0%, transparent 60%),
-            radial-gradient(circle at 80% 70%, rgba(102, 204, 255, 0.15) 0%, transparent 60%),
-            radial-gradient(circle at 40% 80%, rgba(153, 255, 102, 0.15) 0%, transparent 60%);
+            radial-gradient(circle at 20% 30%, rgba(100, 200, 255, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 80% 70%, rgba(255, 100, 200, 0.05) 0%, transparent 50%),
+            radial-gradient(circle at 40% 80%, rgba(100, 255, 200, 0.05) 0%, transparent 50%);
           pointer-events: none;
           z-index: -1;
-          animation: happy-float 15s ease-in-out infinite;
+          animation: float 20s ease-in-out infinite;
         }
         
-        @keyframes happy-float {
+        @keyframes float {
           0%, 100% { 
-            transform: translateY(0px) rotate(0deg) scale(1);
-            filter: blur(0px) hue-rotate(0deg);
+            transform: translateY(0px) rotate(0deg);
+            filter: blur(0px);
           }
           25% { 
-            transform: translateY(-15px) rotate(2deg) scale(1.01);
-            filter: blur(0.5px) hue-rotate(10deg);
+            transform: translateY(-20px) rotate(1deg);
+            filter: blur(1px);
           }
           50% { 
-            transform: translateY(-5px) rotate(-1deg) scale(1.02);
-            filter: blur(0px) hue-rotate(15deg);
+            transform: translateY(-10px) rotate(-1deg);
+            filter: blur(0px);
           }
           75% { 
-            transform: translateY(-20px) rotate(1.5deg) scale(1.01);
-            filter: blur(0.5px) hue-rotate(5deg);
+            transform: translateY(-30px) rotate(1deg);
+            filter: blur(1px);
           }
         }
         
         .project-card.grid-card {
           background: linear-gradient(145deg, 
-            rgba(255, 240, 245, 0.98) 0%,
-            rgba(240, 255, 255, 0.95) 50%,
-            rgba(255, 250, 240, 0.98) 100%
+            rgba(15, 15, 25, 0.95) 0%,
+            rgba(25, 25, 35, 0.9) 50%,
+            rgba(15, 15, 25, 0.95) 100%
           );
-          border: 3px solid;
+          border: 2px solid;
           border-image: linear-gradient(145deg, 
-            rgba(255, 102, 153, 0.8) 0%, 
-            rgba(102, 204, 255, 0.8) 50%, 
-            rgba(153, 255, 102, 0.8) 100%
+            rgba(100, 200, 255, 0.3) 0%, 
+            rgba(255, 100, 200, 0.3) 50%, 
+            rgba(100, 255, 200, 0.3) 100%
           ) 1;
           border-radius: 24px;
-          padding: 1.5rem;
+          padding: 2.5rem;
           transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
           backdrop-filter: blur(25px) saturate(180%);
           box-shadow: 
-            0 8px 20px rgba(255, 102, 204, 0.15),
-            0 3px 8px rgba(102, 204, 255, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.8),
-            0 0 30px rgba(255, 153, 204, 0.15);
-          min-height: 200px;
+            0 15px 35px rgba(0, 0, 0, 0.4),
+            0 5px 15px rgba(0, 0, 0, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.1),
+            0 0 50px rgba(100, 200, 255, 0.1);
+          min-height: 600px;
           position: relative;
           overflow: hidden;
           transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
-          font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
-          animation: happy-bounce 4s ease-in-out infinite;
-        }
-        
-        .project-card.grid-card.expanded {
-          padding: 2.5rem;
-          min-height: 600px;
-          box-shadow: 
-            0 15px 35px rgba(255, 102, 204, 0.2),
-            0 5px 15px rgba(102, 204, 255, 0.15),
-            inset 0 1px 0 rgba(255, 255, 255, 0.8),
-            0 0 50px rgba(255, 153, 204, 0.2);
         }
         
         .project-card.grid-card::before {
@@ -1125,18 +305,17 @@ const Services: React.FC = () => {
         }
         
         .project-card.grid-card:hover {
-          transform: translateY(-15px) scale(1.03);
+          transform: translateY(-5px);
           box-shadow: 
-            0 25px 50px rgba(255, 102, 204, 0.3),
-            0 10px 25px rgba(102, 204, 255, 0.25),
-            inset 0 1px 0 rgba(255, 255, 255, 0.9),
-            0 0 60px rgba(255, 153, 102, 0.3);
+            0 15px 35px rgba(0, 0, 0, 0.4),
+            0 5px 15px rgba(100, 200, 255, 0.2),
+            inset 0 1px 0 rgba(255, 255, 255, 0.2),
+            0 0 40px rgba(100, 200, 255, 0.15);
           border-image: linear-gradient(145deg, 
-            rgba(255, 102, 153, 1) 0%, 
-            rgba(102, 204, 255, 1) 50%, 
-            rgba(153, 255, 102, 1) 100%
+            rgba(100, 200, 255, 0.6) 0%, 
+            rgba(255, 100, 200, 0.6) 50%, 
+            rgba(100, 255, 200, 0.6) 100%
           ) 1;
-          animation: excited-wiggle 0.6s ease-in-out infinite;
         }
         
         .project-card.grid-card:hover::before {
@@ -1150,465 +329,73 @@ const Services: React.FC = () => {
         .project-card.grid-card h2 {
           font-size: 1.8rem;
           font-weight: 800;
-          font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
           background: linear-gradient(135deg, 
-            #ff6699 0%, 
-            #66ccff 30%, 
-            #99ff66 60%,
-            #ffcc66 100%
+            #64c8ff 0%, 
+            #ff64c8 50%, 
+            #64ffc8 100%
           );
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
           margin-bottom: 1.5rem;
           line-height: 1.3;
-          text-shadow: 
-            2px 2px 0px rgba(255, 102, 153, 0.6),
-            4px 4px 0px rgba(102, 204, 255, 0.4);
+          text-shadow: 0 0 30px rgba(100, 200, 255, 0.3);
           position: relative;
           z-index: 3;
-          animation: rainbow-shimmer 2s ease-in-out infinite alternate;
-          letter-spacing: 2px;
-          image-rendering: pixelated;
-          image-rendering: -moz-crisp-edges;
-          image-rendering: crisp-edges;
+          animation: shimmer 3s ease-in-out infinite alternate;
         }
         
-        @keyframes rainbow-shimmer {
-          0% { 
-            filter: brightness(1) saturate(1) hue-rotate(0deg);
-            transform: scale(1);
-          }
-          50% {
-            filter: brightness(1.3) saturate(1.5) hue-rotate(10deg);
-            transform: scale(1.02);
-          }
-          100% { 
-            filter: brightness(1.1) saturate(1.2) hue-rotate(0deg);
-            transform: scale(1);
-          }
+        @keyframes shimmer {
+          0% { filter: brightness(1) saturate(1); }
+          100% { filter: brightness(1.2) saturate(1.3); }
         }
         
-        @keyframes happy-bounce {
+        @keyframes pulse-glow {
           0%, 100% { 
-            transform: translateY(0px) rotate(0deg);
             box-shadow: 
-              0 15px 35px rgba(255, 102, 204, 0.2),
-              0 5px 15px rgba(102, 204, 255, 0.15),
-              inset 0 1px 0 rgba(255, 255, 255, 0.8),
-              0 0 50px rgba(255, 153, 204, 0.2);
-          }
-          25% { 
-            transform: translateY(-3px) rotate(0.5deg);
+              0 15px 35px rgba(0, 0, 0, 0.4),
+              0 5px 15px rgba(0, 0, 0, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1),
+              0 0 50px rgba(100, 200, 255, 0.1);
           }
           50% { 
-            transform: translateY(-1px) rotate(0deg);
             box-shadow: 
-              0 20px 40px rgba(255, 102, 204, 0.25),
-              0 8px 20px rgba(102, 204, 255, 0.2),
-              inset 0 1px 0 rgba(255, 255, 255, 0.9),
-              0 0 60px rgba(255, 153, 204, 0.25);
-          }
-          75% { 
-            transform: translateY(-2px) rotate(-0.5deg);
+              0 15px 35px rgba(0, 0, 0, 0.4),
+              0 5px 15px rgba(0, 0, 0, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.1),
+              0 0 80px rgba(100, 200, 255, 0.2);
           }
         }
         
-        @keyframes excited-wiggle {
-          0%, 100% { transform: translateY(-15px) scale(1.03) rotate(0deg); }
-          25% { transform: translateY(-17px) scale(1.03) rotate(1deg); }
-          50% { transform: translateY(-13px) scale(1.03) rotate(0deg); }
-          75% { transform: translateY(-16px) scale(1.03) rotate(-1deg); }
-        }
-        
-        /* Global override for ALL project cards to make them happy! */
-        .project-card {
-          background: linear-gradient(145deg, 
-            rgba(255, 240, 245, 0.95) 0%,
-            rgba(240, 255, 255, 0.92) 50%,
-            rgba(255, 250, 240, 0.95) 100%
-          ) !important;
-          border: 3px solid rgba(255, 102, 204, 0.6) !important;
-          animation: gentle-bounce-card 5s ease-in-out infinite !important;
-          font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
-          padding: 2rem !important;
-          min-height: 240px !important;
-          transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1) !important;
-        }
-        
-        .project-card.expanded {
-          padding: 2.5rem !important;
-          min-height: 450px !important;
-        }
-        
-        .project-card:hover {
-          transform: translateY(-10px) scale(1.02) !important;
-          border-color: rgba(102, 204, 255, 0.8) !important;
-          box-shadow: 0 20px 40px rgba(255, 102, 204, 0.3) !important;
-          animation: excited-card-bounce 0.8s ease-in-out infinite !important;
-        }
-        
-        .project-card h3 {
-          color: #ff6699 !important;
-          font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
-          font-size: 1.2rem !important;
-          letter-spacing: 2px !important;
-          text-shadow: 2px 2px 0px rgba(255, 102, 204, 0.6), 4px 4px 0px rgba(102, 204, 255, 0.4) !important;
-          image-rendering: pixelated !important;
-          image-rendering: -moz-crisp-edges !important;
-          image-rendering: crisp-edges !important;
-          transition: all 0.4s ease !important;
-          margin-bottom: 0.8rem !important;
-        }
-        
-        .project-card.expanded h3 {
-          font-size: 1.5rem !important;
-          margin-bottom: 1.2rem !important;
-        }
-        
-        .project-card p {
-          font-size: 1rem !important;
-          line-height: 1.8 !important;
-          font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
-          transition: all 0.4s ease !important;
-        }
-        
-        .project-card.expanded p {
-          font-size: 1.1rem !important;
-          line-height: 1.9 !important;
-        }
-        
-        .project-card p {
-          color: #333333 !important;
-          font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
-          letter-spacing: 1px !important;
-          text-shadow: 1px 1px 0px rgba(255, 102, 204, 0.3) !important;
-          image-rendering: pixelated !important;
-          image-rendering: -moz-crisp-edges !important;
-          image-rendering: crisp-edges !important;
-        }
-        
-        .project-card h4 {
-          color: #66ccff !important;
-          font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
-          font-size: 1.2rem !important;
-          font-weight: 700 !important;
-          letter-spacing: 3px !important;
-          text-shadow: 2px 2px 0px rgba(255, 102, 204, 0.6), 4px 4px 0px rgba(102, 204, 255, 0.4) !important;
-          image-rendering: pixelated !important;
-          text-transform: uppercase !important;
-          margin-bottom: 16px !important;
-        }
-        
-        .project-card div {
-          color: #555555 !important;
-          font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
-          letter-spacing: 1px !important;
-          image-rendering: pixelated !important;
-        }
-        
-        .project-card span {
-          color: #ff6699 !important;
-          font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
-          image-rendering: pixelated !important;
-        }
-        
-        @keyframes gentle-bounce-card {
-          0%, 100% { transform: translateY(0px); }
-          50% { transform: translateY(-3px); }
-        }
-        
-        @keyframes excited-card-bounce {
-          0%, 100% { transform: translateY(-10px) scale(1.02); }
-          50% { transform: translateY(-15px) scale(1.02); }
-        }
-        
-        /* Unique Color Schemes for Each Project Card */
-        .project-card.pink-theme {
-          background: linear-gradient(145deg, rgba(255, 230, 245, 0.98), rgba(255, 240, 250, 0.95)) !important;
-          border-image: linear-gradient(145deg, rgba(255, 102, 153, 0.8), rgba(255, 153, 204, 0.8)) 1 !important;
-          box-shadow: 0 15px 35px rgba(255, 102, 153, 0.2), 0 5px 15px rgba(255, 153, 204, 0.15) !important;
-        }
-        
-        .project-card.pink-theme h3 {
-          background: linear-gradient(135deg, #ff6699, #ff99cc) !important;
-          background-clip: text !important;
-          -webkit-background-clip: text !important;
-          -webkit-text-fill-color: transparent !important;
-          text-shadow: 2px 2px 0px rgba(255, 102, 153, 0.6) !important;
-        }
-        
-        .project-card.pink-theme h4 {
-          color: #ff3377 !important;
-          text-shadow: 2px 2px 0px rgba(255, 102, 153, 0.6) !important;
-        }
-        
-        .project-card.pink-theme p {
-          color: rgba(102, 51, 76, 0.9) !important;
-          text-shadow: 1px 1px 0px rgba(255, 153, 204, 0.3) !important;
-        }
-        
-        .project-card.blue-theme {
-          background: linear-gradient(145deg, rgba(230, 245, 255, 0.98), rgba(240, 250, 255, 0.95)) !important;
-          border-image: linear-gradient(145deg, rgba(102, 153, 255, 0.8), rgba(153, 204, 255, 0.8)) 1 !important;
-          box-shadow: 0 15px 35px rgba(102, 153, 255, 0.2), 0 5px 15px rgba(153, 204, 255, 0.15) !important;
-        }
-        
-        .project-card.blue-theme h3 {
-          background: linear-gradient(135deg, #6699ff, #99ccff) !important;
-          background-clip: text !important;
-          -webkit-background-clip: text !important;
-          -webkit-text-fill-color: transparent !important;
-          text-shadow: 2px 2px 0px rgba(102, 153, 255, 0.6) !important;
-        }
-        
-        .project-card.blue-theme h4 {
-          color: #3377ff !important;
-          text-shadow: 2px 2px 0px rgba(102, 153, 255, 0.6) !important;
-        }
-        
-        .project-card.blue-theme p {
-          color: rgba(51, 76, 102, 0.9) !important;
-          text-shadow: 1px 1px 0px rgba(153, 204, 255, 0.3) !important;
-        }
-        
-        .project-card.green-theme {
-          background: linear-gradient(145deg, rgba(230, 255, 235, 0.98), rgba(240, 255, 245, 0.95)) !important;
-          border-image: linear-gradient(145deg, rgba(102, 204, 102, 0.8), rgba(153, 255, 153, 0.8)) 1 !important;
-          box-shadow: 0 15px 35px rgba(102, 204, 102, 0.2), 0 5px 15px rgba(153, 255, 153, 0.15) !important;
-        }
-        
-        .project-card.green-theme h3 {
-          background: linear-gradient(135deg, #66cc66, #99ff99) !important;
-          background-clip: text !important;
-          -webkit-background-clip: text !important;
-          -webkit-text-fill-color: transparent !important;
-          text-shadow: 2px 2px 0px rgba(102, 204, 102, 0.6) !important;
-        }
-        
-        .project-card.green-theme h4 {
-          color: #33aa33 !important;
-          text-shadow: 2px 2px 0px rgba(102, 204, 102, 0.6) !important;
-        }
-        
-        .project-card.green-theme p {
-          color: rgba(51, 102, 51, 0.9) !important;
-          text-shadow: 1px 1px 0px rgba(153, 255, 153, 0.3) !important;
-        }
-        
-        .project-card.orange-theme {
-          background: linear-gradient(145deg, rgba(255, 245, 230, 0.98), rgba(255, 250, 240, 0.95)) !important;
-          border-image: linear-gradient(145deg, rgba(255, 153, 102, 0.8), rgba(255, 204, 153, 0.8)) 1 !important;
-          box-shadow: 0 15px 35px rgba(255, 153, 102, 0.2), 0 5px 15px rgba(255, 204, 153, 0.15) !important;
-        }
-        
-        .project-card.orange-theme h3 {
-          background: linear-gradient(135deg, #ff9966, #ffcc99) !important;
-          background-clip: text !important;
-          -webkit-background-clip: text !important;
-          -webkit-text-fill-color: transparent !important;
-          text-shadow: 2px 2px 0px rgba(255, 153, 102, 0.6) !important;
-        }
-        
-        .project-card.orange-theme h4 {
-          color: #ff6633 !important;
-          text-shadow: 2px 2px 0px rgba(255, 153, 102, 0.6) !important;
-        }
-        
-        .project-card.orange-theme p {
-          color: rgba(102, 76, 51, 0.9) !important;
-          text-shadow: 1px 1px 0px rgba(255, 204, 153, 0.3) !important;
-        }
-        
-        .project-card.purple-theme {
-          background: linear-gradient(145deg, rgba(245, 230, 255, 0.98), rgba(250, 240, 255, 0.95)) !important;
-          border-image: linear-gradient(145deg, rgba(153, 102, 255, 0.8), rgba(204, 153, 255, 0.8)) 1 !important;
-          box-shadow: 0 15px 35px rgba(153, 102, 255, 0.2), 0 5px 15px rgba(204, 153, 255, 0.15) !important;
-        }
-        
-        .project-card.purple-theme h3 {
-          background: linear-gradient(135deg, #9966ff, #cc99ff) !important;
-          background-clip: text !important;
-          -webkit-background-clip: text !important;
-          -webkit-text-fill-color: transparent !important;
-          text-shadow: 2px 2px 0px rgba(153, 102, 255, 0.6) !important;
-        }
-        
-        .project-card.purple-theme h4 {
-          color: #6633ff !important;
-          text-shadow: 2px 2px 0px rgba(153, 102, 255, 0.6) !important;
-        }
-        
-        .project-card.purple-theme p {
-          color: rgba(76, 51, 102, 0.9) !important;
-          text-shadow: 1px 1px 0px rgba(204, 153, 255, 0.3) !important;
-        }
-        
-        .project-card.teal-theme {
-          background: linear-gradient(145deg, rgba(230, 255, 250, 0.98), rgba(240, 255, 252, 0.95)) !important;
-          border-image: linear-gradient(145deg, rgba(102, 204, 204, 0.8), rgba(153, 255, 255, 0.8)) 1 !important;
-          box-shadow: 0 15px 35px rgba(102, 204, 204, 0.2), 0 5px 15px rgba(153, 255, 255, 0.15) !important;
-        }
-        
-        .project-card.teal-theme h3 {
-          background: linear-gradient(135deg, #66cccc, #99ffff) !important;
-          background-clip: text !important;
-          -webkit-background-clip: text !important;
-          -webkit-text-fill-color: transparent !important;
-          text-shadow: 2px 2px 0px rgba(102, 204, 204, 0.6) !important;
-        }
-        
-        .project-card.teal-theme h4 {
-          color: #33aaaa !important;
-          text-shadow: 2px 2px 0px rgba(102, 204, 204, 0.6) !important;
-        }
-        
-        .project-card.teal-theme p {
-          color: rgba(51, 102, 102, 0.9) !important;
-          text-shadow: 1px 1px 0px rgba(153, 255, 255, 0.3) !important;
-        }
-        
-        /* Compact Mode Styles */
-        #projectContainer.compact-mode {
-          display: grid !important;
-          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)) !important;
-          gap: 2rem !important;
-          padding: 1rem !important;
-        }
-        
-        #projectContainer.compact-mode .project-card {
-          position: static !important;
-          width: 100% !important;
-          max-width: none !important;
-          transform: none !important;
-          animation: none !important;
-          min-height: auto !important;
-          padding: 1.5rem !important;
-        }
-        
-        .project-card .project-details {
-          max-height: 0;
-          overflow: hidden;
-          transition: all 0.4s ease;
-          opacity: 0;
-          margin-top: 0;
-        }
-        
-        .project-card .preview-text {
-          display: block;
-        }
-        
-        .project-card.expanded .preview-text {
-          display: none !important;
-        }
-        
-        .project-card.expanded .project-details {
-          max-height: 1000px;
-          opacity: 1;
-          margin-top: 1rem;
-        }
-        
-        #projectContainer.compact-mode .project-card .project-details {
-          max-height: 0;
-          overflow: hidden;
-          transition: all 0.4s ease;
-          opacity: 0;
-        }
-        
-        #projectContainer.compact-mode .project-card.expanded .project-details {
-          max-height: 1000px;
-          opacity: 1;
-          margin-top: 1rem;
-        }
-        
-        .expand-toggle {
-          background: linear-gradient(135deg, rgba(0, 255, 65, 0.8), rgba(0, 200, 50, 0.8)) !important;
-          border: 2px solid #00ff41 !important;
-          color: #000 !important;
-          font-family: 'Courier New', monospace !important;
-          font-weight: 700 !important;
-          padding: 12px 28px !important;
-          border-radius: 8px !important;
-          cursor: pointer !important;
-          transition: all 0.3s ease !important;
-          font-size: 0.9rem !important;
-          letter-spacing: 2px !important;
-          text-transform: uppercase !important;
-          margin-top: 1.2rem !important;
-          width: auto !important;
-          min-width: 190px !important;
-          text-align: center !important;
-          white-space: nowrap !important;
-          overflow: visible !important;
-          display: inline-block !important;
-        }
-        
-        .expand-toggle:hover {
-          background: linear-gradient(135deg, #00ff41, #00cc33) !important;
-          transform: translateY(-2px) !important;
-          box-shadow: 0 4px 12px rgba(0, 255, 65, 0.4) !important;
-        }
-        
-        @media (max-width: 768px) {
-          #projectContainer.compact-mode {
-            grid-template-columns: 1fr !important;
-            gap: 1.5rem !important;
-          }
+        .project-card.grid-card {
+          animation: pulse-glow 4s ease-in-out infinite alternate;
         }
         
         .project-card.grid-card p {
-          font-size: 1.05rem;
-          line-height: 1.8;
-          color: rgba(51, 51, 51, 0.95);
-          margin-bottom: 1rem;
+          font-size: 1.25rem;
+          line-height: 1.7;
+          color: rgba(255, 255, 255, 0.95);
+          margin-bottom: 2rem;
           position: relative;
           z-index: 3;
-          font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
-          text-shadow: 1px 1px 0px rgba(255, 102, 204, 0.3);
-          letter-spacing: 0.5px;
-          image-rendering: pixelated;
-          image-rendering: -moz-crisp-edges;
-          image-rendering: crisp-edges;
-          transition: all 0.4s ease;
-        }
-        
-        .project-card.grid-card.expanded p {
-          font-size: 1.15rem;
-          line-height: 1.9;
-          margin-bottom: 2rem;
-          letter-spacing: 0.8px;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
         }
         
         .project-card.grid-card h3 {
           font-size: 1.3rem;
           font-weight: 700;
-          font-family: 'Courier New', 'Monaco', 'Menlo', monospace !important;
           background: linear-gradient(90deg, 
-            rgba(255, 102, 153, 0.9) 0%, 
-            rgba(102, 204, 255, 0.9) 50%,
-            rgba(153, 255, 102, 0.9) 100%
+            rgba(255, 255, 255, 0.9) 0%, 
+            rgba(100, 200, 255, 0.8) 100%
           );
           background-clip: text;
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-          margin: 1rem 0 0.8rem 0;
+          margin: 2rem 0 1rem 0;
           text-transform: uppercase;
-          letter-spacing: 2.5px;
+          letter-spacing: 2px;
           position: relative;
           z-index: 3;
-          text-shadow: 
-            1px 1px 0px rgba(255, 102, 204, 0.5),
-            2px 2px 0px rgba(102, 204, 255, 0.3);
-          image-rendering: pixelated;
-          image-rendering: -moz-crisp-edges;
-          image-rendering: crisp-edges;
-          transition: all 0.4s ease;
-        }
-        
-        .project-card.grid-card.expanded h3 {
-          font-size: 1.3rem;
-          margin: 2rem 0 1rem 0;
-          letter-spacing: 3px;
         }
         
         .project-card.grid-card h3::after {
@@ -1699,21 +486,6 @@ const Services: React.FC = () => {
         @keyframes spin {
           0% { transform: rotate(0deg); }
           100% { transform: rotate(360deg); }
-        }
-        
-        @keyframes loadingDots {
-          0%, 20% { opacity: 0; }
-          40% { opacity: 1; }
-          100% { opacity: 0; }
-        }
-        
-        .loading-dots {
-          display: inline-block;
-        }
-        
-        .loading-dots::after {
-          content: '...';
-          animation: loadingDots 1.5s infinite;
         }
         
         /* Responsive design */
@@ -1848,32 +620,58 @@ const Services: React.FC = () => {
             <h1 style={{ 
               fontSize: '3.5rem', 
               fontWeight: '700', 
-              fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
               color: '#ffffff',
               marginBottom: '24px',
-              textShadow: '4px 4px 0px #000, 8px 8px 0px rgba(255, 255, 255, 0.3)',
-              letterSpacing: '3px',
-              textTransform: 'uppercase',
-              imageRendering: 'pixelated'
+              background: 'linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
             }}>
-              MY PROJECTS 💻
+              My Work & Experience
             </h1>
             <p style={{ 
-              fontSize: '1.2rem', 
-              fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-              color: '#ffd23f', 
-              maxWidth: '700px', 
+              fontSize: '1.3rem', 
+              color: '#b0b0b0', 
+              maxWidth: '600px', 
               margin: '0 auto',
-              lineHeight: '1.7',
-              fontWeight: '500',
-              textShadow: '2px 2px 0px #000, 0 0 15px rgba(255, 210, 63, 0.5)',
-              letterSpacing: '1px'
+              lineHeight: '1.6',
+              fontWeight: '400'
             }}>
-              [ LOADING PORTFOLIO<span className="loading-dots"></span> ]
+              A collection of projects and experiences that showcase my journey in technology, artificial intelligence, and innovation.
             </p>
           </div>
 
           {/* AI Projects Section */}
+          <div style={{ marginBottom: '80px' }}>
+            <h2 style={{ 
+              fontSize: '2.5rem', 
+              fontWeight: '700', 
+              color: '#ffffff',
+              marginBottom: '24px',
+              background: 'linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              AI Projects
+            </h2>
+            <p style={{ 
+              fontSize: '1rem', 
+              color: '#b0b0b0', 
+              lineHeight: '1.6',
+              marginBottom: '40px',
+              fontWeight: '400'
+            }}>
+              I have built several different AI-based tech projects. Each of my projects aims to address niche problems faced by society. My mission with these projects is simply to create innovative solutions that improve lives, promote sustainability, and drive positive change in communities around the world.
+            </p>
+            <p style={{ 
+              fontSize: '1rem', 
+              color: '#b0b0b0', 
+              marginBottom: '40px',
+              fontWeight: '400'
+            }}>
+              All these projects were created as personal initiatives by me during my free time!
+            </p>
 
             {/* Search Results Counter */}
             <div id="searchResults" style={{ 
@@ -1933,7 +731,7 @@ const Services: React.FC = () => {
               <div style={{ position: 'relative' }}>
                 <input 
                   type="text" 
-                  placeholder="🔍 Search projects by language or frameworks used"
+                  placeholder="🔍 Search by language or framework (Python, TensorFlow, React, etc.)"
                   id="projectSearch"
                   style={{ 
                     width: '100%',
@@ -1978,13 +776,13 @@ const Services: React.FC = () => {
                     performSearch('');
                   }
                 }}
+              />
               <button
                 id="clearSearch"
                 style={{
                   position: 'absolute',
                   right: '12px',
                   top: '50%',
-              </div>
                   transform: 'translateY(-50%)',
                   background: 'none',
                   border: 'none',
@@ -2021,6 +819,7 @@ const Services: React.FC = () => {
               >
                 ✕
               </button>
+              </div>
             </div>
 
             {/* Filter Tags */}
@@ -2104,97 +903,6 @@ const Services: React.FC = () => {
               )}
             </div>
 
-            {/* Sticky Navigation */}
-            <div style={{
-              position: 'sticky',
-              top: '20px',
-              zIndex: 100,
-              backgroundColor: 'rgba(10, 10, 10, 0.95)',
-              backdropFilter: 'blur(20px)',
-              border: '2px solid rgba(0, 255, 65, 0.3)',
-              borderRadius: '16px',
-              padding: '16px 24px',
-              marginBottom: '40px',
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '20px',
-              flexWrap: 'wrap',
-              boxShadow: '0 8px 32px rgba(0, 255, 65, 0.2)'
-            }}>
-              <button 
-                onClick={() => {
-                  document.getElementById('projectContainer')?.scrollIntoView({ behavior: 'smooth' });
-                }}
-                style={{
-                  padding: '12px 28px',
-                  backgroundColor: 'transparent',
-                  border: '2px solid #ff6699',
-                  borderRadius: '10px',
-                  color: '#ff6699',
-                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  letterSpacing: '0.5px',
-                  textTransform: 'uppercase',
-                  fontSize: '0.875rem',
-                  boxShadow: '0 2px 8px rgba(255, 102, 153, 0.2)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#ff6699';
-                  e.currentTarget.style.color = '#000';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(255, 102, 153, 0.4)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#ff6699';
-                  e.currentTarget.style.transform = 'translateY(0px)';
-                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(255, 102, 153, 0.2)';
-                }}
-              >
-                🚀 Projects
-              </button>
-              
-              <button 
-                onClick={() => {
-                  const workSection = document.querySelector('[data-section="work-experience"]');
-                  if (workSection) {
-                    workSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                style={{
-                  padding: '12px 28px',
-                  backgroundColor: 'transparent',
-                  border: '2px solid #66ccff',
-                  borderRadius: '10px',
-                  color: '#66ccff',
-                  fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-                  fontWeight: '600',
-                  cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  letterSpacing: '0.5px',
-                  textTransform: 'uppercase',
-                  fontSize: '0.875rem',
-                  boxShadow: '0 2px 8px rgba(102, 204, 255, 0.2)'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#66ccff';
-                  e.currentTarget.style.color = '#000';
-                  e.currentTarget.style.transform = 'translateY(-2px)';
-                  e.currentTarget.style.boxShadow = '0 4px 12px rgba(102, 204, 255, 0.4)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                  e.currentTarget.style.color = '#66ccff';
-                  e.currentTarget.style.transform = 'translateY(0px)';
-                  e.currentTarget.style.boxShadow = '0 2px 8px rgba(102, 204, 255, 0.2)';
-                }}
-              >
-                💼 Work Experience
-              </button>
-            </div>
-
             {/* Project Container */}
             <div 
               id="projectContainer" 
@@ -2208,7 +916,7 @@ const Services: React.FC = () => {
               
               {/* Plant Pathogen Detection */}
               <div 
-                className="project-card pink-theme" 
+                className="project-card" 
                 data-tags="python tensorflow keras opencv android kotlin sql dji" 
                 style={{ 
                   backgroundColor: '#1a1a1a', 
@@ -2230,72 +938,16 @@ const Services: React.FC = () => {
                   height: '4px',
                   background: 'linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%)'
                 }} />
-                <h3 style={{ 
-                  fontSize: '1.4rem', 
-                  fontWeight: '600', 
-                  fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                  color: '#ffffff', 
-                  marginBottom: '16px',
-                  textShadow: '2px 2px 0px #000',
-                  letterSpacing: '1px',
-                  imageRendering: 'pixelated'
-                }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#ffffff', marginBottom: '16px' }}>
                   🌱 Plant Pathogen Detection
                 </h3>
-                <p style={{ 
-                  color: '#b0b0b0', 
-                  fontSize: '0.95rem', 
-                  fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                  lineHeight: '1.6', 
-                  marginBottom: '20px', 
-                  fontWeight: '400',
-                  textShadow: '1px 1px 0px #000',
-                  letterSpacing: '0.5px'
-                }}>
+                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '20px', fontWeight: '400' }}>
                   My Plant Pathogen Detection system is a Convolutional Neural Network that is compatible with DJI drone systems in order to detect 30+ types of pathogens in apple trees, saving apple orchardists in a local farm 20 hours weekly.
                 </p>
                 
-                <button 
-                  className="expand-toggle"
-                  onClick={(e) => {
-                    console.log('Button clicked!'); // Debug log
-                    const card = e.currentTarget.closest('.project-card');
-                    console.log('Card found:', card); // Debug log
-                    const isExpanded = card?.classList.contains('expanded');
-                    console.log('Is expanded:', isExpanded); // Debug log
-                    
-                    if (isExpanded) {
-                      card?.classList.remove('expanded');
-                      e.currentTarget.textContent = 'Show Details';
-                      console.log('Collapsed card');
-                    } else {
-                      card?.classList.add('expanded');
-                      e.currentTarget.textContent = 'Hide Details';
-                      console.log('Expanded card');
-                    }
-                  }}
-                >
-                  Show Details
-                </button>
-                
-                <div className="project-details">
                 <div style={{ marginBottom: '20px' }}>
-                  <h4 style={{ 
-                    color: '#ffffff', 
-                    fontSize: '0.9rem', 
-                    fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                    fontWeight: '600', 
-                    marginBottom: '12px',
-                    textShadow: '1px 1px 0px #000',
-                    letterSpacing: '0.5px'
-                  }}>Languages</h4>
-                  <div style={{ 
-                    color: '#b0b0b0', 
-                    fontSize: '0.85rem', 
-                    fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                    lineHeight: '1.6',
-                    letterSpacing: '0.3px'
-                  }}>
+                  <h4 style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: '600', marginBottom: '12px' }}>Languages</h4>
+                  <div style={{ color: '#b0b0b0', fontSize: '0.85rem', lineHeight: '1.6' }}>
                     <p style={{ marginBottom: '8px' }}>
                       <span style={{ color: '#4CAF50', fontWeight: '600' }}>Python</span> – Data ingest, training, eval, augmentation.
                     </p>
@@ -2355,17 +1007,15 @@ const Services: React.FC = () => {
                   fontSize: '0.85rem',
                   fontWeight: '500',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  marginTop: '20px'
+                  transition: 'all 0.3s ease'
                 }}>
                   View Details →
                 </button>
-                </div>
               </div>
 
               {/* AI Voice Assistant */}
               <div 
-                className="project-card blue-theme" 
+                className="project-card" 
                 data-tags="python openai pyaudio speechrecognition gtts jarvis" 
                 style={{ 
                   backgroundColor: '#1a1a1a', 
@@ -2387,65 +1037,16 @@ const Services: React.FC = () => {
                   height: '4px',
                   background: 'linear-gradient(90deg, #2196F3 0%, #03DAC6 100%)'
                 }} />
-                <h3 style={{ 
-                  fontSize: '1.4rem', 
-                  fontWeight: '600', 
-                  fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                  color: '#ffffff', 
-                  marginBottom: '16px',
-                  textShadow: '2px 2px 0px #000',
-                  letterSpacing: '1px',
-                  imageRendering: 'pixelated'
-                }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#ffffff', marginBottom: '16px' }}>
                   🤖 AI Voice Assistant "Ronaldo"
                 </h3>
-                <p style={{ 
-                  color: '#b0b0b0', 
-                  fontSize: '0.95rem', 
-                  fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                  lineHeight: '1.6', 
-                  marginBottom: '20px', 
-                  fontWeight: '400',
-                  textShadow: '1px 1px 0px #000',
-                  letterSpacing: '0.5px'
-                }}>
+                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '20px', fontWeight: '400' }}>
                   Inspired by Iron Man's JARVIS, I created my own AI based voice assistant called "Ronaldo." This voice assistant can be activated by using the command terms "Ronaldo" or "Hi Ronaldo" followed by a question/prompt.
                 </p>
 
-                <button 
-                  className="expand-toggle"
-                  onClick={(e) => {
-                    const card = e.currentTarget.closest('.project-card');
-                    const isExpanded = card?.classList.contains('expanded');
-                    if (isExpanded) {
-                      card?.classList.remove('expanded');
-                      e.currentTarget.textContent = 'Show Details';
-                    } else {
-                      card?.classList.add('expanded');
-                      e.currentTarget.textContent = 'Hide Details';
-                    }
-                  }}
-                >
-                  Show Details
-                </button>
-                
-                <div className="project-details">
                 <div style={{ marginBottom: '20px' }}>
-                  <h4 style={{ 
-                    color: '#ffffff', 
-                    fontSize: '0.9rem', 
-                    fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                    fontWeight: '600', 
-                    marginBottom: '8px',
-                    textShadow: '1px 1px 0px #000',
-                    letterSpacing: '0.5px'
-                  }}>Languages</h4>
-                  <p style={{ 
-                    color: '#b0b0b0', 
-                    fontSize: '0.85rem', 
-                    fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                    letterSpacing: '0.3px'
-                  }}>Python (core application and scripts)</p>
+                  <h4 style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: '600', marginBottom: '8px' }}>Languages</h4>
+                  <p style={{ color: '#b0b0b0', fontSize: '0.85rem' }}>Python (core application and scripts)</p>
                 </div>
 
                 <div style={{ marginBottom: '20px' }}>
@@ -2492,17 +1093,15 @@ const Services: React.FC = () => {
                   fontSize: '0.85rem',
                   fontWeight: '500',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  marginTop: '20px'
+                  transition: 'all 0.3s ease'
                 }}>
                   View Details →
                 </button>
-                </div>
               </div>
 
               {/* Mood Based Sound Generation */}
               <div 
-                className="project-card green-theme" 
+                className="project-card" 
                 data-tags="python pytorch numpy encodec conformer hubert" 
                 style={{ 
                   backgroundColor: '#1a1a1a', 
@@ -2524,71 +1123,18 @@ const Services: React.FC = () => {
                   height: '4px',
                   background: 'linear-gradient(90deg, #9C27B0 0%, #E91E63 100%)'
                 }} />
-                <h3 style={{ 
-                  fontSize: '1.4rem', 
-                  fontWeight: '600', 
-                  color: '#ff6699', 
-                  marginBottom: '16px',
-                  fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                  letterSpacing: '2px',
-                  textShadow: '2px 2px 0px rgba(255, 102, 204, 0.6), 4px 4px 0px rgba(102, 204, 255, 0.4)',
-                  imageRendering: 'pixelated'
-                }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#ffffff', marginBottom: '16px' }}>
                   🎵 Mood Based Sound Generation
                 </h3>
-                <p style={{ 
-                  color: '#333333', 
-                  fontSize: '0.95rem', 
-                  lineHeight: '1.6', 
-                  marginBottom: '20px', 
-                  fontWeight: '400',
-                  fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                  letterSpacing: '1px',
-                  textShadow: '1px 1px 0px rgba(255, 102, 204, 0.3)',
-                  imageRendering: 'pixelated'
-                }}>
+                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '20px', fontWeight: '400' }}>
                   Using Google's research on the SoundStorm architecture, I created an AI model that generates sounds and music, adjusting the frequency, genre, and BPM of the generated sound depending on mood. Understanding how to modify the model based on mood is part of my research at the University of Toronto.
                 </p>
 
-                <button 
-                  className="expand-toggle"
-                  onClick={(e) => {
-                    const card = e.currentTarget.closest('.project-card');
-                    const isExpanded = card?.classList.contains('expanded');
-                    if (isExpanded) {
-                      card?.classList.remove('expanded');
-                      e.currentTarget.textContent = 'Show Details';
-                    } else {
-                      card?.classList.add('expanded');
-                      e.currentTarget.textContent = 'Hide Details';
-                    }
-                  }}
-                >
-                  Show Details
-                </button>
-                
-                <div className="project-details">
                 <div style={{ marginBottom: '20px' }}>
-                  <h4 style={{ 
-                    color: '#66ccff', 
-                    fontSize: '0.9rem', 
-                    fontWeight: '600', 
-                    marginBottom: '12px',
-                    fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                    letterSpacing: '2px',
-                    textShadow: '1px 1px 0px rgba(255, 102, 204, 0.5)',
-                    imageRendering: 'pixelated'
-                  }}>Languages</h4>
-                  <div style={{ 
-                    color: '#555555', 
-                    fontSize: '0.85rem', 
-                    lineHeight: '1.6',
-                    fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                    letterSpacing: '1px',
-                    imageRendering: 'pixelated'
-                  }}>
+                  <h4 style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: '600', marginBottom: '12px' }}>Languages</h4>
+                  <div style={{ color: '#b0b0b0', fontSize: '0.85rem', lineHeight: '1.6' }}>
                     <p style={{ marginBottom: '0px' }}>
-                      <span style={{ color: '#ff6699', fontWeight: '600' }}>Python</span> – Model code, training, utilities.
+                      <span style={{ color: '#9C27B0', fontWeight: '600' }}>Python</span> – Model code, training, utilities.
                     </p>
                   </div>
                 </div>
@@ -2644,12 +1190,11 @@ const Services: React.FC = () => {
                 }}>
                   View Details →
                 </button>
-                </div>
               </div>
 
               {/* Facial Emotion Detection */}
               <div 
-                className="project-card orange-theme" 
+                className="project-card" 
                 data-tags="python tensorflow keras numpy pandas matplotlib kaggle cnn" 
                 style={{ 
                   backgroundColor: '#1a1a1a', 
@@ -2671,91 +1216,16 @@ const Services: React.FC = () => {
                   height: '4px',
                   background: 'linear-gradient(90deg, #FF9800 0%, #FF5722 100%)'
                 }} />
-                <h3 style={{ 
-                  fontSize: '1.4rem', 
-                  fontWeight: '600', 
-                  color: '#ff6699', 
-                  marginBottom: '16px',
-                  fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                  letterSpacing: '2px',
-                  textShadow: '2px 2px 0px rgba(255, 102, 204, 0.6), 4px 4px 0px rgba(102, 204, 255, 0.4)',
-                  imageRendering: 'pixelated'
-                }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#ffffff', marginBottom: '16px' }}>
                   😊 Facial Emotion Detection
                 </h3>
-                <p 
-                  className="preview-text"
-                  style={{ 
-                  color: '#333333', 
-                  fontSize: '0.95rem', 
-                  lineHeight: '1.8', 
-                  marginBottom: '16px', 
-                  fontWeight: '400',
-                  fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                  letterSpacing: '0.5px',
-                  textShadow: '1px 1px 0px rgba(255, 102, 204, 0.3)',
-                  imageRendering: 'pixelated',
-                  maxHeight: '4.5em',
-                  overflow: 'hidden',
-                  display: '-webkit-box',
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: 'vertical'
-                }}>
+                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '20px', fontWeight: '400' }}>
                   Through this project, I made a CNN looking at the seven distinct emotions of Happiness, Anger, Disgust, Fear, Sad, Surprised, or Neutral. Constructing models like this was a good starting point for developing and experimenting with CNNs for image classification tasks.
                 </p>
 
-                <button 
-                  className="expand-toggle"
-                  onClick={(e) => {
-                    const card = e.currentTarget.closest('.project-card');
-                    const isExpanded = card?.classList.contains('expanded');
-                    
-                    if (isExpanded) {
-                      card?.classList.remove('expanded');
-                      e.currentTarget.textContent = 'Show Details';
-                    } else {
-                      card?.classList.add('expanded');
-                      e.currentTarget.textContent = 'Hide Details';
-                    }
-                  }}
-                >
-                  Show Details
-                </button>
-                
-                <div className="project-details">
-                <p style={{ 
-                  color: '#333333', 
-                  fontSize: '0.95rem', 
-                  lineHeight: '1.8', 
-                  marginBottom: '20px', 
-                  fontWeight: '400',
-                  fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                  letterSpacing: '0.5px',
-                  textShadow: '1px 1px 0px rgba(255, 102, 204, 0.3)',
-                  imageRendering: 'pixelated'
-                }}>
-                  Through this project, I made a CNN looking at the seven distinct emotions of Happiness, Anger, Disgust, Fear, Sad, Surprised, or Neutral. Constructing models like this was a good starting point for developing and experimenting with CNNs for image classification tasks.
-                </p>
-                
                 <div style={{ marginBottom: '20px' }}>
-                  <h4 style={{ 
-                    color: '#66ccff', 
-                    fontSize: '0.9rem', 
-                    fontWeight: '600', 
-                    marginBottom: '12px',
-                    fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                    letterSpacing: '2px',
-                    textShadow: '1px 1px 0px rgba(255, 102, 204, 0.5)',
-                    imageRendering: 'pixelated'
-                  }}>Languages</h4>
-                  <div style={{ 
-                    color: '#555555', 
-                    fontSize: '0.85rem', 
-                    lineHeight: '1.6',
-                    fontFamily: '"Courier New", "Monaco", "Menlo", monospace',
-                    letterSpacing: '1px',
-                    imageRendering: 'pixelated'
-                  }}>
+                  <h4 style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: '600', marginBottom: '12px' }}>Languages</h4>
+                  <div style={{ color: '#b0b0b0', fontSize: '0.85rem', lineHeight: '1.6' }}>
                     <p style={{ marginBottom: '0px' }}>
                       <span style={{ color: '#FF9800', fontWeight: '600' }}>Python</span> – Kaggle notebook + local scripts.
                     </p>
@@ -2803,17 +1273,15 @@ const Services: React.FC = () => {
                   fontSize: '0.85rem',
                   fontWeight: '500',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  marginTop: '12px'
+                  transition: 'all 0.3s ease'
                 }}>
                   View Details →
                 </button>
-                </div>
               </div>
 
               {/* COVID-19 Mask Detection */}
               <div 
-                className="project-card purple-theme" 
+                className="project-card" 
                 data-tags="javascript html css tensorflow mediapipe webrtc canvas" 
                 style={{ 
                   backgroundColor: '#1a1a1a', 
@@ -2838,46 +1306,10 @@ const Services: React.FC = () => {
                 <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#ffffff', marginBottom: '16px' }}>
                   😷 COVID-19 Mask Detection
                 </h3>
-                <p 
-                  className="preview-text"
-                  style={{ 
-                  color: '#b0b0b0', 
-                  fontSize: '0.95rem', 
-                  lineHeight: '1.8', 
-                  marginBottom: '16px', 
-                  fontWeight: '400',
-                  maxHeight: '4.5em',
-                  overflow: 'hidden',
-                  display: '-webkit-box',
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: 'vertical'
-                }}>
+                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '20px', fontWeight: '400' }}>
                   During the COVID-19 pandemic, I created a real-time mask detection system for use in public places. Connected to a live broadcasting camera, this detection system displays a bright red "no mask" text if a maskless person walks by, accompanied by a repeating siren until the mask is put on.
                 </p>
 
-                <button 
-                  className="expand-toggle"
-                  onClick={(e) => {
-                    const card = e.currentTarget.closest('.project-card');
-                    const isExpanded = card?.classList.contains('expanded');
-                    
-                    if (isExpanded) {
-                      card?.classList.remove('expanded');
-                      e.currentTarget.textContent = 'Show Details';
-                    } else {
-                      card?.classList.add('expanded');
-                      e.currentTarget.textContent = 'Hide Details';
-                    }
-                  }}
-                >
-                  Show Details
-                </button>
-                
-                <div className="project-details">
-                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '20px', fontWeight: '400' }}>
-                  During the COVID-19 pandemic, I created a real-time mask detection system for use in public places. Connected to a live broadcasting camera, this detection system displays a bright red "no mask" text if a maskless person walks by, accompanied by a repeating siren until the mask is put on.
-                </p>
-                
                 <div style={{ marginBottom: '20px' }}>
                   <h4 style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: '600', marginBottom: '12px' }}>Languages</h4>
                   <div style={{ color: '#b0b0b0', fontSize: '0.85rem', lineHeight: '1.6' }}>
@@ -2940,17 +1372,15 @@ const Services: React.FC = () => {
                   fontSize: '0.85rem',
                   fontWeight: '500',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  marginTop: '12px'
+                  transition: 'all 0.3s ease'
                 }}>
                   View Details →
                 </button>
-                </div>
               </div>
 
               {/* TurtleShell Function */}
               <div 
-                className="project-card teal-theme" 
+                className="project-card" 
                 data-tags="python pyspark swift sql scikit-learn fastapi corelocation h3 airflow" 
                 style={{ 
                   backgroundColor: '#1a1a1a', 
@@ -2973,44 +1403,12 @@ const Services: React.FC = () => {
                   background: 'linear-gradient(90deg, #607D8B 0%, #455A64 100%)'
                 }} />
                 <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#ffffff', marginBottom: '16px' }}>
-                  🐢 TurtleShell (My Tourist Safety Startup)
+                  🐢 TurtleShell Safety Platform
                 </h3>
-                <p 
-                  className="preview-text"
-                  style={{ 
-                  color: '#b0b0b0', 
-                  fontSize: '0.95rem', 
-                  lineHeight: '1.8', 
-                  marginBottom: '16px', 
-                  fontWeight: '400',
-                  fontStyle: 'italic'
-                }}>
-                  it'll take me too long to explain this in a small space without messing up formatting just click show details pls lol
-                </p>
-
-                <button 
-                  className="expand-toggle"
-                  onClick={(e) => {
-                    const card = e.currentTarget.closest('.project-card');
-                    const isExpanded = card?.classList.contains('expanded');
-                    
-                    if (isExpanded) {
-                      card?.classList.remove('expanded');
-                      e.currentTarget.textContent = 'Show Details';
-                    } else {
-                      card?.classList.add('expanded');
-                      e.currentTarget.textContent = 'Hide Details';
-                    }
-                  }}
-                >
-                  Show Details
-                </button>
-                
-                <div className="project-details">
-                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '20px', fontWeight: '400' }}>
+                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '20px', fontWeight: '400' }}>
                   Built a geospatial ML pipeline that clusters the city into micro-regions and computes a dynamic risk score per cluster from multi-source crime feeds (police blotters, government portals, vetted datasets). A PySpark ETL cleans, geocodes, and deduplicates incidents; K-Means (k chosen via elbow curve) partitions lat/long space; time-aware features (hour-of-day, day-of-week, recency decay) and contextual signals (category mix, density, seasonal effects) drive the score. The iOS app (Swift) uses CoreLocation to snap users to the nearest cluster and returns preventative measures, "things to avoid," and best-practice tips tailored to location and time. A routing layer can optionally penalize risky edges to suggest safer paths. All inference is low-latency and privacy-preserving.
                 </p>
-                
+
                 <div style={{ marginBottom: '20px' }}>
                   <h4 style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: '600', marginBottom: '12px' }}>Languages</h4>
                   <div style={{ color: '#b0b0b0', fontSize: '0.85rem', lineHeight: '1.6' }}>
@@ -3079,17 +1477,15 @@ const Services: React.FC = () => {
                   fontSize: '0.85rem',
                   fontWeight: '500',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  marginTop: '12px'
+                  transition: 'all 0.3s ease'
                 }}>
                   View Details →
                 </button>
-                </div>
               </div>
 
               {/* ConnectED */}
               <div 
-                className="project-card pink-theme" 
+                className="project-card" 
                 data-tags="python javascript html css scrapy nltk google-api mern" 
                 style={{ 
                   backgroundColor: '#1a1a1a', 
@@ -3112,48 +1508,12 @@ const Services: React.FC = () => {
                   background: 'linear-gradient(90deg, #00BCD4 0%, #009688 100%)'
                 }} />
                 <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#ffffff', marginBottom: '16px' }}>
-                  🎓 ConnectED - Tinder for Scholarships and Grants
+                  🎓 ConnectED Scholarship Platform
                 </h3>
-                <p 
-                  className="preview-text"
-                  style={{ 
-                  color: '#b0b0b0', 
-                  fontSize: '0.95rem', 
-                  lineHeight: '1.8', 
-                  marginBottom: '16px', 
-                  fontWeight: '400',
-                  maxHeight: '4.5em',
-                  overflow: 'hidden',
-                  display: '-webkit-box',
-                  WebkitLineClamp: 2,
-                  WebkitBoxOrient: 'vertical'
-                }}>
-                  Built a pipeline that scrapes, normalizes, and ranks scholarships, matches students to mentors with NLP and linear programming, and calculates personalized aid projections. Data is pulled from university and aggregator sites, written to Google Sheets, and key deadlines are pushed to Google Calendar.
+                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '20px', fontWeight: '400' }}>
+                  Built a pipeline that scrapes, normalizes, and ranks scholarships, matches students to mentors with NLP and linear programming, and calculates personalized aid projections.
                 </p>
 
-                <button 
-                  className="expand-toggle"
-                  onClick={(e) => {
-                    const card = e.currentTarget.closest('.project-card');
-                    const isExpanded = card?.classList.contains('expanded');
-                    
-                    if (isExpanded) {
-                      card?.classList.remove('expanded');
-                      e.currentTarget.textContent = 'Show Details';
-                    } else {
-                      card?.classList.add('expanded');
-                      e.currentTarget.textContent = 'Hide Details';
-                    }
-                  }}
-                >
-                  Show Details
-                </button>
-                
-                <div className="project-details">
-                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '20px', fontWeight: '400' }}>
-                  Built a pipeline that scrapes, normalizes, and ranks scholarships, matches students to mentors with NLP and linear programming, and calculates personalized aid projections. Data is pulled from university and aggregator sites, written to Google Sheets, and key deadlines are pushed to Google Calendar.
-                </p>
-                
                 <div style={{ marginBottom: '20px' }}>
                   <h4 style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: '600', marginBottom: '12px' }}>Languages</h4>
                   <div style={{ color: '#b0b0b0', fontSize: '0.85rem', lineHeight: '1.6' }}>
@@ -3219,17 +1579,15 @@ const Services: React.FC = () => {
                   fontSize: '0.85rem',
                   fontWeight: '500',
                   cursor: 'pointer',
-                  transition: 'all 0.3s ease',
-                  marginTop: '12px'
+                  transition: 'all 0.3s ease'
                 }}>
                   View Details →
                 </button>
-                </div>
               </div>
 
               {/* GrayPass */}
               <div 
-                className="project-card blue-theme" 
+                className="project-card" 
                 data-tags="python javascript html css fastapi pytorch webgazer docker postgresql" 
                 style={{ 
                   backgroundColor: '#1a1a1a', 
@@ -3252,72 +1610,12 @@ const Services: React.FC = () => {
                   background: 'linear-gradient(90deg, #FFC107 0%, #FF9800 100%)'
                 }} />
                 <h3 style={{ fontSize: '1.4rem', fontWeight: '600', color: '#ffffff', marginBottom: '16px' }}>
-                  🧠 Graypass - Behavorial log in and Authentication
+                  🧠 GrayPass Brainprint Auth
                 </h3>
-                <p 
-                  className="preview-text"
-                  style={{ 
-                  color: '#b0b0b0', 
-                  fontSize: '0.95rem', 
-                  lineHeight: '1.8', 
-                  marginBottom: '16px', 
-                  fontWeight: '400',
-                  fontStyle: 'italic'
-                }}>
-                  it'll take me too long to explain this in a small space without messing up formatting just click show details pls lol
+                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.6', marginBottom: '20px', fontWeight: '400' }}>
+                  GrayPass is a passwordless authentication engine that builds a per-user brainprint from cognitive and behavioral signals (Stroop reaction times, keystroke dynamics, eye-tracking). Achieved sub-100ms auth.
                 </p>
 
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
                 <div style={{ marginBottom: '20px' }}>
                   <h4 style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: '600', marginBottom: '12px' }}>Languages</h4>
                   <div style={{ color: '#b0b0b0', fontSize: '0.85rem', lineHeight: '1.6' }}>
@@ -3333,147 +1631,6 @@ const Services: React.FC = () => {
                     <p style={{ marginBottom: '0px' }}>
                       <span style={{ color: '#FFC107', fontWeight: '600' }}>SQL</span> – PostgreSQL and SQLite
                     </p>
-=======
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-                <button 
-                  className="expand-toggle"
-                  onClick={(e) => {
-                    const card = e.currentTarget.closest('.project-card');
-                    const isExpanded = card?.classList.contains('expanded');
-                    
-                    if (isExpanded) {
-                      card?.classList.remove('expanded');
-                      e.currentTarget.textContent = 'Show Details';
-                    } else {
-                      card?.classList.add('expanded');
-                      e.currentTarget.textContent = 'Hide Details';
-                    }
-                  }}
-                >
-                  Show Details
-                </button>
-                
-                <div className="project-details">
-                  <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.8', marginBottom: '20px', fontWeight: '400' }}>
-                    GrayPass is a passwordless authentication engine that builds a per-user brainprint from cognitive and behavioral signals (Stroop reaction times, keystroke dynamics, eye-tracking). A FastAPI backend extracts 15-dimensional features, calibrates confidence, derives a SHA-256 brainprint, and stores encrypted vectors. A lightweight web client captures gaze and typing data, performs live quality checks, and sends signed payloads to the API. The system supports fuzzy matching with tunable thresholds, nonce protection, rate limiting, and encrypted at-rest storage. Achieved sub-100 ms end-to-end auth on calibrated sessions.
-                  </p>
-                  
-                  <div style={{ marginBottom: '20px' }}>
-                    <h4 style={{ color: '#ffffff', fontSize: '0.9rem', fontWeight: '600', marginBottom: '12px' }}>Languages</h4>
-                    <div style={{ color: '#b0b0b0', fontSize: '0.85rem', lineHeight: '1.6' }}>
-                      <p style={{ marginBottom: '8px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>Python</span> – backend, ML features
-                      </p>
-                      <p style={{ marginBottom: '8px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>JavaScript</span> – frontend capture
-                      </p>
-                      <p style={{ marginBottom: '8px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>HTML/CSS</span> – responsive UI
-                      </p>
-                      <p style={{ marginBottom: '0px' }}>
-                        <span style={{ color: '#FFC107', fontWeight: '600' }}>SQL</span> – PostgreSQL and SQLite
-                      </p>
-                    </div>
->>>>>>> theirs
                   </div>
                 </div>
 
@@ -3513,24 +1670,6 @@ const Services: React.FC = () => {
                       </span>
                     )}
                   </div>
-<<<<<<< ours
-=======
-
-                  <button style={{ 
-                    backgroundColor: 'transparent',
-                    border: '1px solid #FFC107',
-                    color: '#FFC107',
-                    padding: '8px 16px',
-                    borderRadius: '20px',
-                    fontSize: '0.85rem',
-                    fontWeight: '500',
-                    cursor: 'pointer',
-                    transition: 'all 0.3s ease',
-                    marginTop: '12px'
-                  }}>
-                    View Details
-                  </button>
->>>>>>> theirs
                 </div>
 
                 <button style={{ 
@@ -3546,223 +1685,8 @@ const Services: React.FC = () => {
                 }}>
                   View Details →
                 </button>
-<<<<<<< ours
               </div>
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
-<<<<<<< ours
             </div>
-=======
-                </div>
-              </div>
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
-=======
->>>>>>> theirs
 
             {/* No Results Message */}
             <div id="noResults" style={{ 
@@ -3830,69 +1754,10 @@ const Services: React.FC = () => {
             </div>
 
 
-          {/* Hackathon Achievements Section */}
-          <div style={{ marginBottom: '80px' }}>
-            <h2 style={{ 
-              fontSize: '2.5rem', 
-              fontWeight: '700', 
-              color: '#ffffff',
-              marginBottom: '24px',
-              background: 'linear-gradient(135deg, #ffd700 0%, #ffed4e 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text'
-            }}>
-              🏆 Hackathon Achievements
-            </h2>
-            <p style={{ 
-              fontSize: '1rem', 
-              color: '#b0b0b0', 
-              marginBottom: '40px',
-              fontWeight: '400'
-            }}>
-              Competitive achievements and recognitions from hackathons.
-            </p>
-
-            {/* Achievement Items */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '30px' }}>
-              
-              {/* Hack the North */}
-              <div style={{ 
-                backgroundColor: '#1a1a1a', 
-                padding: '32px', 
-                borderRadius: '16px',
-                border: '2px solid #333333',
-                transition: 'all 0.3s ease'
-              }}>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: '#ffd700', marginBottom: '8px' }}>
-                  🥇 Top 32 @ Hack the North
-                </h3>
-                <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.6', fontWeight: '400' }}>
-                  View Project here: <a href="https://www.youtube.com/watch?v=bs8oWt-5LOQ" target="_blank" rel="noopener noreferrer" style={{ color: '#ffd700', textDecoration: 'underline' }}>https://www.youtube.com/watch?v=bs8oWt-5LOQ</a>
-                </p>
-              </div>
-
-              {/* Empower Hacks */}
-              <div style={{ 
-                backgroundColor: '#1a1a1a', 
-                padding: '32px', 
-                borderRadius: '16px',
-                border: '2px solid #333333',
-                transition: 'all 0.3s ease'
-              }}>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: '600', color: '#ffd700', marginBottom: '8px' }}>
-                  🎖️ 11th Place @ Empower Hacks
-                </h3>
-                  <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.6', fontWeight: '400' }}>
-                    View Project here: <a href="https://devpost.com/software/connected-ie5ghl" target="_blank" rel="noopener noreferrer" style={{ color: '#ffd700', textDecoration: 'underline' }}>https://devpost.com/software/connected-ie5ghl</a>
-                  </p>
-              </div>
-              
-            </div>
           </div>
 
           {/* Work Experience Section */}
-          <div data-section="work-experience" style={{ marginBottom: '80px' }}>
+          <div style={{ marginBottom: '80px' }}>
             <h2 style={{ 
               fontSize: '2.5rem', 
               fontWeight: '700', 
@@ -3944,7 +1809,7 @@ const Services: React.FC = () => {
                   SWE and Data Intern @ AviewInt
                 </h3>
                 <p style={{ color: '#b0b0b0', fontSize: '0.95rem', lineHeight: '1.6', fontWeight: '400' }}>
-                  I was working as a Software Engineering Intern at Aview International. Aview specializes in AI translations and AI audio/video dubbing for content creators and entertainment companies. They have worked with clients such as MARVEL, Yes Theory, Logan Paul, Ninja, Mark Rober, and many other top-tier clients in the entertainment and content creation industry. I am developing a data collection tool for Aview to efficiently track up-and-coming content creators on several social media platforms. My tool will be used to find potential clients for Aview across five different social platforms. Based on their growth, Aview can reach out to these potential clients. This process simplifies data collection and client management for Aview, as they do not need a separate team to find content creators and possible partnership opportunities; the AI scans the web for them.
+                  I am working as a Software Engineering Intern at Aview International. Aview specializes in AI translations and AI audio/video dubbing for content creators and entertainment companies. They have worked with clients such as MARVEL, Yes Theory, Logan Paul, Ninja, Mark Rober, and many other top-tier clients in the entertainment and content creation industry. I am developing a data collection tool for Aview to efficiently track up-and-coming content creators on several social media platforms. My tool will be used to find potential clients for Aview across five different social platforms. Based on their growth, Aview can reach out to these potential clients. This process simplifies data collection and client management for Aview, as they do not need a separate team to find content creators and possible partnership opportunities; the AI scans the web for them.
                 </p>
               </div>
 
@@ -4235,6 +2100,7 @@ const Services: React.FC = () => {
               GET IN TOUCH
             </Link>
           </div>
+        </div>
       </section>
     </Layout>
   );
