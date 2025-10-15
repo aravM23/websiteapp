@@ -59,15 +59,10 @@ const Header: React.FC = () => {
           gap: 8px;
           font-size: 1.6rem;
           font-weight: 700;
-          color: #ffffff;
           text-decoration: none;
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           letter-spacing: -0.02em;
           transition: transform 0.2s ease, text-shadow 0.2s ease;
-        }
-        .site-header__brand:visited,
-        .site-header__brand:active {
-          color: #ffffff;
         }
 
         .site-header__brand:hover {
@@ -83,7 +78,6 @@ const Header: React.FC = () => {
         }
 
         .site-header__link {
-          color: #d1d5db;
           text-decoration: none;
           font-size: 0.875rem;
           font-weight: 600;
@@ -93,13 +87,9 @@ const Header: React.FC = () => {
           transition: color 0.2s ease, text-shadow 0.2s ease;
           white-space: nowrap;
         }
-        .site-header__link:visited,
-        .site-header__link:active {
-          color: #d1d5db;
-        }
 
         .site-header__link:hover {
-          color: #ffffff;
+          color: #ffffff !important;
           text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
         }
 
@@ -118,6 +108,48 @@ const Header: React.FC = () => {
           transition: background 0.2s ease, border 0.2s ease;
         }
 @@
+            pointer-events: auto;
+          }
+
+          .site-header__link {
+            width: 100%;
+            text-align: right;
+            padding: 6px 0;
+          }
+        }
+      `}</style>
+      <div className="site-header__inner">
+        <Link
+          href="/"
+          className="site-header__brand"
+          style={{ color: '#ffffff' }}
+        >
+          Arav Mathur <span role="img" aria-label="cool">😎</span>
+        </Link>
+        <button
+          type="button"
+          className="site-header__burger"
+          aria-label="Toggle navigation"
+          aria-expanded={menuOpen}
+          onClick={toggleMenu}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+        <nav className={`site-header__nav ${menuOpen ? 'is-open' : ''}`}>
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="site-header__link"
+              style={{ color: '#d1d5db' }}
+              onClick={closeMenu}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
       </div>
     </header>
   );
