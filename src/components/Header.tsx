@@ -63,11 +63,18 @@ const Header: React.FC = () => {
           font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           letter-spacing: -0.02em;
           transition: transform 0.2s ease, text-shadow 0.2s ease;
+          color: #ffffff;
+        }
+
+        .site-header__brand:link,
+        .site-header__brand:visited {
+          color: #ffffff;
         }
 
         .site-header__brand:hover {
           transform: translateY(-1px) scale(1.02);
           text-shadow: 0 0 16px rgba(255, 255, 255, 0.35);
+          color: #ffffff;
         }
 
         .site-header__nav {
@@ -86,10 +93,16 @@ const Header: React.FC = () => {
           text-transform: uppercase;
           transition: color 0.2s ease, text-shadow 0.2s ease;
           white-space: nowrap;
+          color: #d1d5db;
+        }
+
+        .site-header__link:link,
+        .site-header__link:visited {
+          color: #d1d5db;
         }
 
         .site-header__link:hover {
-          color: #ffffff !important;
+          color: #ffffff;
           text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
         }
 
@@ -119,11 +132,7 @@ const Header: React.FC = () => {
         }
       `}</style>
       <div className="site-header__inner">
-        <Link
-          href="/"
-          className="site-header__brand"
-          style={{ color: '#ffffff' }}
-        >
+        <Link href="/" className="site-header__brand">
           Arav Mathur <span role="img" aria-label="cool">😎</span>
         </Link>
         <button
@@ -143,7 +152,6 @@ const Header: React.FC = () => {
               key={link.href}
               href={link.href}
               className="site-header__link"
-              style={{ color: '#d1d5db' }}
               onClick={closeMenu}
             >
               {link.label}
