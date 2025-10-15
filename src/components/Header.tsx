@@ -61,7 +61,7 @@ const Header: React.FC = () => {
           font-size: 1.6rem;
           font-weight: 700;
           text-decoration: none;
-          color: #ffffff;
+          color: #ffffff !important;
           letter-spacing: -0.02em;
           transition: transform 0.2s ease, text-shadow 0.2s ease;
         }
@@ -69,14 +69,14 @@ const Header: React.FC = () => {
         .site-header__brand:link,
         .site-header__brand:visited,
         .site-header__brand:active {
-          color: #ffffff;
+          color: #ffffff !important;
           text-decoration: none;
         }
 
         .site-header__brand:hover {
           transform: translateY(-1px) scale(1.02);
           text-shadow: 0 0 16px rgba(255, 255, 255, 0.35);
-          color: #ffffff;
+          color: #ffffff !important;
         }
 
         .site-header__nav {
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
         }
 
         .site-header__link {
-          color: #d1d5db;
+          color: #d1d5db !important;
           text-decoration: none;
           font-size: 0.875rem;
           font-weight: 600;
@@ -100,12 +100,12 @@ const Header: React.FC = () => {
         .site-header__link:link,
         .site-header__link:visited,
         .site-header__link:active {
-          color: #d1d5db;
+          color: #d1d5db !important;
           text-decoration: none;
         }
 
         .site-header__link:hover {
-          color: #ffffff;
+          color: #ffffff !important;
           text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
         }
 
