@@ -41,6 +41,7 @@ const Header: React.FC = () => {
           background: rgba(26, 26, 26, 0.92);
           backdrop-filter: blur(14px);
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         }
 
         .site-header__inner {
@@ -60,15 +61,16 @@ const Header: React.FC = () => {
           font-size: 1.6rem;
           font-weight: 700;
           text-decoration: none;
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+          color: #ffffff;
           letter-spacing: -0.02em;
           transition: transform 0.2s ease, text-shadow 0.2s ease;
-          color: #ffffff;
         }
 
         .site-header__brand:link,
-        .site-header__brand:visited {
+        .site-header__brand:visited,
+        .site-header__brand:active {
           color: #ffffff;
+          text-decoration: none;
         }
 
         .site-header__brand:hover {
@@ -85,20 +87,21 @@ const Header: React.FC = () => {
         }
 
         .site-header__link {
+          color: #d1d5db;
           text-decoration: none;
           font-size: 0.875rem;
           font-weight: 600;
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
           letter-spacing: 0.8px;
           text-transform: uppercase;
           transition: color 0.2s ease, text-shadow 0.2s ease;
           white-space: nowrap;
-          color: #d1d5db;
         }
 
         .site-header__link:link,
-        .site-header__link:visited {
+        .site-header__link:visited,
+        .site-header__link:active {
           color: #d1d5db;
+          text-decoration: none;
         }
 
         .site-header__link:hover {
@@ -120,7 +123,46 @@ const Header: React.FC = () => {
           cursor: pointer;
           transition: background 0.2s ease, border 0.2s ease;
         }
-@@
+
+        .site-header__burger span {
+          width: 20px;
+          height: 2px;
+          background: #ffffff;
+          border-radius: 2px;
+          transition: transform 0.2s ease;
+        }
+
+        .site-header__burger:focus-visible {
+          outline: 2px solid #60a5fa;
+          outline-offset: 3px;
+        }
+
+        @media (max-width: 880px) {
+          .site-header__burger {
+            display: inline-flex;
+          }
+
+          .site-header__nav {
+            position: absolute;
+            top: 100%;
+            right: 20px;
+            margin-top: 12px;
+            background: rgba(10, 16, 32, 0.96);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 16px;
+            padding: 18px;
+            flex-direction: column;
+            gap: 12px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+            opacity: 0;
+            transform: translateY(-8px) scale(0.97);
+            pointer-events: none;
+            min-width: 220px;
+          }
+
+          .site-header__nav.is-open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
             pointer-events: auto;
           }
 
