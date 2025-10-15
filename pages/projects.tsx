@@ -1199,6 +1199,24 @@ const ProjectsPage: React.FC = () => {
           overflow: visible;
         }
 
+        @media (max-width: 768px) {
+          .pixel-car-track {
+            height: 110px;
+            margin-bottom: 32px;
+          }
+          .pixel-car-annotation {
+            display: none;
+          }
+          .pixel-car {
+            top: 10px;
+            left: -200px;
+          }
+          .pixel-car svg {
+            width: 110px;
+            height: 60px;
+          }
+        }
+
         .pixel-car {
           position: absolute;
           top: 14px;
@@ -1324,7 +1342,7 @@ const ProjectsPage: React.FC = () => {
               </div>
             </div>
             <h1 style={{ 
-              fontSize: '3.75rem', 
+              fontSize: 'clamp(2.4rem, 7vw, 3.75rem)', 
               fontWeight: 800, 
               color: '#ffffff',
               marginBottom: '32px',
@@ -1344,7 +1362,7 @@ const ProjectsPage: React.FC = () => {
                 background: 'linear-gradient(150deg, rgba(10, 16, 36, 0.92), rgba(6, 12, 28, 0.9))',
                 border: '1px solid rgba(72, 164, 255, 0.2)',
                 borderRadius: '28px',
-                padding: '40px 48px',
+                padding: 'clamp(28px, 7vw, 40px) clamp(20px, 8vw, 48px)',
                 maxWidth: '760px',
                 width: '100%',
                 boxShadow: '0 48px 120px rgba(6, 18, 48, 0.68)',
