@@ -95,6 +95,49 @@ const Home: React.FC = () => {
       .scroll-animate:nth-child(3) { transition-delay: 0.2s; }
       .scroll-animate:nth-child(4) { transition-delay: 0.3s; }
       .scroll-animate:nth-child(5) { transition-delay: 0.4s; }
+
+      @media (max-width: 900px) {
+        .hero-section {
+          padding: 80px 16px 48px !important;
+          align-items: flex-start !important;
+        }
+        .hero-terminal {
+          margin-bottom: 48px !important;
+        }
+        .hero-terminal__content {
+          padding: 28px 20px !important;
+          font-size: 0.9rem !important;
+          min-height: auto !important;
+        }
+        .floating-emojis {
+          display: none !important;
+        }
+        .hero-heading {
+          font-size: clamp(2.4rem, 8vw, 3.2rem) !important;
+        }
+        .hero-actions {
+          flex-direction: column !important;
+          gap: 16px !important;
+          width: 100% !important;
+        }
+        .hero-actions a {
+          width: 100% !important;
+          justify-content: center !important;
+        }
+      }
+
+      @media (max-width: 540px) {
+        .hero-section {
+          padding: 64px 14px 36px !important;
+        }
+        .hero-terminal {
+          margin-bottom: 40px !important;
+        }
+        .hero-terminal__content {
+          padding: 24px 16px !important;
+          font-size: 0.85rem !important;
+        }
+      }
     `;
     document.head.appendChild(style);
 
@@ -107,9 +150,9 @@ const Home: React.FC = () => {
   return (
     <Layout title="Arav Mathur">
       {/* Hero Section */}
-      <section style={{
+      <section className="hero-section" style={{
         minHeight: '100vh',
-        padding: '40px 20px',
+        padding: 'clamp(80px, 12vw, 120px) 20px 60px',
         background: '#0a0a0a',
         display: 'flex',
         alignItems: 'center',
@@ -117,7 +160,7 @@ const Home: React.FC = () => {
       }}>
         <div style={{ maxWidth: '1400px', margin: '0 auto', position: 'relative', zIndex: 3 }}>
           {/* Mac Terminal - Full Width */}
-          <div className="scroll-animate scale-in" style={{ marginBottom: '80px' }}>
+          <div className="hero-terminal scroll-animate scale-in" style={{ marginBottom: '80px' }}>
               {/* Mac-style Terminal Window */}
               <div 
                 style={{
@@ -129,7 +172,7 @@ const Home: React.FC = () => {
                   width: '100%',
                   maxWidth: 'none',
                   boxShadow: '0 20px 60px rgba(0,0,0,0.4)',
-                  minHeight: '500px',
+                  minHeight: 'min(500px, 75vh)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   cursor: 'default'
                 }}
@@ -223,13 +266,13 @@ const Home: React.FC = () => {
                     arav@portfolio ~ %
                   </div>
                 </div>                {/* Terminal Content */}
-                <div style={{ 
-                  padding: '50px',
+                <div className="hero-terminal__content" style={{ 
+                  padding: 'clamp(28px, 6vw, 50px)',
                   fontFamily: 'SF Mono, Monaco, Consolas, monospace',
-                  fontSize: '16px',
+                  fontSize: 'clamp(0.95rem, 1.6vw, 1.05rem)',
                   lineHeight: '1.6',
                   color: '#00ff00',
-                  minHeight: '400px',
+                  minHeight: 'min(420px, 65vh)',
                   display: 'flex',
                   flexDirection: 'column',
                   justifyContent: 'center',
@@ -758,7 +801,7 @@ const Home: React.FC = () => {
                         }
                       `
                     }} />
-                    <h1 style={{ 
+                    <h1 className="hero-heading" style={{ 
                       fontSize: 'clamp(3rem, 7vw, 5rem)', 
                       fontWeight: '900', 
                       lineHeight: '1.0',
@@ -802,7 +845,7 @@ const Home: React.FC = () => {
                     I dream of making <strong style={{ color: '#8b5cf6', textShadow: '0 0 10px rgba(139, 92, 246, 0.3)' }}>something one day</strong> that a bunch of people actually <strong style={{ color: '#06b6d4', textShadow: '0 0 10px rgba(6, 182, 212, 0.3)' }}>use and love</strong>.
                   </p>
                   
-                  <div style={{
+                  <div className="hero-actions" style={{
                     display: 'flex',
                     gap: '20px',
                     flexWrap: 'wrap',
