@@ -580,7 +580,7 @@ const Home: React.FC = () => {
               </p>
               
               <Link 
-                href="/services"
+                href="/projects"
                 style={{ 
                   background: '#ffffff',
                   color: '#000000',

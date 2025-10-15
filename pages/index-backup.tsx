@@ -107,7 +107,7 @@ const Home: React.FC = () => {
                   Let's chat →
                 </Link>
                 <Link 
-                  href="/services" 
+                  href="/projects" 
                   style={{ 
                     background: 'rgba(255, 255, 255, 0.08)', 
                     color: '#e2e8f0', 
@@ -269,7 +269,7 @@ const Home: React.FC = () => {
               </p>
               
               <Link 
-                href="/services"
+                href="/projects"
                 style={{ 
                   background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                   color: 'white',

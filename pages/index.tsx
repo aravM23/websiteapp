@@ -809,7 +809,7 @@ const Home: React.FC = () => {
                     marginTop: '40px'
                   }}>
                     <Link 
-                      href="/services" 
+                      href="/projects" 
                       style={{
                         background: '#ffffff',
                         color: '#000000',

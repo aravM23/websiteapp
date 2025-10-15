@@ -37,7 +37,7 @@ const Header: React.FC = () => {
             </Link>
           </div>
           <nav style={{ display: 'flex', gap: '32px', alignItems: 'center' }}>
-            <Link href="/services" style={{ 
+            <Link href="/projects" style={{ 
               color: '#d1d5db', 
               textDecoration: 'none', 
               fontSize: '0.875rem', 
