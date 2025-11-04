@@ -139,6 +139,87 @@ const Home: React.FC = () => {
           font-size: 0.85rem !important;
         }
       }
+
+      /* Mobile responsiveness for all sections */
+      @media (max-width: 768px) {
+        /* Fix image container */
+        .image-grid {
+          flex-direction: column !important;
+          align-items: center !important;
+          gap: 20px !important;
+        }
+        
+        .image-container {
+          width: 100% !important;
+          max-width: 280px !important;
+          height: auto !important;
+        }
+        
+        .image-container img {
+          width: 100% !important;
+          height: 350px !important;
+          object-fit: cover !important;
+        }
+        
+        /* Fix pixel art character section */
+        .character-section {
+          flex-direction: column !important;
+          gap: 20px !important;
+          text-align: center !important;
+        }
+        
+        /* Fix text content in about sections */
+        .text-content {
+          text-align: center !important;
+          padding: 0 10px !important;
+        }
+        
+        /* Fix headings */
+        h1, h2 {
+          font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
+        }
+        
+        /* Fix card containers */
+        .card-container {
+          padding: 20px !important;
+          margin: 10px !important;
+        }
+        
+        /* Ensure full width on mobile */
+        section {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+          overflow-x: hidden !important;
+        }
+        
+        /* Fix max-width containers */
+        div[style*="maxWidth"] {
+          padding-left: 16px !important;
+          padding-right: 16px !important;
+        }
+      }
+
+      /* Extra small screens */
+      @media (max-width: 480px) {
+        body, html {
+          overflow-x: hidden !important;
+          width: 100% !important;
+          max-width: 100vw !important;
+        }
+        
+        * {
+          max-width: 100vw !important;
+          box-sizing: border-box !important;
+        }
+        
+        .image-container {
+          max-width: 240px !important;
+        }
+        
+        .image-container img {
+          height: 300px !important;
+        }
+      }
     `;
     document.head.appendChild(style);
 
@@ -933,16 +1014,17 @@ const Home: React.FC = () => {
           </div>
           
           {/* Profile Images - Below Terminal */}
-          <div style={{ 
+          <div className="image-grid" style={{ 
             display: 'flex', 
             gap: '40px', 
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: '60px'
+            marginTop: '60px',
+            flexWrap: 'wrap'
           }}>
             {/* Profile Image 1 - Striped Shirt */}
             <div 
-              className="scroll-animate fade-left"
+              className="scroll-animate fade-left image-container"
               style={{ 
                 position: 'relative',
                 borderRadius: '16px',
@@ -981,7 +1063,7 @@ const Home: React.FC = () => {
 
             {/* Profile Image 2 - Orange Shirt */}
             <div 
-              className="scroll-animate fade-right"
+              className="scroll-animate fade-right image-container"
               style={{ 
                 position: 'relative',
                 borderRadius: '16px',
@@ -1031,7 +1113,7 @@ const Home: React.FC = () => {
       }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div 
-            className="scroll-animate scale-in"
+            className="scroll-animate scale-in card-container"
             style={{
               backgroundColor: '#1a1a1a',
               borderRadius: '12px',
@@ -1100,7 +1182,7 @@ const Home: React.FC = () => {
               paddingTop: '32px'
             }}>
               {/* Animated Character Section */}
-              <div className="scroll-animate" style={{
+              <div className="scroll-animate character-section" style={{
                 display: 'flex',
                 alignItems: 'flex-start',
                 gap: '40px',
@@ -1311,7 +1393,7 @@ const Home: React.FC = () => {
                 </div>
 
                 {/* Animated Speech Bubble */}
-                <div className="scroll-animate fade-right" style={{
+                <div className="scroll-animate fade-right text-content" style={{
                   flex: 1,
                   position: 'relative',
                   animation: 'slideInRight 1s ease-out 0.5s both'

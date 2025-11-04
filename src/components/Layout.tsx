@@ -31,13 +31,26 @@ const Layout: React.FC<LayoutProps> = ({
             padding: 0 !important;
             border: none !important;
             width: 100% !important;
+            max-width: 100vw !important;
             height: 100% !important;
+            overflow-x: hidden !important;
+          }
+          
+          * {
+            box-sizing: border-box !important;
+          }
+          
+          @media (max-width: 768px) {
+            body {
+              overflow-x: hidden !important;
+            }
           }
         `}</style>
       </Head>
       <div style={{ 
         minHeight: '100vh',
-        width: '100vw',
+        width: '100%',
+        maxWidth: '100vw',
         display: 'flex', 
         flexDirection: 'column',
         backgroundColor: '#0a0a0a',
@@ -46,7 +59,7 @@ const Layout: React.FC<LayoutProps> = ({
         padding: 0,
         border: 'none',
         position: 'relative',
-        overflow: 'hidden'
+        overflowX: 'hidden'
       }}>
         <Header />
         <main style={{ flex: '1' }}>
