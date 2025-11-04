@@ -168,17 +168,18 @@ const Home: React.FC = () => {
           text-align: center !important;
           align-items: center !important;
           justify-content: center !important;
-          padding: 80px 20px 20px !important;
+          padding: 20px !important;
           position: relative !important;
         }
         
         /* Center the character wrapper on mobile and KEEP ANIMATION */
         .character-section .scroll-animate.fade-left {
           margin: 0 auto !important;
-          position: static !important;
+          position: relative !important;
           left: auto !important;
           right: auto !important;
           transform: none !important;
+          padding-top: 40px !important;
         }
         
         /* Keep the floating animation on character's inner div */
@@ -186,26 +187,29 @@ const Home: React.FC = () => {
           animation: float1 4s ease-in-out infinite !important;
         }
         
-        /* Show and center the arrow with "this is me!" text */
+        /* Position "this is me!" text above character's head */
         .character-section .arrow-label {
-          position: static !important;
-          left: auto !important;
-          top: auto !important;
-          margin: 0 auto 20px auto !important;
+          position: absolute !important;
+          left: 50% !important;
+          top: 0 !important;
+          transform: translateX(-50%) !important;
+          margin: 0 !important;
           text-align: center !important;
-          width: 100% !important;
+          width: auto !important;
           display: block !important;
+          z-index: 20 !important;
         }
         
-        /* Center the "this is me!" text and make it visible */
+        /* Style the "this is me!" text */
         .character-section .arrow-label span {
           display: block !important;
           text-align: center !important;
-          margin: 0 auto !important;
-          white-space: normal !important;
+          margin: 0 !important;
+          white-space: nowrap !important;
+          font-size: 14px !important;
         }
         
-        /* Hide the arrow SVG on mobile but keep the text */
+        /* Hide the arrow SVG on mobile */
         .character-section .arrow-label svg {
           display: none !important;
         }
