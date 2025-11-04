@@ -161,35 +161,45 @@ const Home: React.FC = () => {
           object-fit: cover !important;
         }
         
-        /* Fix pixel art character section */
+        /* Fix pixel art character section - CENTER EVERYTHING */
         .character-section {
           flex-direction: column !important;
           gap: 20px !important;
           text-align: center !important;
           align-items: center !important;
           justify-content: center !important;
-        }
-        
-        /* Center the character and arrow on mobile */
-        .character-section > div:first-child {
-          margin: 0 auto !important;
+          padding: 60px 20px 20px !important;
           position: relative !important;
         }
         
-        /* Reposition arrow for mobile - center it above character */
-        .character-section > div:first-child > div:last-child {
-          position: absolute !important;
-          left: 50% !important;
-          top: -60px !important;
-          transform: translateX(-50%) !important;
+        /* Center the character wrapper on mobile */
+        .character-section .scroll-animate.fade-left {
+          margin: 0 auto !important;
+          position: static !important;
+          left: auto !important;
+          right: auto !important;
+          transform: none !important;
         }
         
-        .character-section > div:first-child > div:last-child span {
+        /* Hide the arrow that's positioned absolutely outside */
+        .character-section > div[style*="position: absolute"] {
+          position: static !important;
+          left: auto !important;
+          top: auto !important;
+          margin: 0 auto 20px auto !important;
           text-align: center !important;
-          display: block !important;
+          width: 100% !important;
         }
         
-        .character-section > div:first-child > div:last-child svg {
+        /* Center the "this is me!" text */
+        .character-section > div[style*="position: absolute"] span {
+          display: block !important;
+          text-align: center !important;
+          margin: 0 auto !important;
+        }
+        
+        /* Hide the arrow SVG on mobile */
+        .character-section > div[style*="position: absolute"] svg {
           display: none !important;
         }
         
