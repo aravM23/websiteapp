@@ -166,6 +166,31 @@ const Home: React.FC = () => {
           flex-direction: column !important;
           gap: 20px !important;
           text-align: center !important;
+          align-items: center !important;
+          justify-content: center !important;
+        }
+        
+        /* Center the character and arrow on mobile */
+        .character-section > div:first-child {
+          margin: 0 auto !important;
+          position: relative !important;
+        }
+        
+        /* Reposition arrow for mobile - center it above character */
+        .character-section > div:first-child > div:last-child {
+          position: absolute !important;
+          left: 50% !important;
+          top: -60px !important;
+          transform: translateX(-50%) !important;
+        }
+        
+        .character-section > div:first-child > div:last-child span {
+          text-align: center !important;
+          display: block !important;
+        }
+        
+        .character-section > div:first-child > div:last-child svg {
+          display: none !important;
         }
         
         /* Fix text content in about sections */
