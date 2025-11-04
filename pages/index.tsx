@@ -174,6 +174,14 @@ const Home: React.FC = () => {
           padding: 0 10px !important;
         }
         
+        /* Fix speech bubble on mobile */
+        .text-content > div {
+          padding: 15px 12px !important;
+          font-size: 0.7rem !important;
+          margin: 0 auto !important;
+          max-width: calc(100vw - 40px) !important;
+        }
+        
         /* Fix headings */
         h1, h2 {
           font-size: clamp(1.8rem, 5vw, 2.5rem) !important;
@@ -884,16 +892,19 @@ const Home: React.FC = () => {
                       `
                     }} />
                     <h1 className="hero-heading" style={{ 
-                      fontSize: 'clamp(3rem, 7vw, 5rem)', 
+                      fontSize: 'clamp(2rem, 7vw, 5rem)', 
                       fontWeight: '900', 
-                      lineHeight: '1.0',
+                      lineHeight: '1.2',
                       fontFamily: 'system-ui, -apple-system, sans-serif',
                       color: '#ffffff',
                       letterSpacing: '-0.02em',
                       position: 'relative',
                       width: '100%',
                       textAlign: 'center',
-                      zIndex: '1'
+                      zIndex: '1',
+                      padding: '0 10px',
+                      wordWrap: 'break-word',
+                      overflowWrap: 'break-word'
                     }}>
                       <span className="typewriter-text">
                         Hi, this is Arav :)
@@ -902,27 +913,33 @@ const Home: React.FC = () => {
                   </div>
                   
                   <p style={{ 
-                    fontSize: 'clamp(1.5rem, 3vw, 2rem)', 
+                    fontSize: 'clamp(1.1rem, 3vw, 2rem)', 
                     marginBottom: '24px',
                     color: '#94a3b8',
-                    lineHeight: '1.4',
+                    lineHeight: '1.5',
                     fontWeight: '500',
                     letterSpacing: '-0.01em',
                     position: 'relative',
-                    zIndex: '10'
+                    zIndex: '10',
+                    padding: '0 10px',
+                    wordWrap: 'break-word',
+                    overflowWrap: 'break-word'
                   }}>
                     I am an <strong style={{ color: '#60a5fa', textShadow: '0 0 10px rgba(96, 165, 250, 0.3)' }}>18-year-old</strong> from <strong style={{ color: '#f59e0b', textShadow: '0 0 10px rgba(245, 158, 11, 0.3)' }}>Toronto, Ontario</strong>, interested in making and shipping <strong style={{ color: '#10b981', textShadow: '0 0 10px rgba(16, 185, 129, 0.3)' }}>cool shit</strong>. My goals with each of my projects is to ensure that each project delivers <strong style={{ color: '#ef4444', textShadow: '0 0 10px rgba(239, 68, 68, 0.3)' }}>value to society</strong>, and if it doesn&apos;t, its probably just something I really really want to use myself <span style={{ fontSize: '1.2em' }}>😄</span>
                   </p>
                   
                   <p style={{ 
-                    fontSize: 'clamp(1.3rem, 2.5vw, 1.8rem)', 
+                    fontSize: 'clamp(1rem, 2.5vw, 1.8rem)', 
                     marginBottom: '60px',
                     color: '#64748b',
-                    lineHeight: '1.4',
+                    lineHeight: '1.5',
                     fontWeight: '400',
                     letterSpacing: '-0.01em',
                     position: 'relative',
-                    zIndex: '10'
+                    zIndex: '10',
+                    padding: '0 10px',
+                    wordWrap: 'break-word',
+                    overflowWrap: 'break-word'
                   }}>
                     I dream of making <strong style={{ color: '#8b5cf6', textShadow: '0 0 10px rgba(139, 92, 246, 0.3)' }}>something one day</strong> that a bunch of people actually <strong style={{ color: '#06b6d4', textShadow: '0 0 10px rgba(6, 182, 212, 0.3)' }}>use and love</strong>.
                   </p>
@@ -931,7 +948,10 @@ const Home: React.FC = () => {
                     display: 'flex',
                     gap: '20px',
                     flexWrap: 'wrap',
-                    marginTop: '40px'
+                    marginTop: '40px',
+                    width: '100%',
+                    maxWidth: '100%',
+                    padding: '0 10px'
                   }}>
                     <Link 
                       href="/projects" 
@@ -1408,7 +1428,10 @@ const Home: React.FC = () => {
                     boxShadow: '8px 8px 0px #000000',
                     animation: 'bubbleBounce 3s ease-in-out infinite',
                     imageRendering: 'pixelated' as any,
-                    transform: 'translateZ(0)'
+                    transform: 'translateZ(0)',
+                    maxWidth: '100%',
+                    width: '100%',
+                    boxSizing: 'border-box'
                   }}>
                     
                     {/* Pixelated Speech Bubble Tail */}
@@ -1434,14 +1457,17 @@ const Home: React.FC = () => {
                     
                     {/* 8-bit Comic Text */}
                     <div style={{
-                      fontSize: '1rem',
+                      fontSize: 'clamp(0.65rem, 2vw, 1rem)',
                       color: '#000000',
-                      lineHeight: '1.6',
+                      lineHeight: '1.8',
                       fontFamily: '"Press Start 2P", "Courier New", monospace',
                       fontWeight: 'bold',
                       position: 'relative',
                       zIndex: 2,
-                      animation: 'textWobble 4s ease-in-out infinite'
+                      animation: 'textWobble 4s ease-in-out infinite',
+                      wordWrap: 'break-word',
+                      overflowWrap: 'break-word',
+                      maxWidth: '100%'
                     }}>
                       <span>
                         I just wrapped up a SWE internship at <span style={{
