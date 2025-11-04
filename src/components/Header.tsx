@@ -33,6 +33,7 @@ const Header: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
+              fontFamily: '"Times New Roman", Times, serif',
             }}
           >
             Arav Mathur 😎
@@ -58,6 +59,7 @@ const Header: React.FC = () => {
                 fontWeight: '500',
                 transition: 'all 0.3s ease',
                 letterSpacing: '0.3px',
+                fontFamily: '"Times New Roman", Times, serif',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
@@ -86,6 +88,7 @@ const Header: React.FC = () => {
                 fontWeight: '500',
                 transition: 'all 0.3s ease',
                 letterSpacing: '0.3px',
+                fontFamily: '"Times New Roman", Times, serif',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
@@ -114,6 +117,7 @@ const Header: React.FC = () => {
                 fontWeight: '500',
                 transition: 'all 0.3s ease',
                 letterSpacing: '0.3px',
+                fontFamily: '"Times New Roman", Times, serif',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
@@ -179,6 +183,7 @@ const Header: React.FC = () => {
                 fontWeight: '500',
                 textAlign: 'center',
                 transition: 'all 0.3s ease',
+                fontFamily: '"Times New Roman", Times, serif',
               }}
             >
               Projects and Experience
@@ -198,6 +203,7 @@ const Header: React.FC = () => {
                 fontWeight: '500',
                 textAlign: 'center',
                 transition: 'all 0.3s ease',
+                fontFamily: '"Times New Roman", Times, serif',
               }}
             >
               Awards and Recognition
@@ -217,6 +223,7 @@ const Header: React.FC = () => {
                 fontWeight: '500',
                 textAlign: 'center',
                 transition: 'all 0.3s ease',
+                fontFamily: '"Times New Roman", Times, serif',
               }}
             >
               Contact Me
