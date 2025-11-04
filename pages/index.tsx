@@ -168,7 +168,7 @@ const Home: React.FC = () => {
           text-align: center !important;
           align-items: center !important;
           justify-content: center !important;
-          padding: 20px !important;
+          padding: 60px 20px 40px !important;
           position: relative !important;
         }
         
@@ -179,7 +179,7 @@ const Home: React.FC = () => {
           left: auto !important;
           right: auto !important;
           transform: none !important;
-          padding-top: 40px !important;
+          padding-top: 50px !important;
         }
         
         /* Keep the floating animation on character's inner div */
@@ -191,7 +191,7 @@ const Home: React.FC = () => {
         .character-section .arrow-label {
           position: absolute !important;
           left: 50% !important;
-          top: 0 !important;
+          top: 10px !important;
           transform: translateX(-50%) !important;
           margin: 0 !important;
           text-align: center !important;
@@ -200,13 +200,23 @@ const Home: React.FC = () => {
           z-index: 20 !important;
         }
         
-        /* Style the "this is me!" text */
+        /* Style the "this is me!" text and remove arrow */
         .character-section .arrow-label span {
           display: block !important;
           text-align: center !important;
           margin: 0 !important;
           white-space: nowrap !important;
-          font-size: 14px !important;
+          font-size: 16px !important;
+        }
+        
+        /* Hide desktop arrow with → symbol on mobile */
+        .character-section .arrow-label .desktop-arrow {
+          display: none !important;
+        }
+        
+        /* Show mobile version without arrow on mobile */
+        .character-section .arrow-label .mobile-arrow {
+          display: inline !important;
         }
         
         /* Hide the arrow SVG on mobile */
@@ -1425,7 +1435,8 @@ const Home: React.FC = () => {
                     marginBottom: '10px',
                     animation: 'textGlow 2s ease-in-out infinite alternate'
                   }}>
-                    this is me! →
+                    <span className="desktop-arrow">this is me! →</span>
+                    <span className="mobile-arrow" style={{ display: 'none' }}>this is me!</span>
                   </span>
                   {/* Squiggly animated arrow */}
                   <svg 
