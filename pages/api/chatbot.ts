@@ -220,13 +220,53 @@ function searchKnowledgeBase(question: string): string {
 
   // Project queries
   if (q.includes('project') || q.includes('built') || q.includes('made')) {
-    const projectNames = knowledgeBase.projects.map(p => `• ${p.name}`).join('\n');
-    return `Arav has built some amazing projects! Here are his key ones:\n\n${projectNames}\n\nAsk me about any specific project for more details! 💻🚀`;
+    return `Arav has built some amazing projects! Here are his key ones:
+
+• 🔐 **Graypass** - Passwordless auth using cognitive/behavioral signals
+• 🐢 **TurtleShell** - Tourist safety app ($26K Microsoft funding)
+• ⚽ **UEFA Champions League Betting Assistant** - Sports analytics dashboard
+• 🎓 **ConnectED** - Tinder for Scholarships (matches students to mentors)
+• 🍎 **Plant Pathogen Detection** - AI for apple orchards with drones
+• 🗣️ **Ronaldo** - JARVIS-inspired voice assistant
+• 🎵 **Mood Based Sound Generation** - AI music from emotions
+• 😊 **Facial Emotion Detection** - CNN recognizing 7 emotions
+
+Ask me about any specific project for details! 💻🚀`;
   }
 
   if (q.includes('graypass')) {
     const project = knowledgeBase.projects.find(p => p.name === 'Graypass');
     return `${project?.description} Built with ${project?.technologies.slice(0, 4).join(', ')}. Check it out: ${project?.link} 🧠🔐`;
+  }
+
+  if (q.includes('connected') || q.includes('scholarship') || q.includes('tinder for')) {
+    const project = knowledgeBase.projects.find(p => p.name === 'ConnectED');
+    return `ConnectED is Arav's "Tinder for Scholarships and Grants"! 🎓💰 It scrapes and ranks scholarships, then matches students to mentors using NLP and linear programming optimization. The system uses Google Sheets API and Google Calendar API to create 15-minute speed-dating style sessions between students and mentors. Technologies: ${project?.technologies.join(', ')}. Check it out: ${project?.link}`;
+  }
+
+  if (q.includes('sports betting') || q.includes('uefa') || q.includes('champions league')) {
+    const project = knowledgeBase.projects.find(p => p.name.includes('UEFA'));
+    return `Arav built a UEFA Champions League Sports Betting Assistant! ⚽📊 It's a Streamlit-powered analytics dashboard that tracks Champions League matches with betting insights and live odds movements. Great for analyzing football matches and making informed betting decisions. Try it: ${project?.link}`;
+  }
+
+  if (q.includes('plant') || q.includes('pathogen') || q.includes('apple')) {
+    const project = knowledgeBase.projects.find(p => p.name.includes('Plant'));
+    return `Arav developed a Plant Pathogen Detection system using CNNs compatible with DJI drone systems! 🍎🚁 It can detect 30+ types of pathogens in apple trees, saving orchardists around 20 hours of work weekly. Built with TensorFlow, Keras, OpenCV, and DJI Mobile SDK. Read more: ${project?.link}`;
+  }
+
+  if (q.includes('ronaldo') || q.includes('voice assistant') || q.includes('jarvis')) {
+    const project = knowledgeBase.projects.find(p => p.name.includes('Ronaldo'));
+    return `Meet Ronaldo! 🗣️🤖 Arav's JARVIS-inspired voice assistant activated by saying "Ronaldo" or "Hi Ronaldo". It uses speech recognition, OpenAI API, and text-to-speech to have conversations. Read about how he built it: ${project?.link}`;
+  }
+
+  if (q.includes('mood') || q.includes('music') || q.includes('sound generation') || q.includes('soundstorm')) {
+    const project = knowledgeBase.projects.find(p => p.name.includes('Mood'));
+    return `Arav created an AI model for Mood Based Sound Generation! 🎵🎨 It uses Google's SoundStorm architecture to generate sounds and music, adjusting frequency, genre, and BPM based on your mood. Built with PyTorch and Encodec. Learn more: ${project?.link}`;
+  }
+
+  if (q.includes('emotion') || q.includes('facial') || q.includes('face detection')) {
+    const project = knowledgeBase.projects.find(p => p.name.includes('Facial'));
+    return `Arav built a Facial Emotion Detection CNN that can recognize seven distinct emotions: Happiness, Anger, Disgust, Fear, Sad, Surprised, and Neutral! 😊😠😨 Built with TensorFlow and OpenCV. Read about it: ${project?.link}`;
   }
 
   // Skills queries
@@ -256,7 +296,16 @@ function searchKnowledgeBase(question: string): string {
   }
 
   // Default - couldn't find information
-  return `I don't have specific information about "${question}" in my knowledge base. 🤔\n\nFor more details, please contact Arav directly:\n📧 ${knowledgeBase.personal.contact.email}\n\nOr check out the /contact page to send him a message! You can also try asking about:\n• His projects (Graypass, TurtleShell, etc.)\n• Work experience\n• Skills and technologies\n• Education\n• Achievements`;
+  return `I don't have specific information about "${question}" in my knowledge base. 🤔
+
+Try asking me about:
+📂 **Projects**: Graypass, TurtleShell, ConnectED, UEFA Betting, Plant Detection, Ronaldo voice assistant, Mood Music, Emotion Detection
+💼 **Work**: Aview (internship), BenchSci, IKEA, NASA, Positive Powers
+🎓 **Education**: Waterloo, Computer Science
+🏆 **Achievements**: Hackathons, Microsoft funding, publications
+📧 **Contact**: Email, LinkedIn, Twitter
+
+Or contact Arav directly at ${knowledgeBase.personal.contact.email}!`;
 }
 
 export default function handler(
