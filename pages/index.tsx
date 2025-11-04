@@ -168,11 +168,11 @@ const Home: React.FC = () => {
           text-align: center !important;
           align-items: center !important;
           justify-content: center !important;
-          padding: 60px 20px 20px !important;
+          padding: 80px 20px 20px !important;
           position: relative !important;
         }
         
-        /* Center the character wrapper on mobile */
+        /* Center the character wrapper on mobile and KEEP ANIMATION */
         .character-section .scroll-animate.fade-left {
           margin: 0 auto !important;
           position: static !important;
@@ -181,25 +181,32 @@ const Home: React.FC = () => {
           transform: none !important;
         }
         
-        /* Hide the arrow that's positioned absolutely outside */
-        .character-section > div[style*="position: absolute"] {
+        /* Keep the floating animation on character's inner div */
+        .character-section .scroll-animate.fade-left > div {
+          animation: float1 4s ease-in-out infinite !important;
+        }
+        
+        /* Show and center the arrow with "this is me!" text */
+        .character-section .arrow-label {
           position: static !important;
           left: auto !important;
           top: auto !important;
           margin: 0 auto 20px auto !important;
           text-align: center !important;
           width: 100% !important;
+          display: block !important;
         }
         
-        /* Center the "this is me!" text */
-        .character-section > div[style*="position: absolute"] span {
+        /* Center the "this is me!" text and make it visible */
+        .character-section .arrow-label span {
           display: block !important;
           text-align: center !important;
           margin: 0 auto !important;
+          white-space: normal !important;
         }
         
-        /* Hide the arrow SVG on mobile */
-        .character-section > div[style*="position: absolute"] svg {
+        /* Hide the arrow SVG on mobile but keep the text */
+        .character-section .arrow-label svg {
           display: none !important;
         }
         
@@ -1397,7 +1404,7 @@ const Home: React.FC = () => {
                 </div>
 
                 {/* Squiggly Arrow pointing at character */}
-                <div style={{
+                <div className="arrow-label" style={{
                   position: 'absolute',
                   left: '-150px',
                   top: '80px',
