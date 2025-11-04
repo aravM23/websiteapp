@@ -1,207 +1,248 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-
-const NAV_LINKS = [
-  { href: '/projects', label: 'Projects and Experience' },
-  { href: '/client', label: 'Awards and Recognition' },
-  { href: '/contact', label: 'Contact Me' },
-];
 
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    if (!isMounted) return;
-
-    const handleResize = () => {
-      if (window.innerWidth > 880) {
-        setMenuOpen(false);
-      }
-    };
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, [isMounted]);
-
-  const toggleMenu = () => setMenuOpen((prev) => !prev);
-  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="site-header">
+    <>
+      <header style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        background: '#0a0a0a',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+        padding: '1rem 2rem',
+      }}>
+        <nav style={{
+          maxWidth: '1400px',
+          margin: '0 auto',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+          <Link 
+            href="/" 
+            style={{
+              fontSize: '1.5rem',
+              fontWeight: '700',
+              color: '#ffffff',
+              textDecoration: 'none',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+            }}
+          >
+            Arav Mathur 😎
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div style={{
+            display: 'flex',
+            gap: '1rem',
+            alignItems: 'center',
+          }}
+          className="desktop-nav">
+            <Link 
+              href="/projects" 
+              style={{
+                color: '#ffffff',
+                textDecoration: 'none',
+                padding: '0.65rem 1.25rem',
+                borderRadius: '6px',
+                background: 'transparent',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                fontSize: '0.9rem',
+                fontWeight: '500',
+                transition: 'all 0.3s ease',
+                letterSpacing: '0.3px',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                e.currentTarget.style.transform = 'translateY(-1px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              Projects and Experience
+            </Link>
+
+            <Link 
+              href="/client" 
+              style={{
+                color: '#ffffff',
+                textDecoration: 'none',
+                padding: '0.65rem 1.25rem',
+                borderRadius: '6px',
+                background: 'transparent',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                fontSize: '0.9rem',
+                fontWeight: '500',
+                transition: 'all 0.3s ease',
+                letterSpacing: '0.3px',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                e.currentTarget.style.transform = 'translateY(-1px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              Awards and Recognition
+            </Link>
+
+            <Link 
+              href="/contact" 
+              style={{
+                color: '#ffffff',
+                textDecoration: 'none',
+                padding: '0.65rem 1.25rem',
+                borderRadius: '6px',
+                background: 'transparent',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                fontSize: '0.9rem',
+                fontWeight: '500',
+                transition: 'all 0.3s ease',
+                letterSpacing: '0.3px',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)';
+                e.currentTarget.style.transform = 'translateY(-1px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent';
+                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                e.currentTarget.style.transform = 'translateY(0)';
+              }}
+            >
+              Contact Me
+            </Link>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setMenuOpen(!menuOpen)}
+            className="mobile-menu-btn"
+            style={{
+              display: 'none',
+              background: 'transparent',
+              border: '2px solid rgba(255, 255, 255, 0.2)',
+              color: '#ffffff',
+              fontSize: '1.5rem',
+              cursor: 'pointer',
+              padding: '0.5rem 0.75rem',
+              borderRadius: '6px',
+              transition: 'all 0.3s ease',
+            }}
+          >
+            {menuOpen ? '✕' : '☰'}
+          </button>
+        </nav>
+
+        {/* Mobile Menu */}
+        {menuOpen && (
+          <div 
+            className="mobile-menu"
+            style={{
+              display: 'none',
+              flexDirection: 'column',
+              gap: '0.75rem',
+              marginTop: '1rem',
+              padding: '1rem',
+              background: 'rgba(20, 20, 20, 0.98)',
+              borderRadius: '8px',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
+            }}
+          >
+            <Link 
+              href="/projects"
+              onClick={() => setMenuOpen(false)}
+              style={{
+                color: '#ffffff',
+                textDecoration: 'none',
+                padding: '0.75rem 1rem',
+                borderRadius: '6px',
+                background: 'transparent',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                fontSize: '0.95rem',
+                fontWeight: '500',
+                textAlign: 'center',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              Projects and Experience
+            </Link>
+
+            <Link 
+              href="/client"
+              onClick={() => setMenuOpen(false)}
+              style={{
+                color: '#ffffff',
+                textDecoration: 'none',
+                padding: '0.75rem 1rem',
+                borderRadius: '6px',
+                background: 'transparent',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                fontSize: '0.95rem',
+                fontWeight: '500',
+                textAlign: 'center',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              Awards and Recognition
+            </Link>
+
+            <Link 
+              href="/contact"
+              onClick={() => setMenuOpen(false)}
+              style={{
+                color: '#ffffff',
+                textDecoration: 'none',
+                padding: '0.75rem 1rem',
+                borderRadius: '6px',
+                background: 'transparent',
+                border: '2px solid rgba(255, 255, 255, 0.2)',
+                fontSize: '0.95rem',
+                fontWeight: '500',
+                textAlign: 'center',
+                transition: 'all 0.3s ease',
+              }}
+            >
+              Contact Me
+            </Link>
+          </div>
+        )}
+      </header>
+
+      {/* CSS for responsive behavior */}
       <style jsx>{`
-        .site-header {
-          position: sticky;
-          top: 0;
-          z-index: 1000;
-          background: rgba(26, 26, 26, 0.92);
-          backdrop-filter: blur(14px);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-
-        .site-header__inner {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 14px 20px;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 16px;
-        }
-
-        .site-header__brand {
-          display: inline-flex;
-          align-items: center;
-          gap: 8px;
-          font-size: 1.6rem;
-          font-weight: 700;
-          text-decoration: none;
-          color: #ffffff !important;
-          letter-spacing: -0.02em;
-          transition: transform 0.2s ease, text-shadow 0.2s ease;
-        }
-
-        .site-header__brand:link,
-        .site-header__brand:visited,
-        .site-header__brand:active {
-          color: #ffffff !important;
-          text-decoration: none;
-        }
-
-        .site-header__brand:hover {
-          transform: translateY(-1px) scale(1.02);
-          text-shadow: 0 0 16px rgba(255, 255, 255, 0.35);
-          color: #ffffff !important;
-        }
-
-        .site-header__nav {
-          display: flex;
-          align-items: center;
-          gap: 28px;
-          transition: opacity 0.2s ease, transform 0.2s ease;
-        }
-
-        .site-header__link {
-          color: #d1d5db !important;
-          text-decoration: none;
-          font-size: 0.875rem;
-          font-weight: 600;
-          letter-spacing: 0.8px;
-          text-transform: uppercase;
-          transition: color 0.2s ease, text-shadow 0.2s ease;
-          white-space: nowrap;
-        }
-
-        .site-header__link:link,
-        .site-header__link:visited,
-        .site-header__link:active {
-          color: #d1d5db !important;
-          text-decoration: none;
-        }
-
-        .site-header__link:hover {
-          color: #ffffff !important;
-          text-shadow: 0 0 10px rgba(255, 255, 255, 0.45);
-        }
-
-        .site-header__burger {
-          display: none;
-          width: 44px;
-          height: 44px;
-          border-radius: 12px;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.12);
-          align-items: center;
-          justify-content: center;
-          flex-direction: column;
-          gap: 5px;
-          cursor: pointer;
-          transition: background 0.2s ease, border 0.2s ease;
-        }
-
-        .site-header__burger span {
-          width: 20px;
-          height: 2px;
-          background: #ffffff;
-          border-radius: 2px;
-          transition: transform 0.2s ease;
-        }
-
-        .site-header__burger:focus-visible {
-          outline: 2px solid #60a5fa;
-          outline-offset: 3px;
-        }
-
-        @media (max-width: 880px) {
-          .site-header__burger {
-            display: inline-flex;
+        @media (max-width: 768px) {
+          .desktop-nav {
+            display: none !important;
           }
-
-          .site-header__nav {
-            position: absolute;
-            top: 100%;
-            right: 20px;
-            margin-top: 12px;
-            background: rgba(10, 16, 32, 0.96);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: 16px;
-            padding: 18px;
-            flex-direction: column;
-            gap: 12px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-            opacity: 0;
-            transform: translateY(-8px) scale(0.97);
-            pointer-events: none;
-            min-width: 220px;
+          .mobile-menu-btn {
+            display: block !important;
           }
-
-          .site-header__nav.is-open {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-            pointer-events: auto;
-          }
-
-          .site-header__link {
-            width: 100%;
-            text-align: right;
-            padding: 6px 0;
+          .mobile-menu {
+            display: flex !important;
           }
         }
       `}</style>
-      <div className="site-header__inner">
-        <Link href="/" className="site-header__brand">
-          Arav Mathur <span role="img" aria-label="cool">😎</span>
-        </Link>
-        <button
-          type="button"
-          className="site-header__burger"
-          aria-label="Toggle navigation"
-          aria-expanded={menuOpen}
-          onClick={toggleMenu}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-        <nav className={`site-header__nav ${menuOpen ? 'is-open' : ''}`}>
-          {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="site-header__link"
-              onClick={closeMenu}
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
-      </div>
-    </header>
+
+      {/* Spacer to prevent content from hiding under fixed header */}
+      <div style={{ height: '80px' }} />
+    </>
   );
 };
 

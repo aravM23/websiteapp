@@ -2,6 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
+import Chatbot from './Chatbot';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -52,6 +53,7 @@ const Layout: React.FC<LayoutProps> = ({
           {children}
         </main>
         <Footer />
+        <Chatbot />
       </div>
     </>
   );

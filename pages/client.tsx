@@ -104,259 +104,217 @@ const Client: React.FC = () => {
     <Layout title="Awards & Recognition - Arav Mathur">
       <section
         style={{
-          backgroundColor: '#05070f',
-          color: '#f5f9ff',
+          backgroundColor: '#0a0a0a',
+          color: '#ffffff',
           padding: '120px 24px 80px',
           minHeight: '100vh',
-          fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         }}
       >
-        <div style={{ maxWidth: '1150px', margin: '0 auto' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+          {/* Hero Section */}
           <div
             style={{
               textAlign: 'center',
               marginBottom: '80px',
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '24px',
-              alignItems: 'center',
+              position: 'relative',
             }}
           >
             <h1
               style={{
-                fontSize: '3.4rem',
-                fontWeight: 800,
-                margin: 0,
-                letterSpacing: '0.04em',
-                background: 'linear-gradient(135deg, #ffffff 0%, #9ec9ff 100%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
-                textShadow: '0 32px 90px rgba(68, 153, 255, 0.35)',
+                fontSize: '3.5rem',
+                fontWeight: '800',
+                margin: '0 0 20px 0',
+                letterSpacing: '-1px',
+                color: '#ffffff',
+                textShadow: '0 2px 20px rgba(255, 255, 255, 0.1)',
               }}
             >
-              Awards and Recognition
+              Awards & Recognition 🏆
             </h1>
             <p
               style={{
-                color: '#a6b7d4',
-                maxWidth: '720px',
-                fontSize: '1.15rem',
-                lineHeight: 1.8,
+                color: '#b0b0b0',
+                maxWidth: '600px',
+                fontSize: '1.1rem',
+                lineHeight: 1.6,
+                margin: '0 auto',
               }}
             >
-              Here is some recognition that my work is getting
+              Here's some recognition that my work is getting
             </p>
           </div>
 
+          {/* Awards Grid - All 4 in one row */}
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-              gap: '36px',
-              marginBottom: '96px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '24px',
+              marginBottom: '100px',
             }}
           >
-            {awards.map((award) => (
+            {awards.map((award, index) => (
               <div
                 key={award.title}
                 style={{
-                  background: 'linear-gradient(175deg, rgba(12, 18, 40, 0.95), rgba(4, 8, 18, 0.97))',
-                  border: '1px solid rgba(80, 150, 255, 0.35)',
-                  borderRadius: '32px',
-                  padding: '44px 42px',
-                  boxShadow: '0 48px 160px rgba(8, 24, 60, 0.55)',
+                  background: 'rgba(20, 20, 20, 0.6)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: '16px',
+                  padding: '32px',
                   position: 'relative',
                   overflow: 'hidden',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '22px',
-                  minHeight: '340px',
+                  transition: 'all 0.3s ease',
+                  cursor: 'pointer',
+                  animation: `fadeInUp 0.6s ease ${index * 0.1}s both`,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.transform = 'translateY(-8px)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                  e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.transform = 'translateY(0)';
+                  e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                  e.currentTarget.style.boxShadow = 'none';
                 }}
               >
+                {/* Icon */}
+                <div
+                  style={{
+                    fontSize: '3rem',
+                    marginBottom: '20px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    width: '80px',
+                    height: '80px',
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    borderRadius: '16px',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                  }}
+                >
+                  {award.icon}
+                </div>
+
+                {/* Title */}
+                <h2
+                  style={{
+                    fontSize: '1.4rem',
+                    fontWeight: '700',
+                    marginBottom: '16px',
+                    color: '#ffffff',
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {award.title}
+                </h2>
+
+                {/* Description */}
+                <p
+                  style={{
+                    color: '#b0b0b0',
+                    fontSize: '0.95rem',
+                    lineHeight: 1.7,
+                    margin: 0,
+                  }}
+                >
+                  {award.description}
+                </p>
+
+                {/* Decorative gradient */}
                 <div
                   style={{
                     position: 'absolute',
-                    inset: '-35% auto auto -15%',
-                    width: '360px',
-                    height: '360px',
-                    background: 'radial-gradient(circle, rgba(72,164,255,0.24) 0%, rgba(72,164,255,0) 78%)',
-                    pointerEvents: 'none',
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: '4px',
+                    background: 'linear-gradient(90deg, #42a5f5, #66bb6a, #ffa726)',
+                    opacity: 0.5,
                   }}
                 />
-                <div
-                  style={{
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'space-between',
-                    position: 'relative',
-                    zIndex: 1,
-                    gap: '16px',
-                  }}
-                >
-                  <span
-                    style={{
-                      fontSize: '2.1rem',
-                      display: 'inline-flex',
-                      width: '68px',
-                      height: '68px',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      borderRadius: '20px',
-                      background: 'rgba(80, 170, 255, 0.26)',
-                      border: '1px solid rgba(120, 190, 255, 0.45)',
-                      color: '#ffffff',
-                    }}
-                  >
-                    {award.icon}
-                  </span>
-                  <div
-                    style={{
-                      flex: 1,
-                      height: '1px',
-                      marginLeft: '16px',
-                      background: 'linear-gradient(90deg, rgba(80,170,255,0.45) 0%, rgba(80,170,255,0) 100%)',
-                    }}
-                  />
-                </div>
-                <div style={{ position: 'relative', zIndex: 1, marginTop: '4px' }}>
-                  <h2
-                    style={{
-                      fontSize: '1.9rem',
-                      fontWeight: 700,
-                      marginBottom: '18px',
-                      color: '#f7fbff',
-                      letterSpacing: '0.01em',
-                    }}
-                  >
-                    {award.title}
-                  </h2>
-                  {award.highlight && (
-                    <p
-                      style={{
-                        color: '#71b5ff',
-                        fontSize: '0.95rem',
-                        fontWeight: 600,
-                        letterSpacing: '0.05em',
-                        textTransform: 'uppercase',
-                        marginBottom: '16px',
-                      }}
-                    >
-                      {award.highlight}
-                    </p>
-                  )}
-                  <p
-                    style={{
-                      color: '#c9d5ee',
-                      fontSize: '1rem',
-                      lineHeight: 1.9,
-                      letterSpacing: '0.012em',
-                    }}
-                  >
-                    {award.description}
-                  </p>
-                </div>
               </div>
             ))}
           </div>
 
-          <div style={{ marginBottom: '96px' }}>
-            <div
+          {/* Certifications Section */}
+          <div style={{ marginBottom: '100px' }}>
+            <h2
               style={{
-                display: 'flex',
-                justifyContent: 'center',
-                marginBottom: '36px',
+                fontSize: '2.5rem',
+                fontWeight: '800',
+                marginBottom: '48px',
+                textAlign: 'center',
+                color: '#ffffff',
               }}
             >
-              <h2
-                style={{
-                  fontSize: '2.4rem',
-                  fontWeight: 700,
-                  margin: 0,
-                  background: 'linear-gradient(135deg, #ffffff 0%, #9ec9ff 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  letterSpacing: '0.04em',
-                }}
-              >
-                My Certifications
-              </h2>
-            </div>
+              Certifications 📜
+            </h2>
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-                gap: '28px',
-                alignItems: 'stretch',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '24px',
               }}
             >
-              {certifications.map((cert) => (
+              {certifications.map((cert, index) => (
                 <div
                   key={cert.title}
                   style={{
-                    background: 'linear-gradient(160deg, rgba(13, 22, 48, 0.94), rgba(7, 11, 24, 0.96))',
-                    border: '1px solid rgba(120, 190, 255, 0.28)',
-                    borderRadius: '24px',
+                    background: 'rgba(20, 20, 20, 0.6)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    borderRadius: '16px',
                     padding: '32px',
-                    boxShadow: '0 32px 110px rgba(10, 26, 56, 0.45)',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: '100%',
-                    gap: '18px',
+                    transition: 'all 0.3s ease',
+                    animation: `fadeInUp 0.6s ease ${index * 0.1 + 0.4}s both`,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateY(-8px)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.3)';
+                    e.currentTarget.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.3)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
+                    e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
+                  <h3
+                    style={{
+                      fontSize: '1.3rem',
+                      fontWeight: '700',
+                      color: '#ffffff',
+                      marginBottom: '16px',
+                      lineHeight: 1.3,
+                    }}
+                  >
+                    {cert.title}
+                  </h3>
                   <div
                     style={{
                       display: 'flex',
-                      justifyContent: 'space-between',
-                      alignItems: 'center',
-                      gap: '16px',
+                      flexDirection: 'column',
+                      gap: '8px',
+                      color: '#b0b0b0',
+                      fontSize: '0.95rem',
                     }}
                   >
-                    <h3
-                      style={{
-                        fontSize: '1.45rem',
-                        fontWeight: 700,
-                        color: '#f5f9ff',
-                        letterSpacing: '0.01em',
-                        margin: 0,
-                      }}
-                    >
-                      {cert.title}
-                    </h3>
-                    <span
-                      style={{
-                        width: '64px',
-                        height: '32px',
-                        borderRadius: '12px',
-                        background: 'rgba(80, 170, 255, 0.18)',
-                        border: '1px solid rgba(120, 190, 255, 0.32)',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        flexShrink: 0,
-                      }}
-                    >
-                      <img
-                        src="/ibmlogo1.jpg"
-                        alt="IBM logo"
-                        style={{ height: '18px', width: 'auto', display: 'block' }}
-                      />
+                    <span>
+                      <strong style={{ color: '#ffffff' }}>Issuer:</strong> {cert.issuer}
                     </span>
-                  </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', color: '#c5d7f2' }}>
-                    <span style={{ fontWeight: 600 }}>Issued by {cert.issuer}</span>
-                    <span style={{ color: '#a8bcdf' }}>Issue Date: {cert.issued}</span>
+                    <span>
+                      <strong style={{ color: '#ffffff' }}>Issued:</strong> {cert.issued}
+                    </span>
                     <span
                       style={{
-                        color: '#7fb8ff',
-                        fontFamily: 'SFMono-Regular, Menlo, monospace',
-                        fontSize: '0.9rem',
-                        marginTop: 'auto',
+                        fontFamily: 'monospace',
+                        fontSize: '0.85rem',
+                        color: '#888888',
+                        marginTop: '8px',
                       }}
                     >
-                      Credential ID: {cert.credentialId}
+                      ID: {cert.credentialId}
                     </span>
                   </div>
                 </div>
@@ -364,107 +322,110 @@ const Client: React.FC = () => {
             </div>
           </div>
 
-          <div style={{ marginBottom: '80px' }}>
+          {/* Social Links */}
+          <div style={{ marginBottom: '100px' }}>
             <h2
               style={{
-                fontSize: '2.1rem',
-                fontWeight: 700,
-                color: '#f5f9ff',
-                marginBottom: '28px',
+                fontSize: '2.5rem',
+                fontWeight: '800',
+                marginBottom: '48px',
                 textAlign: 'center',
+                color: '#ffffff',
               }}
             >
-              View more about me on my social profiles
+              Connect with me 🤝
             </h2>
             <div
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '18px',
+                gap: '20px',
                 justifyContent: 'center',
               }}
             >
-              {socials.map((social) => (
+              {socials.map((social, index) => (
                 <Link
                   key={social.label}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
-                    minWidth: '200px',
                     display: 'inline-flex',
                     alignItems: 'center',
-                    justifyContent: 'center',
-                    gap: '10px',
-                    padding: '16px 24px',
-                    borderRadius: '14px',
-                    background: 'rgba(15, 28, 48, 0.85)',
-                    border: `1px solid ${social.accent}`,
-                    color: social.accent,
-                    fontWeight: 600,
-                    letterSpacing: '0.04em',
-                    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                    gap: '12px',
+                    padding: '16px 32px',
+                    borderRadius: '12px',
+                    background: 'rgba(20, 20, 20, 0.6)',
+                    border: '1px solid rgba(255, 255, 255, 0.1)',
+                    color: '#ffffff',
+                    fontWeight: '600',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease',
+                    animation: `fadeInUp 0.6s ease ${index * 0.1 + 0.8}s both`,
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.transform = 'translateY(-2px)';
-                    e.currentTarget.style.boxShadow = `0 16px 40px ${social.accent}33`;
+                    e.currentTarget.style.transform = 'translateY(-4px)';
+                    e.currentTarget.style.borderColor = social.accent;
+                    e.currentTarget.style.boxShadow = `0 10px 30px ${social.accent}33`;
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
                     e.currentTarget.style.boxShadow = 'none';
                   }}
                 >
-                  <span style={{ display: 'inline-flex', color: social.accent }}>{social.icon}</span>
+                  <span style={{ color: social.accent }}>{social.icon}</span>
                   {social.label}
                 </Link>
               ))}
             </div>
           </div>
 
+          {/* CTA Section */}
           <div
             style={{
-              background: 'linear-gradient(160deg, rgba(20, 28, 52, 0.95), rgba(10, 14, 28, 0.92))',
-              borderRadius: '22px',
-              padding: '56px 40px',
-              border: '1px solid rgba(120, 190, 255, 0.22)',
-              boxShadow: '0 40px 120px rgba(12, 28, 60, 0.55)',
+              background: 'rgba(20, 20, 20, 0.6)',
+              borderRadius: '20px',
+              padding: '60px 40px',
+              border: '1px solid rgba(255, 255, 255, 0.1)',
               textAlign: 'center',
             }}
           >
             <h2
               style={{
-                fontSize: '2.6rem',
-                fontWeight: 700,
-                marginBottom: '20px',
-                color: '#f7fbff',
+                fontSize: '2.5rem',
+                fontWeight: '800',
+                marginBottom: '16px',
+                color: '#ffffff',
               }}
             >
-              I would love to work with you
+              Let's work together 💪
             </h2>
-            <p style={{ fontSize: '1.05rem', marginBottom: '32px', color: '#98abd4' }}>
-              want to build something together? msg me
+            <p
+              style={{
+                fontSize: '1.1rem',
+                marginBottom: '32px',
+                color: '#b0b0b0',
+              }}
+            >
+              Want to build something amazing? Let's chat!
             </p>
             <Link
-              href="https://www.linkedin.com/in/arav-mathur-0567bb26a/"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/contact"
               style={{
                 backgroundColor: '#42a5f5',
                 color: 'white',
-                padding: '16px 32px',
-                borderRadius: '10px',
-                fontWeight: 700,
+                padding: '16px 40px',
+                borderRadius: '12px',
+                fontWeight: '700',
                 textDecoration: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '1.05rem',
-                letterSpacing: '0.08em',
-                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                display: 'inline-block',
+                fontSize: '1.1rem',
+                transition: 'all 0.3s ease',
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 18px 45px rgba(66, 165, 245, 0.35)';
+                e.currentTarget.style.boxShadow = '0 10px 30px rgba(66, 165, 245, 0.4)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0)';
@@ -476,6 +437,20 @@ const Client: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Keyframe animations */}
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+      `}</style>
     </Layout>
   );
 };
