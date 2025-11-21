@@ -23,8 +23,9 @@ const Music: React.FC = () => {
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             textAlign: 'center',
+            textTransform: 'lowercase',
           }}>
-            🎵 Music I'm Listening To
+            music im currently listening to
           </h1>
           <p style={{
             fontSize: '1.2rem',
@@ -34,7 +35,7 @@ const Music: React.FC = () => {
             maxWidth: '600px',
             margin: '0 auto 3rem',
           }}>
-            Check out what I've been jamming to recently on Spotify
+            tunes i like
           </p>
           
           <SpotifyRecentlyPlayed />

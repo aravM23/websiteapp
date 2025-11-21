@@ -45,9 +45,10 @@ const SpotifyRecentlyPlayed: React.FC = () => {
             fontWeight: '800',
             color: '#ffffff',
             marginBottom: '48px',
-            letterSpacing: '-0.02em'
+            letterSpacing: '-0.02em',
+            textTransform: 'lowercase',
           }}>
-            Recently Played 🎵
+            recently played
           </h2>
           <div style={{
             display: 'flex',
@@ -84,16 +85,17 @@ const SpotifyRecentlyPlayed: React.FC = () => {
 
   return (
     <section style={{ padding: '80px 20px', backgroundColor: '#0a0a0a' }}>
-      <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <h2 style={{
           fontSize: 'clamp(2rem, 5vw, 2.5rem)',
           fontWeight: '800',
           color: '#ffffff',
           marginBottom: '16px',
           textAlign: 'center',
-          letterSpacing: '-0.02em'
+          letterSpacing: '-0.02em',
+          textTransform: 'lowercase',
         }}>
-          Recently Played 🎵
+          recently played
         </h2>
         <p style={{
           textAlign: 'center',
@@ -101,13 +103,13 @@ const SpotifyRecentlyPlayed: React.FC = () => {
           fontSize: '1.1rem',
           marginBottom: '48px'
         }}>
-          Here's what I've been listening to lately on Spotify
+          tunes i like
         </p>
 
         <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-          gap: '24px'
+          display: 'flex',
+          flexDirection: 'column',
+          gap: '12px'
         }}>
           {tracks.map((track, index) => (
             <a
@@ -117,42 +119,52 @@ const SpotifyRecentlyPlayed: React.FC = () => {
               rel="noopener noreferrer"
               style={{
                 display: 'flex',
+                alignItems: 'center',
                 gap: '16px',
-                padding: '20px',
+                padding: '16px 20px',
                 backgroundColor: 'rgba(20, 20, 20, 0.6)',
-                borderRadius: '12px',
+                borderRadius: '8px',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
                 textDecoration: 'none',
                 transition: 'all 0.3s ease',
                 animation: `fadeInUp 0.6s ease ${index * 0.1}s both`,
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.transform = 'translateX(4px)';
                 e.currentTarget.style.borderColor = 'rgba(30, 215, 96, 0.5)';
-                e.currentTarget.style.boxShadow = '0 12px 32px rgba(0, 0, 0, 0.4)';
                 e.currentTarget.style.backgroundColor = 'rgba(30, 20, 20, 0.7)';
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.transform = 'translateX(0)';
                 e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.1)';
-                e.currentTarget.style.boxShadow = 'none';
                 e.currentTarget.style.backgroundColor = 'rgba(20, 20, 20, 0.6)';
               }}
             >
+              <div style={{
+                fontSize: '1.2rem',
+                fontWeight: '700',
+                color: '#888888',
+                minWidth: '32px',
+                textAlign: 'center'
+              }}>
+                {index + 1}
+              </div>
+              
               {track.albumImageUrl && (
                 <img
                   src={track.albumImageUrl}
                   alt={`${track.album} cover`}
                   style={{
-                    width: '80px',
-                    height: '80px',
-                    borderRadius: '8px',
+                    width: '60px',
+                    height: '60px',
+                    borderRadius: '6px',
                     objectFit: 'cover',
                     flexShrink: 0,
                     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)'
                   }}
                 />
               )}
+              
               <div style={{
                 flex: 1,
                 display: 'flex',
@@ -161,10 +173,10 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                 minWidth: 0
               }}>
                 <h3 style={{
-                  fontSize: '1.1rem',
-                  fontWeight: '700',
+                  fontSize: '1.05rem',
+                  fontWeight: '600',
                   color: '#ffffff',
-                  margin: '0 0 6px 0',
+                  margin: '0 0 4px 0',
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   whiteSpace: 'nowrap'
@@ -172,31 +184,23 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                   {track.title}
                 </h3>
                 <p style={{
-                  fontSize: '0.95rem',
+                  fontSize: '0.9rem',
                   color: '#b0b0b0',
-                  margin: '0 0 4px 0',
+                  margin: 0,
                   overflow: 'hidden',
                   textOverflow: 'ellipsis',
                   whiteSpace: 'nowrap'
                 }}>
                   {track.artist}
                 </p>
-                <p style={{
-                  fontSize: '0.85rem',
-                  color: '#888888',
-                  margin: 0,
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  whiteSpace: 'nowrap'
-                }}>
-                  {track.album}
-                </p>
               </div>
+              
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
                 color: 'rgba(30, 215, 96, 0.8)',
-                fontSize: '24px'
+                fontSize: '20px',
+                paddingRight: '8px'
               }}>
                 ▶
               </div>
@@ -209,7 +213,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
           textAlign: 'center'
         }}>
           <a
-            href="https://open.spotify.com"
+            href="https://open.spotify.com/user/31rw3qvivmvp4jbx7fmbfkcxe3na"
             target="_blank"
             rel="noopener noreferrer"
             style={{
@@ -237,8 +241,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
               e.currentTarget.style.transform = 'translateY(0)';
             }}
           >
-            <span style={{ fontSize: '20px' }}>🎧</span>
-            Listen on Spotify
+            drop a follow on spotify
           </a>
         </div>
       </div>
