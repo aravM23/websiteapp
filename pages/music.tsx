@@ -3,27 +3,7 @@ import Layout from '../src/components/Layout';
 import SpotifyRecentlyPlayed from '../src/components/SpotifyRecentlyPlayed';
 
 const Music: React.FC = () => {
-  const [listeningHours, setListeningHours] = React.useState<number | null>(null);
-
-  React.useEffect(() => {
-    // Calculate approximate listening hours based on recent activity
-    // This is an estimate since Spotify doesn't provide total hours directly
-    const calculateListeningHours = async () => {
-      try {
-        const response = await fetch('/api/spotify?type=top');
-        const data = await response.json();
-        
-        // Rough estimate: assume average song is 3 minutes, multiply by typical plays
-        // This is a placeholder - you can adjust this logic
-        const estimatedHours = Math.floor(Math.random() * 500) + 200; // Random for now
-        setListeningHours(estimatedHours);
-      } catch (error) {
-        console.error('Error calculating hours:', error);
-      }
-    };
-
-    calculateListeningHours();
-  }, []);
+  const minutesListened = 77627;
 
   return (
     <Layout>
@@ -50,37 +30,65 @@ const Music: React.FC = () => {
             what i'm listening to
           </h1>
 
-          {/* Stats Cards */}
+          {/* Stats Card */}
           <div style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-            gap: '24px',
+            display: 'flex',
+            justifyContent: 'center',
             marginBottom: '3rem',
           }}>
             <div style={{
-              background: 'rgba(20, 20, 20, 0.6)',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              borderRadius: '16px',
-              padding: '32px',
+              background: 'linear-gradient(135deg, rgba(29, 185, 84, 0.1) 0%, rgba(30, 215, 96, 0.05) 100%)',
+              border: '2px solid rgba(29, 185, 84, 0.3)',
+              borderRadius: '20px',
+              padding: '40px 60px',
               textAlign: 'center',
+              boxShadow: '0 10px 40px rgba(29, 185, 84, 0.2)',
+              position: 'relative',
+              overflow: 'hidden',
             }}>
-              <h3 style={{
-                fontSize: '0.9rem',
-                color: 'rgba(255, 255, 255, 0.6)',
-                marginBottom: '12px',
-                textTransform: 'lowercase',
-                letterSpacing: '1px',
-              }}>
-                hours spent this year
-              </h3>
-              <p style={{
-                fontSize: '3rem',
-                fontWeight: '700',
-                color: '#1DB954',
-                margin: 0,
-              }}>
-                {listeningHours !== null ? listeningHours.toLocaleString() : '...'}<span style={{ fontSize: '1.5rem', color: 'rgba(255, 255, 255, 0.5)' }}>h</span>
-              </p>
+              {/* Decorative background elements */}
+              <div style={{
+                position: 'absolute',
+                top: '-50%',
+                right: '-50%',
+                width: '200%',
+                height: '200%',
+                background: 'radial-gradient(circle, rgba(29, 185, 84, 0.1) 0%, transparent 70%)',
+                pointerEvents: 'none',
+              }} />
+              
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <p style={{
+                  fontSize: '0.95rem',
+                  color: 'rgba(255, 255, 255, 0.6)',
+                  marginBottom: '16px',
+                  textTransform: 'uppercase',
+                  letterSpacing: '2px',
+                  fontWeight: '600',
+                }}>
+                  Total Minutes Listened This Year
+                </p>
+                <p style={{
+                  fontSize: '4rem',
+                  fontWeight: '800',
+                  background: 'linear-gradient(135deg, #1DB954 0%, #1ed760 100%)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent',
+                  margin: 0,
+                  lineHeight: 1,
+                  letterSpacing: '-2px',
+                }}>
+                  {minutesListened.toLocaleString()}
+                </p>
+                <p style={{
+                  fontSize: '0.9rem',
+                  color: 'rgba(29, 185, 84, 0.8)',
+                  marginTop: '12px',
+                  fontWeight: '500',
+                }}>
+                  that's {Math.floor(minutesListened / 60).toLocaleString()} hours of pure vibes 🎵
+                </p>
+              </div>
             </div>
           </div>
           
