@@ -11,7 +11,7 @@ const Music: React.FC = () => {
         minHeight: '100vh',
         background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
         padding: '2rem',
-        fontFamily: '"Times New Roman", Times, serif',
+        fontFamily: 'system-ui, -apple-system, sans-serif',
       }}>
         <div style={{
           maxWidth: '1400px',
