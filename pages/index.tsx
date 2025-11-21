@@ -1662,7 +1662,7 @@ const Home: React.FC = () => {
                 marginBottom: '24px',
                 color: '#ffffff'
               }}>
-                Fun Facts About Me 😝
+                Fun Facts About Me
               </h2>
               <p style={{ 
                 fontSize: '1.6rem', 
