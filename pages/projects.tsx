@@ -1390,7 +1390,7 @@ const ProjectsPage: React.FC = () => {
                   letterSpacing: '0.02em',
                   textShadow: '0 6px 22px rgba(72, 164, 255, 0.25)'
                 }}>
-                  If you get bored reading all this, just click the buttons below to take you to where you want to go.
+                  If you dont wanna read all this, just click the buttons below to take you to where you want to go.
                 </p>
                 <div style={{ 
                   position: 'relative',
