@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Layout from '../src/components/Layout';
 import Link from 'next/link';
-import SpotifyRecentlyPlayed from '../src/components/SpotifyRecentlyPlayed';
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -1866,9 +1865,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
-
-      {/* Spotify Recently Played Section */}
-      <SpotifyRecentlyPlayed />
     </Layout>
   );
 };
