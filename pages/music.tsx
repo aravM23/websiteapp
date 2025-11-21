@@ -40,12 +40,12 @@ const Music: React.FC = () => {
             marginTop: '4rem',
           }}>
             <div style={{
-              background: 'linear-gradient(135deg, rgba(29, 185, 84, 0.1) 0%, rgba(30, 215, 96, 0.05) 100%)',
-              border: '2px solid rgba(29, 185, 84, 0.3)',
-              borderRadius: '20px',
-              padding: '40px 60px',
+              background: 'linear-gradient(135deg, rgba(29, 185, 84, 0.15) 0%, rgba(30, 215, 96, 0.1) 100%)',
+              border: '2px solid rgba(29, 185, 84, 0.4)',
+              borderRadius: '24px',
+              padding: '48px 80px',
               textAlign: 'center',
-              boxShadow: '0 10px 40px rgba(29, 185, 84, 0.2)',
+              boxShadow: '0 20px 60px rgba(29, 185, 84, 0.3), 0 0 80px rgba(29, 185, 84, 0.1)',
               position: 'relative',
               overflow: 'hidden',
             }}>
@@ -56,30 +56,32 @@ const Music: React.FC = () => {
                 right: '-50%',
                 width: '200%',
                 height: '200%',
-                background: 'radial-gradient(circle, rgba(29, 185, 84, 0.1) 0%, transparent 70%)',
+                background: 'radial-gradient(circle, rgba(29, 185, 84, 0.15) 0%, transparent 70%)',
                 pointerEvents: 'none',
               }} />
               
               <div style={{ position: 'relative', zIndex: 1 }}>
                 <p style={{
-                  fontSize: '0.95rem',
-                  color: 'rgba(255, 255, 255, 0.6)',
-                  marginBottom: '16px',
+                  fontSize: '0.85rem',
+                  color: '#ffffff',
+                  marginBottom: '20px',
                   textTransform: 'uppercase',
-                  letterSpacing: '2px',
-                  fontWeight: '600',
+                  letterSpacing: '3px',
+                  fontWeight: '700',
+                  opacity: 0.9,
                 }}>
                   total minutes listening to spotify this year (im an addict)
                 </p>
                 <p style={{
-                  fontSize: '4rem',
-                  fontWeight: '800',
+                  fontSize: '5rem',
+                  fontWeight: '900',
                   background: 'linear-gradient(135deg, #1DB954 0%, #1ed760 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
                   margin: 0,
                   lineHeight: 1,
-                  letterSpacing: '-2px',
+                  letterSpacing: '-3px',
+                  textShadow: '0 0 40px rgba(29, 185, 84, 0.5)',
                 }}>
                   {minutesListened.toLocaleString()}
                 </p>
