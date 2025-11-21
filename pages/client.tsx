@@ -130,7 +130,7 @@ const Client: React.FC = () => {
                 textShadow: '0 2px 20px rgba(255, 255, 255, 0.1)',
               }}
             >
-              Awards & Recognition 🏆
+              Awards & Recognition
             </h1>
             <p
               style={{
@@ -249,7 +249,7 @@ const Client: React.FC = () => {
                 color: '#ffffff',
               }}
             >
-              Certifications 📜
+              Certifications
             </h2>
             <div
               style={{
@@ -333,7 +333,7 @@ const Client: React.FC = () => {
                 color: '#ffffff',
               }}
             >
-              Connect with me 🤝
+              connect with me (im cool)
             </h2>
             <div
               style={{
