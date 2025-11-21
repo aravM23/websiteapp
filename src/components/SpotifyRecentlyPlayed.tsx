@@ -11,18 +11,31 @@ interface Track {
 
 const SpotifyRecentlyPlayed: React.FC = () => {
   const [tracks, setTracks] = useState<Track[]>([]);
+  const [topTracks, setTopTracks] = useState<Track[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    const fetchRecentlyPlayed = async () => {
+    const fetchSpotifyData = async () => {
       try {
-        const response = await fetch('/api/spotify');
-        const data = await response.json();
+        // Fetch recently played
+        const recentResponse = await fetch('/api/spotify');
+        const recentData = await recentResponse.json();
         
-        if (data.tracks && data.tracks.length > 0) {
-          setTracks(data.tracks);
-        } else {
+        // Fetch top tracks
+        const topResponse = await fetch('/api/spotify?type=top');
+        const topData = await topResponse.json();
+        
+        if (recentData.tracks && recentData.tracks.length > 0) {
+          setTracks(recentData.tracks);
+        }
+        
+        if (topData.tracks && topData.tracks.length > 0) {
+          setTopTracks(topData.tracks);
+        }
+        
+        if ((!recentData.tracks || recentData.tracks.length === 0) && 
+            (!topData.tracks || topData.tracks.length === 0)) {
           setError(true);
         }
       } catch (err) {
@@ -33,7 +46,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
       }
     };
 
-    fetchRecentlyPlayed();
+    fetchSpotifyData();
   }, []);
 
   if (loading) {
@@ -199,6 +212,126 @@ const SpotifyRecentlyPlayed: React.FC = () => {
             </a>
           ))}
         </div>
+
+        {/* Top Tracks Section */}
+        {topTracks.length > 0 && (
+          <>
+            <h2 style={{
+              fontSize: 'clamp(2rem, 5vw, 2.5rem)',
+              fontWeight: '800',
+              color: '#ffffff',
+              marginBottom: '48px',
+              marginTop: '80px',
+              textAlign: 'center',
+              letterSpacing: '-0.02em',
+              textTransform: 'lowercase',
+            }}>
+              top of the month
+            </h2>
+
+            <div style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '12px'
+            }}>
+              {topTracks.map((track, index) => (
+                <a
+                  key={`${track.songUrl}-${index}`}
+                  href={track.songUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '16px',
+                    padding: '16px 20px',
+                    backgroundColor: 'rgba(20, 20, 20, 0.6)',
+                    borderRadius: '8px',
+                    border: '1px solid rgba(255, 215, 0, 0.2)',
+                    textDecoration: 'none',
+                    transition: 'all 0.3s ease',
+                    animation: `fadeInUp 0.6s ease ${index * 0.1}s both`,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.transform = 'translateX(4px)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 215, 0, 0.5)';
+                    e.currentTarget.style.backgroundColor = 'rgba(30, 20, 20, 0.7)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.transform = 'translateX(0)';
+                    e.currentTarget.style.borderColor = 'rgba(255, 215, 0, 0.2)';
+                    e.currentTarget.style.backgroundColor = 'rgba(20, 20, 20, 0.6)';
+                  }}
+                >
+                  <div style={{
+                    fontSize: '1.2rem',
+                    fontWeight: '700',
+                    color: '#FFD700',
+                    minWidth: '32px',
+                    textAlign: 'center'
+                  }}>
+                    {index + 1}
+                  </div>
+                  
+                  {track.albumImageUrl && (
+                    <img
+                      src={track.albumImageUrl}
+                      alt={`${track.album} cover`}
+                      style={{
+                        width: '60px',
+                        height: '60px',
+                        borderRadius: '6px',
+                        objectFit: 'cover',
+                        flexShrink: 0,
+                        boxShadow: '0 4px 12px rgba(255, 215, 0, 0.2)'
+                      }}
+                    />
+                  )}
+                  
+                  <div style={{
+                    flex: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    minWidth: 0
+                  }}>
+                    <h3 style={{
+                      fontSize: '1.05rem',
+                      fontWeight: '600',
+                      color: '#ffffff',
+                      margin: '0 0 4px 0',
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      whiteSpace: 'nowrap'
+                    }}>
+                      {track.title}
+                    </h3>
+                    <p style={{
+                      fontSize: '0.9rem',
+                      color: '#b0b0b0',
+                      margin: 0,
+                      overflow: 'hidden',
+                      textOverflow: 'ellipsis',
+                      whiteSpace: 'nowrap'
+                    }}>
+                      {track.artist}
+                    </p>
+                  </div>
+                  
+                  <div style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    color: 'rgba(255, 215, 0, 0.8)',
+                    fontSize: '20px',
+                    paddingRight: '8px'
+                  }}>
+                    ▶
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
 
         <div style={{
           marginTop: '40px',

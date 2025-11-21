@@ -7,6 +7,7 @@ const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
 const basic = Buffer.from(`${client_id}:${client_secret}`).toString('base64');
 const NOW_PLAYING_ENDPOINT = 'https://api.spotify.com/v1/me/player/currently-playing';
 const RECENTLY_PLAYED_ENDPOINT = 'https://api.spotify.com/v1/me/player/recently-played?limit=5';
+const TOP_TRACKS_ENDPOINT = 'https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5';
 const TOKEN_ENDPOINT = 'https://accounts.spotify.com/api/token';
 
 const getAccessToken = async () => {
@@ -35,11 +36,50 @@ export const getRecentlyPlayed = async () => {
   });
 };
 
+export const getTopTracks = async () => {
+  const { access_token } = await getAccessToken();
+
+  return fetch(TOP_TRACKS_ENDPOINT, {
+    headers: {
+      Authorization: `Bearer ${access_token}`,
+    },
+  });
+};
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
   try {
+    const { type } = req.query;
+
+    // Handle top tracks request
+    if (type === 'top') {
+      const response = await getTopTracks();
+      
+      if (response.status === 204 || response.status > 400) {
+        return res.status(200).json({ tracks: [] });
+      }
+
+      const data = await response.json();
+
+      if (!data.items || data.items.length === 0) {
+        return res.status(200).json({ tracks: [] });
+      }
+
+      const tracks = data.items.map((item: any) => ({
+        title: item.name,
+        artist: item.artists.map((artist: any) => artist.name).join(', '),
+        album: item.album.name,
+        albumImageUrl: item.album.images[0]?.url || '',
+        songUrl: item.external_urls.spotify,
+      }));
+
+      res.setHeader('Cache-Control', 'public, s-maxage=300, stale-while-revalidate=60');
+      return res.status(200).json({ tracks });
+    }
+
+    // Default: recently played
     const response = await getRecentlyPlayed();
 
     if (response.status === 204 || response.status > 400) {
