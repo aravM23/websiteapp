@@ -132,35 +132,6 @@ const Header: React.FC = () => {
             >
               What I'm Listening To
             </Link>
-
-            <Link 
-              href="/contact" 
-              style={{
-                color: '#ffffff',
-                textDecoration: 'none',
-                padding: '0.65rem 1.25rem',
-                borderRadius: '6px',
-                background: 'transparent',
-                border: '2px solid rgba(255, 255, 255, 0.2)',
-                fontSize: '0.9rem',
-                fontWeight: '500',
-                transition: 'all 0.3s ease',
-                letterSpacing: '0.3px',
-                fontFamily: '"Times New Roman", Times, serif',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = 'rgba(255, 255, 255, 0.05)';
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.4)';
-                e.currentTarget.style.transform = 'translateY(-1px)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = 'transparent';
-                e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.2)';
-                e.currentTarget.style.transform = 'translateY(0)';
-              }}
-            >
-              Contact Me
-            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -256,26 +227,6 @@ const Header: React.FC = () => {
               }}
             >
               What I'm Listening To
-            </Link>
-
-            <Link 
-              href="/contact"
-              onClick={() => setMenuOpen(false)}
-              style={{
-                color: '#ffffff',
-                textDecoration: 'none',
-                padding: '0.75rem 1rem',
-                borderRadius: '6px',
-                background: 'transparent',
-                border: '2px solid rgba(255, 255, 255, 0.2)',
-                fontSize: '0.95rem',
-                fontWeight: '500',
-                textAlign: 'center',
-                transition: 'all 0.3s ease',
-                fontFamily: '"Times New Roman", Times, serif',
-              }}
-            >
-              Contact Me
             </Link>
           </div>
         )}
