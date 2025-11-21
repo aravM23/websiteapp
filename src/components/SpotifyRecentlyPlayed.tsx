@@ -226,7 +226,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
               letterSpacing: '-0.02em',
               textTransform: 'lowercase',
             }}>
-              top of the month
+              top songs of the month
             </h2>
 
             <div style={{
