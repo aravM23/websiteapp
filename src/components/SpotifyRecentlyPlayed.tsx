@@ -338,7 +338,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
           textAlign: 'center'
         }}>
           <a
-            href="https://open.spotify.com/user/31rw3qvivmvp4jbx7fmbfkcxe3na"
+            href="https://open.spotify.com/user/h85k4crnf27w61e7wynzb6iti"
             target="_blank"
             rel="noopener noreferrer"
             style={{
