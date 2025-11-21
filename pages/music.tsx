@@ -29,12 +29,14 @@ const Music: React.FC = () => {
           }}>
             what i'm listening to
           </h1>
+          
+          <SpotifyRecentlyPlayed />
 
-          {/* Stats Card */}
+          {/* Stats Card - Moved to bottom */}
           <div style={{
             display: 'flex',
             justifyContent: 'center',
-            marginBottom: '3rem',
+            marginTop: '4rem',
           }}>
             <div style={{
               background: 'linear-gradient(135deg, rgba(29, 185, 84, 0.1) 0%, rgba(30, 215, 96, 0.05) 100%)',
@@ -66,7 +68,7 @@ const Music: React.FC = () => {
                   letterSpacing: '2px',
                   fontWeight: '600',
                 }}>
-                  Total Minutes Listened This Year
+                  total minutes listening to spotify this year (im an addict)
                 </p>
                 <p style={{
                   fontSize: '4rem',
@@ -80,19 +82,9 @@ const Music: React.FC = () => {
                 }}>
                   {minutesListened.toLocaleString()}
                 </p>
-                <p style={{
-                  fontSize: '0.9rem',
-                  color: 'rgba(29, 185, 84, 0.8)',
-                  marginTop: '12px',
-                  fontWeight: '500',
-                }}>
-                  that's {Math.floor(minutesListened / 60).toLocaleString()} hours of pure vibes 🎵
-                </p>
               </div>
             </div>
           </div>
-          
-          <SpotifyRecentlyPlayed />
         </div>
       </div>
     </Layout>
