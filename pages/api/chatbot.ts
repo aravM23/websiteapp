@@ -27,6 +27,7 @@ const knowledgeBase = {
     latest: 'GRAYPASS - a passwordless authentication engine that uses cognitive and behavioral signals to verify identity',
     student: 'First-year CS student at Waterloo',
     research: 'Researching the online shopping space for next project idea',
+    spotify: 'Live Spotify tracker showing recently played tracks on the website at /music',
   },
   experience: [
     {
@@ -290,6 +291,11 @@ Ask me about any specific project for details! 💻🚀`;
     return `Here's a fun fact about Arav: ${randomFact} 🎉\n\nWant to know more? Ask me another question!`;
   }
 
+  // Spotify queries
+  if (q.includes('spotify') || q.includes('music') || q.includes('listening') || q.includes('songs') || q.includes('tracks')) {
+    return `Arav has a live Spotify tracker on his website! 🎵 You can see what he's been listening to recently by visiting the /music page (or click "What I'm Listening To" in the navbar). It's a cool leaderboard-style display showing his recently played tracks from Spotify. Check it out to see what music he's vibing to! 🎧`;
+  }
+
   // Funding queries
   if (q.includes('funding') || q.includes('money') || q.includes('investment')) {
     return `Arav secured $26,000 in funding from Microsoft for his tourist safety startup TurtleShell, plus additional support from the Government of Canada. He also raised $15,000 through his nonprofit Positive Powers. Pretty impressive for an 18-year-old! 💰🚀`;
@@ -303,6 +309,7 @@ Try asking me about:
 💼 **Work**: Aview (internship), BenchSci, IKEA, NASA, Positive Powers
 🎓 **Education**: Waterloo, Computer Science
 🏆 **Achievements**: Hackathons, Microsoft funding, publications
+🎵 **Music**: Spotify tracker, what Arav is listening to
 📧 **Contact**: Email, LinkedIn, Twitter
 
 Or contact Arav directly at ${knowledgeBase.personal.contact.email}!`;
