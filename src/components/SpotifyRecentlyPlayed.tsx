@@ -90,21 +90,13 @@ const SpotifyRecentlyPlayed: React.FC = () => {
           fontSize: 'clamp(2rem, 5vw, 2.5rem)',
           fontWeight: '800',
           color: '#ffffff',
-          marginBottom: '16px',
+          marginBottom: '48px',
           textAlign: 'center',
           letterSpacing: '-0.02em',
           textTransform: 'lowercase',
         }}>
-          recently played
+          my top tracks
         </h2>
-        <p style={{
-          textAlign: 'center',
-          color: '#b0b0b0',
-          fontSize: '1.1rem',
-          marginBottom: '48px'
-        }}>
-          tunes i like
-        </p>
 
         <div style={{
           display: 'flex',

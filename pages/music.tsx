@@ -18,25 +18,15 @@ const Music: React.FC = () => {
           <h1 style={{
             fontSize: '3rem',
             fontWeight: '700',
-            marginBottom: '1rem',
+            marginBottom: '3rem',
             background: 'linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%)',
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent',
             textAlign: 'center',
             textTransform: 'lowercase',
           }}>
-            music im currently listening to
+            what i'm listening to
           </h1>
-          <p style={{
-            fontSize: '1.2rem',
-            color: 'rgba(255, 255, 255, 0.7)',
-            textAlign: 'center',
-            marginBottom: '3rem',
-            maxWidth: '600px',
-            margin: '0 auto 3rem',
-          }}>
-            tunes i like
-          </p>
           
           <SpotifyRecentlyPlayed />
         </div>

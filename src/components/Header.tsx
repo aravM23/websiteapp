@@ -130,7 +130,7 @@ const Header: React.FC = () => {
                 e.currentTarget.style.transform = 'translateY(0)';
               }}
             >
-              Music I'm Listening To
+              What I'm Listening To
             </Link>
 
             <Link 
@@ -255,7 +255,7 @@ const Header: React.FC = () => {
                 fontFamily: '"Times New Roman", Times, serif',
               }}
             >
-              Music I'm Listening To
+              What I'm Listening To
             </Link>
 
             <Link 
