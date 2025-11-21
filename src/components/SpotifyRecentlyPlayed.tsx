@@ -95,7 +95,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
           letterSpacing: '-0.02em',
           textTransform: 'lowercase',
         }}>
-          my top tracks
+          live spotify tracker lol
         </h2>
 
         <div style={{
