@@ -97,7 +97,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
   }
 
   return (
-    <section style={{ padding: '80px 20px', backgroundColor: '#0a0a0a' }}>
+    <section style={{ padding: '80px 20px', backgroundColor: '#0a0a0a', fontFamily: '"Times New Roman", Times, serif' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <h2 style={{
           fontSize: 'clamp(2rem, 5vw, 2.5rem)',
