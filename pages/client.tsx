@@ -380,61 +380,6 @@ const Client: React.FC = () => {
               ))}
             </div>
           </div>
-
-          {/* CTA Section */}
-          <div
-            style={{
-              background: 'rgba(20, 20, 20, 0.6)',
-              borderRadius: '20px',
-              padding: '60px 40px',
-              border: '1px solid rgba(255, 255, 255, 0.1)',
-              textAlign: 'center',
-            }}
-          >
-            <h2
-              style={{
-                fontSize: '2.5rem',
-                fontWeight: '800',
-                marginBottom: '16px',
-                color: '#ffffff',
-              }}
-            >
-              Let's work together 💪
-            </h2>
-            <p
-              style={{
-                fontSize: '1.1rem',
-                marginBottom: '32px',
-                color: '#b0b0b0',
-              }}
-            >
-              Want to build something amazing? Let's chat!
-            </p>
-            <Link
-              href="/contact"
-              style={{
-                backgroundColor: '#42a5f5',
-                color: 'white',
-                padding: '16px 40px',
-                borderRadius: '12px',
-                fontWeight: '700',
-                textDecoration: 'none',
-                display: 'inline-block',
-                fontSize: '1.1rem',
-                transition: 'all 0.3s ease',
-              }}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 10px 30px rgba(66, 165, 245, 0.4)';
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = 'none';
-              }}
-            >
-              GET IN TOUCH
-            </Link>
-          </div>
         </div>
       </section>
 
