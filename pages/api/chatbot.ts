@@ -4,6 +4,23 @@ type ResponseData = {
   answer: string;
 };
 
+// Helper function to fetch Spotify data
+async function fetchSpotifyData(type: 'recent' | 'top' = 'recent') {
+  try {
+    const baseUrl = process.env.VERCEL_URL 
+      ? `https://${process.env.VERCEL_URL}` 
+      : 'http://localhost:3000';
+    const endpoint = type === 'top' ? `${baseUrl}/api/spotify?type=top` : `${baseUrl}/api/spotify`;
+    
+    const response = await fetch(endpoint);
+    const data = await response.json();
+    return data.tracks || [];
+  } catch (error) {
+    console.error('Error fetching Spotify data:', error);
+    return [];
+  }
+}
+
 // Knowledge base extracted from the website content
 const knowledgeBase = {
   personal: {
@@ -166,8 +183,47 @@ const knowledgeBase = {
   ],
 };
 
-function searchKnowledgeBase(question: string): string {
+function searchKnowledgeBase(question: string): string | Promise<string> {
   const q = question.toLowerCase();
+
+  // Spotify queries - TOP SONGS
+  if (q.includes('top song') || q.includes('favorite song') || q.includes('top track') || q.includes('best song') || (q.includes('what') && q.includes('arav') && (q.includes('top') || q.includes('favorite')) && q.includes('song'))) {
+    return fetchSpotifyData('top').then(tracks => {
+      if (tracks.length === 0) {
+        return `I couldn't fetch Arav's top songs right now, but you can check them out on the /music page! 🎵`;
+      }
+      const topSongs = tracks.slice(0, 5).map((track: any, idx: number) => 
+        `${idx + 1}. "${track.title}" by ${track.artist}`
+      ).join('\n');
+      return `Here are Arav's top songs of the month! 🎵🔥\n\n${topSongs}\n\nThese are bangers! Check out the full list at /music 🎧`;
+    });
+  }
+
+  // Spotify queries - RECENTLY PLAYED
+  if (q.includes('recently played') || q.includes('recently listening') || q.includes('just listened') || q.includes('last played') || (q.includes('what') && q.includes('listening') && (q.includes('now') || q.includes('recently')))) {
+    return fetchSpotifyData('recent').then(tracks => {
+      if (tracks.length === 0) {
+        return `I couldn't fetch Arav's recently played tracks right now, but you can check them out on the /music page! 🎵`;
+      }
+      const recentTracks = tracks.slice(0, 5).map((track: any, idx: number) => 
+        `${idx + 1}. "${track.title}" by ${track.artist}`
+      ).join('\n');
+      return `Here's what Arav has been jamming to recently! 🎧\n\n${recentTracks}\n\nLive tracker available at /music 🎵`;
+    });
+  }
+
+  // Spotify queries - HOURS/MINUTES LISTENED
+  if (q.includes('hours listen') || q.includes('minutes listen') || q.includes('how much') || q.includes('how long') || q.includes('time listen') || q.includes('listening time')) {
+    const minutes = 77627;
+    const hours = Math.floor(minutes / 60);
+    const days = Math.floor(hours / 24);
+    return `Arav has listened to a total of ${minutes.toLocaleString()} minutes (that's ${hours.toLocaleString()} hours or ${days} days!) of Spotify this year! 🎵\n\nYeah... he's an addict. 😅 Check out the stats on /music! 🎧`;
+  }
+
+  // Spotify queries - GENERAL
+  if (q.includes('spotify') || q.includes('music') || (q.includes('listening') && !q.includes('hours') && !q.includes('minutes')) || q.includes('songs') || q.includes('tracks')) {
+    return `Arav has a live Spotify tracker on his website! 🎵 You can see:\n\n🎧 Recently played tracks (updated live!)\n🔥 Top songs of the month\n⏱️ Total listening time: 77,627 minutes this year (that's 1,294 hours!)\n\nVisit /music or click "What I'm Listening To" in the navbar to see what he's vibing to! Want specifics? Ask me about his "top songs" or "recently played" tracks! 🎶`;
+  }
 
   // Personal info queries
   if (q.includes('who is') || q.includes('who are') || q.includes('tell me about arav')) {
@@ -291,11 +347,6 @@ Ask me about any specific project for details! 💻🚀`;
     return `Here's a fun fact about Arav: ${randomFact} 🎉\n\nWant to know more? Ask me another question!`;
   }
 
-  // Spotify queries
-  if (q.includes('spotify') || q.includes('music') || q.includes('listening') || q.includes('songs') || q.includes('tracks')) {
-    return `Arav has a live Spotify tracker on his website! 🎵 You can see what he's been listening to recently by visiting the /music page (or click "What I'm Listening To" in the navbar). It's a cool leaderboard-style display showing his recently played tracks from Spotify. Check it out to see what music he's vibing to! 🎧`;
-  }
-
   // Funding queries
   if (q.includes('funding') || q.includes('money') || q.includes('investment')) {
     return `Arav secured $26,000 in funding from Microsoft for his tourist safety startup TurtleShell, plus additional support from the Government of Canada. He also raised $15,000 through his nonprofit Positive Powers. Pretty impressive for an 18-year-old! 💰🚀`;
@@ -315,7 +366,7 @@ Try asking me about:
 Or contact Arav directly at ${knowledgeBase.personal.contact.email}!`;
 }
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseData>
 ) {
@@ -330,7 +381,7 @@ export default function handler(
       return res.status(400).json({ answer: 'Please provide a valid question.' });
     }
 
-    const answer = searchKnowledgeBase(question);
+    const answer = await searchKnowledgeBase(question);
 
     return res.status(200).json({ answer });
   } catch (error) {
