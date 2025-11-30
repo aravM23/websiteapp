@@ -106,7 +106,7 @@ const Client: React.FC = () => {
         style={{
           backgroundColor: '#0a0a0a',
           color: '#ffffff',
-          padding: '120px 24px 80px',
+          padding: 'clamp(80px, 15vw, 120px) clamp(16px, 4vw, 24px) clamp(48px, 10vw, 80px)',
           minHeight: '100vh',
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
         }}
@@ -116,13 +116,13 @@ const Client: React.FC = () => {
           <div
             style={{
               textAlign: 'center',
-              marginBottom: '80px',
+              marginBottom: 'clamp(40px, 10vw, 80px)',
               position: 'relative',
             }}
           >
             <h1
               style={{
-                fontSize: '3.5rem',
+                fontSize: 'clamp(2rem, 6vw, 3.5rem)',
                 fontWeight: '800',
                 margin: '0 0 20px 0',
                 letterSpacing: '-1px',
@@ -136,9 +136,10 @@ const Client: React.FC = () => {
               style={{
                 color: '#b0b0b0',
                 maxWidth: '600px',
-                fontSize: '1.1rem',
+                fontSize: 'clamp(0.95rem, 3vw, 1.1rem)',
                 lineHeight: 1.6,
                 margin: '0 auto',
+                padding: '0 16px',
               }}
             >
               Here's some recognition that my work is getting
@@ -149,9 +150,9 @@ const Client: React.FC = () => {
           <div
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-              gap: '24px',
-              marginBottom: '100px',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))',
+              gap: 'clamp(16px, 4vw, 24px)',
+              marginBottom: 'clamp(60px, 12vw, 100px)',
             }}
           >
             {awards.map((award, index) => (
@@ -161,7 +162,7 @@ const Client: React.FC = () => {
                   background: 'rgba(20, 20, 20, 0.6)',
                   border: '1px solid rgba(255, 255, 255, 0.1)',
                   borderRadius: '16px',
-                  padding: '32px',
+                  padding: 'clamp(20px, 5vw, 32px)',
                   position: 'relative',
                   overflow: 'hidden',
                   transition: 'all 0.3s ease',
@@ -182,13 +183,13 @@ const Client: React.FC = () => {
                 {/* Icon */}
                 <div
                   style={{
-                    fontSize: '3rem',
-                    marginBottom: '20px',
+                    fontSize: 'clamp(2rem, 6vw, 3rem)',
+                    marginBottom: 'clamp(12px, 4vw, 20px)',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    width: '80px',
-                    height: '80px',
+                    width: 'clamp(60px, 15vw, 80px)',
+                    height: 'clamp(60px, 15vw, 80px)',
                     background: 'rgba(255, 255, 255, 0.05)',
                     borderRadius: '16px',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -200,9 +201,9 @@ const Client: React.FC = () => {
                 {/* Title */}
                 <h2
                   style={{
-                    fontSize: '1.4rem',
+                    fontSize: 'clamp(1.1rem, 4vw, 1.4rem)',
                     fontWeight: '700',
-                    marginBottom: '16px',
+                    marginBottom: 'clamp(10px, 3vw, 16px)',
                     color: '#ffffff',
                     lineHeight: 1.3,
                   }}
@@ -214,7 +215,7 @@ const Client: React.FC = () => {
                 <p
                   style={{
                     color: '#b0b0b0',
-                    fontSize: '0.95rem',
+                    fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)',
                     lineHeight: 1.7,
                     margin: 0,
                   }}
@@ -239,12 +240,12 @@ const Client: React.FC = () => {
           </div>
 
           {/* Certifications Section */}
-          <div style={{ marginBottom: '100px' }}>
+          <div style={{ marginBottom: 'clamp(60px, 12vw, 100px)' }}>
             <h2
               style={{
-                fontSize: '2.5rem',
+                fontSize: 'clamp(1.8rem, 5vw, 2.5rem)',
                 fontWeight: '800',
-                marginBottom: '48px',
+                marginBottom: 'clamp(24px, 6vw, 48px)',
                 textAlign: 'center',
                 color: '#ffffff',
               }}
@@ -254,8 +255,8 @@ const Client: React.FC = () => {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '24px',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(280px, 100%), 1fr))',
+                gap: 'clamp(16px, 4vw, 24px)',
               }}
             >
               {certifications.map((cert, index) => (
@@ -265,7 +266,7 @@ const Client: React.FC = () => {
                     background: 'rgba(20, 20, 20, 0.6)',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                     borderRadius: '16px',
-                    padding: '32px',
+                    padding: 'clamp(20px, 5vw, 32px)',
                     transition: 'all 0.3s ease',
                     animation: `fadeInUp 0.6s ease ${index * 0.1 + 0.4}s both`,
                   }}
@@ -282,10 +283,10 @@ const Client: React.FC = () => {
                 >
                   <h3
                     style={{
-                      fontSize: '1.3rem',
+                      fontSize: 'clamp(1.1rem, 3.5vw, 1.3rem)',
                       fontWeight: '700',
                       color: '#ffffff',
-                      marginBottom: '16px',
+                      marginBottom: 'clamp(10px, 3vw, 16px)',
                       lineHeight: 1.3,
                     }}
                   >
@@ -297,7 +298,7 @@ const Client: React.FC = () => {
                       flexDirection: 'column',
                       gap: '8px',
                       color: '#b0b0b0',
-                      fontSize: '0.95rem',
+                      fontSize: 'clamp(0.85rem, 2.5vw, 0.95rem)',
                     }}
                   >
                     <span>
@@ -323,12 +324,12 @@ const Client: React.FC = () => {
           </div>
 
           {/* Social Links */}
-          <div style={{ marginBottom: '100px' }}>
+          <div style={{ marginBottom: 'clamp(40px, 10vw, 100px)' }}>
             <h2
               style={{
-                fontSize: '2.5rem',
+                fontSize: 'clamp(1.8rem, 5vw, 2.5rem)',
                 fontWeight: '800',
-                marginBottom: '48px',
+                marginBottom: 'clamp(24px, 6vw, 48px)',
                 textAlign: 'center',
                 color: '#ffffff',
               }}
@@ -339,7 +340,7 @@ const Client: React.FC = () => {
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '20px',
+                gap: 'clamp(12px, 3vw, 20px)',
                 justifyContent: 'center',
               }}
             >
@@ -352,13 +353,14 @@ const Client: React.FC = () => {
                   style={{
                     display: 'inline-flex',
                     alignItems: 'center',
-                    gap: '12px',
-                    padding: '16px 32px',
+                    gap: 'clamp(8px, 2vw, 12px)',
+                    padding: 'clamp(12px, 3vw, 16px) clamp(20px, 5vw, 32px)',
                     borderRadius: '12px',
                     background: 'rgba(20, 20, 20, 0.6)',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                     color: '#ffffff',
                     fontWeight: '600',
+                    fontSize: 'clamp(0.85rem, 2.5vw, 1rem)',
                     textDecoration: 'none',
                     transition: 'all 0.3s ease',
                     animation: `fadeInUp 0.6s ease ${index * 0.1 + 0.8}s both`,

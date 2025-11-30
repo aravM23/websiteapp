@@ -176,3 +176,47 @@ html {
   scrollbar-width: none;
   scrollbar-color: #333 #0a0a0a;
 }
+
+/* Mobile-first responsive improvements */
+@media (max-width: 768px) {
+  /* Better touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  /* Improve text readability */
+  body {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+  
+  /* Prevent horizontal scroll */
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  
+  /* Better spacing for mobile */
+  section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Extra small screens */
+  html, body {
+    font-size: 14px;
+  }
+  
+  /* Ensure nothing overflows */
+  * {
+    max-width: 100vw;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -14,7 +14,7 @@ const Header: React.FC = () => {
         zIndex: 1000,
         background: '#0a0a0a',
         borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-        padding: '1rem 2rem',
+        padding: '0.75rem 1rem',
       }}>
         <nav style={{
           maxWidth: '1400px',
@@ -26,7 +26,7 @@ const Header: React.FC = () => {
           <Link 
             href="/" 
             style={{
-              fontSize: '1.5rem',
+              fontSize: 'clamp(1.1rem, 4vw, 1.5rem)',
               fontWeight: '700',
               color: '#ffffff',
               textDecoration: 'none',

@@ -97,13 +97,13 @@ const SpotifyRecentlyPlayed: React.FC = () => {
   }
 
   return (
-    <section style={{ padding: '80px 20px', backgroundColor: '#0a0a0a', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
+    <section style={{ padding: 'clamp(40px, 8vw, 80px) clamp(12px, 4vw, 20px)', backgroundColor: '#0a0a0a', fontFamily: 'system-ui, -apple-system, sans-serif' }}>
       <div style={{ maxWidth: '800px', margin: '0 auto' }}>
         <h2 style={{
-          fontSize: 'clamp(2rem, 5vw, 2.5rem)',
+          fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
           fontWeight: '800',
           color: '#ffffff',
-          marginBottom: '48px',
+          marginBottom: 'clamp(24px, 5vw, 48px)',
           textAlign: 'center',
           letterSpacing: '-0.02em',
           textTransform: 'lowercase',
@@ -114,7 +114,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
         <div style={{
           display: 'flex',
           flexDirection: 'column',
-          gap: '12px'
+          gap: '10px'
         }}>
           {tracks.map((track, index) => (
             <a
@@ -125,8 +125,8 @@ const SpotifyRecentlyPlayed: React.FC = () => {
               style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '16px',
-                padding: '16px 20px',
+                gap: 'clamp(10px, 3vw, 16px)',
+                padding: 'clamp(12px, 3vw, 16px) clamp(12px, 3vw, 20px)',
                 backgroundColor: 'rgba(20, 20, 20, 0.6)',
                 borderRadius: '8px',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
@@ -146,10 +146,10 @@ const SpotifyRecentlyPlayed: React.FC = () => {
               }}
             >
               <div style={{
-                fontSize: '1.2rem',
+                fontSize: 'clamp(1rem, 3vw, 1.2rem)',
                 fontWeight: '700',
                 color: '#888888',
-                minWidth: '32px',
+                minWidth: 'clamp(24px, 5vw, 32px)',
                 textAlign: 'center'
               }}>
                 {index + 1}
@@ -160,8 +160,8 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                   src={track.albumImageUrl}
                   alt={`${track.album} cover`}
                   style={{
-                    width: '60px',
-                    height: '60px',
+                    width: 'clamp(48px, 12vw, 60px)',
+                    height: 'clamp(48px, 12vw, 60px)',
                     borderRadius: '6px',
                     objectFit: 'cover',
                     flexShrink: 0,
@@ -178,7 +178,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                 minWidth: 0
               }}>
                 <h3 style={{
-                  fontSize: '1.05rem',
+                  fontSize: 'clamp(0.9rem, 3vw, 1.05rem)',
                   fontWeight: '600',
                   color: '#ffffff',
                   margin: '0 0 4px 0',
@@ -189,7 +189,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                   {track.title}
                 </h3>
                 <p style={{
-                  fontSize: '0.9rem',
+                  fontSize: 'clamp(0.75rem, 2.5vw, 0.9rem)',
                   color: '#b0b0b0',
                   margin: 0,
                   overflow: 'hidden',
@@ -204,8 +204,8 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                 display: 'flex',
                 alignItems: 'center',
                 color: 'rgba(30, 215, 96, 0.8)',
-                fontSize: '20px',
-                paddingRight: '8px'
+                fontSize: 'clamp(16px, 4vw, 20px)',
+                paddingRight: 'clamp(4px, 2vw, 8px)'
               }}>
                 ▶
               </div>
@@ -217,11 +217,11 @@ const SpotifyRecentlyPlayed: React.FC = () => {
         {topTracks.length > 0 && (
           <>
             <h2 style={{
-              fontSize: 'clamp(2rem, 5vw, 2.5rem)',
+              fontSize: 'clamp(1.5rem, 5vw, 2.5rem)',
               fontWeight: '800',
               color: '#ffffff',
-              marginBottom: '48px',
-              marginTop: '80px',
+              marginBottom: 'clamp(24px, 5vw, 48px)',
+              marginTop: 'clamp(48px, 8vw, 80px)',
               textAlign: 'center',
               letterSpacing: '-0.02em',
               textTransform: 'lowercase',
@@ -232,7 +232,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
             <div style={{
               display: 'flex',
               flexDirection: 'column',
-              gap: '12px'
+              gap: '10px'
             }}>
               {topTracks.map((track, index) => (
                 <a
@@ -243,8 +243,8 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                   style={{
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '16px',
-                    padding: '16px 20px',
+                    gap: 'clamp(10px, 3vw, 16px)',
+                    padding: 'clamp(12px, 3vw, 16px) clamp(12px, 3vw, 20px)',
                     backgroundColor: 'rgba(20, 20, 20, 0.6)',
                     borderRadius: '8px',
                     border: '1px solid rgba(255, 215, 0, 0.2)',
@@ -264,10 +264,10 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                   }}
                 >
                   <div style={{
-                    fontSize: '1.2rem',
+                    fontSize: 'clamp(1rem, 3vw, 1.2rem)',
                     fontWeight: '700',
                     color: '#FFD700',
-                    minWidth: '32px',
+                    minWidth: 'clamp(24px, 5vw, 32px)',
                     textAlign: 'center'
                   }}>
                     {index + 1}
@@ -278,8 +278,8 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                       src={track.albumImageUrl}
                       alt={`${track.album} cover`}
                       style={{
-                        width: '60px',
-                        height: '60px',
+                        width: 'clamp(48px, 12vw, 60px)',
+                        height: 'clamp(48px, 12vw, 60px)',
                         borderRadius: '6px',
                         objectFit: 'cover',
                         flexShrink: 0,
@@ -296,7 +296,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                     minWidth: 0
                   }}>
                     <h3 style={{
-                      fontSize: '1.05rem',
+                      fontSize: 'clamp(0.9rem, 3vw, 1.05rem)',
                       fontWeight: '600',
                       color: '#ffffff',
                       margin: '0 0 4px 0',
@@ -307,7 +307,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                       {track.title}
                     </h3>
                     <p style={{
-                      fontSize: '0.9rem',
+                      fontSize: 'clamp(0.75rem, 2.5vw, 0.9rem)',
                       color: '#b0b0b0',
                       margin: 0,
                       overflow: 'hidden',
@@ -322,8 +322,8 @@ const SpotifyRecentlyPlayed: React.FC = () => {
                     display: 'flex',
                     alignItems: 'center',
                     color: 'rgba(255, 215, 0, 0.8)',
-                    fontSize: '20px',
-                    paddingRight: '8px'
+                    fontSize: 'clamp(16px, 4vw, 20px)',
+                    paddingRight: 'clamp(4px, 2vw, 8px)'
                   }}>
                     ▶
                   </div>
@@ -334,7 +334,7 @@ const SpotifyRecentlyPlayed: React.FC = () => {
         )}
 
         <div style={{
-          marginTop: '40px',
+          marginTop: 'clamp(24px, 5vw, 40px)',
           textAlign: 'center'
         }}>
           <a
@@ -345,13 +345,13 @@ const SpotifyRecentlyPlayed: React.FC = () => {
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              padding: '14px 28px',
+              padding: 'clamp(12px, 3vw, 14px) clamp(20px, 5vw, 28px)',
               backgroundColor: 'rgba(30, 215, 96, 0.1)',
               border: '1px solid rgba(30, 215, 96, 0.3)',
               borderRadius: '24px',
               color: 'rgba(30, 215, 96, 1)',
               textDecoration: 'none',
-              fontSize: '1rem',
+              fontSize: 'clamp(0.85rem, 3vw, 1rem)',
               fontWeight: '600',
               transition: 'all 0.3s ease'
             }}
