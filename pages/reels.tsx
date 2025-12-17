@@ -5,9 +5,7 @@ import Head from 'next/head';
 // Add your Instagram reel URLs here
 // Format: https://www.instagram.com/reel/REEL_ID/
 const reelUrls: string[] = [
-  // Add your reel URLs here like:
-  // 'https://www.instagram.com/reel/ABC123/',
-  // 'https://www.instagram.com/reel/DEF456/',
+  'https://www.instagram.com/reel/DRwCYR_jhOm/',
 ];
 
 const Reels: React.FC = () => {
