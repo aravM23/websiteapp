@@ -89,7 +89,7 @@ const Reels: React.FC = () => {
               margin: '0 auto',
               lineHeight: 1.6,
             }}>
-              i make reels for fun watch pls 📱
+              i make reels for fun watch pls
             </p>
           </div>
 
