@@ -1577,7 +1577,7 @@ const Home: React.FC = () => {
                 </div>
               </div>
               
-              <div className="scroll-animate" style={{ textAlign: 'center', marginTop: '40px' }}>
+              <div className="scroll-animate" style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '16px', marginTop: '40px' }}>
                 <Link 
                   href="https://x.com/aravmathur23"
                   target="_blank"
