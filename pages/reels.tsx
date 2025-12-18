@@ -40,10 +40,36 @@ const Reels: React.FC = () => {
       
       <div style={{
         minHeight: '100vh',
-        background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
+        background: `
+          linear-gradient(135deg, #0a0a0a 0%, #1a0808 50%, #0a0a0a 100%),
+          repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 40px,
+            rgba(220, 0, 0, 0.015) 40px,
+            rgba(220, 0, 0, 0.015) 80px
+          )
+        `,
         padding: '2rem 1rem',
         fontFamily: 'system-ui, -apple-system, sans-serif',
+        position: 'relative',
       }}>
+        {/* Racing decoration at top */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '5px',
+          background: `repeating-linear-gradient(
+            90deg,
+            #DC0000 0px,
+            #DC0000 15px,
+            #1a1a1a 15px,
+            #1a1a1a 30px
+          )`,
+          opacity: 0.5,
+        }} />
         <div style={{
           maxWidth: '1400px',
           margin: '0 auto',

@@ -46,7 +46,7 @@ const ProjectsPage: React.FC = () => {
   };
 
   const navButtonStyle: React.CSSProperties = {
-    background: 'linear-gradient(135deg, rgba(48, 142, 240, 0.32), rgba(18, 110, 220, 0.22))',
+    background: 'linear-gradient(135deg, rgba(220, 0, 0, 0.32), rgba(139, 0, 0, 0.22))',
     color: '#f5f7ff',
     padding: '14px 32px',
     borderRadius: '999px',
@@ -56,9 +56,9 @@ const ProjectsPage: React.FC = () => {
     letterSpacing: '0.12em',
     textTransform: 'uppercase',
     fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-    border: '1px solid rgba(80, 170, 255, 0.55)',
+    border: '1px solid rgba(220, 0, 0, 0.55)',
     transition: 'transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease',
-    boxShadow: '0 18px 36px rgba(28, 108, 218, 0.28), 0 0 24px rgba(72, 160, 255, 0.28)',
+    boxShadow: '0 18px 36px rgba(220, 0, 0, 0.28), 0 0 24px rgba(255, 80, 80, 0.28)',
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -1090,12 +1090,12 @@ const ProjectsPage: React.FC = () => {
 
         .projects-loading {
           font-size: 1rem;
-          color: #6bdcff;
+          color: #ff6b6b;
           text-align: center;
           letterSpacing: 0.2em;
           font-family: 'Courier New', 'Monaco', 'Menlo', monospace;
           margin-bottom: 40px;
-          filter: drop-shadow(0 0 12px rgba(107, 220, 255, 0.55));
+          filter: drop-shadow(0 0 12px rgba(220, 0, 0, 0.55));
         }
 
         .loading-ellipsis::after {
@@ -1146,8 +1146,8 @@ const ProjectsPage: React.FC = () => {
           content: '';
           position: absolute;
           inset: 74% -80px -12px -80px;
-          background: linear-gradient(180deg, rgba(12, 16, 28, 0.6) 0%, rgba(8, 10, 18, 0.95) 65%, rgba(0, 0, 0, 0) 100%);
-          box-shadow: inset 0 12px 20px rgba(10, 18, 38, 0.4);
+          background: linear-gradient(180deg, rgba(20, 10, 10, 0.6) 0%, rgba(15, 8, 8, 0.95) 65%, rgba(0, 0, 0, 0) 100%);
+          box-shadow: inset 0 12px 20px rgba(20, 0, 0, 0.4);
         }
 
         .pixel-car-track::after {
@@ -1159,8 +1159,8 @@ const ProjectsPage: React.FC = () => {
           height: 4px;
           background-image: linear-gradient(
             to right,
-            rgba(120, 190, 255, 0.8) 0,
-            rgba(120, 190, 255, 0.8) 40px,
+            rgba(220, 0, 0, 0.8) 0,
+            rgba(220, 0, 0, 0.8) 40px,
             transparent 40px,
             transparent 80px
           );
@@ -1278,12 +1278,38 @@ const ProjectsPage: React.FC = () => {
         }
       `}</style>
       <section style={{ 
-        backgroundColor: '#0a0a0a', 
+        background: `
+          linear-gradient(135deg, #0a0a0a 0%, #1a0808 50%, #0a0a0a 100%),
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 100px,
+            rgba(220, 0, 0, 0.03) 100px,
+            rgba(220, 0, 0, 0.03) 101px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 100px,
+            rgba(220, 0, 0, 0.03) 100px,
+            rgba(220, 0, 0, 0.03) 101px
+          )
+        `, 
         minHeight: '100vh', 
         padding: '120px 20px 60px',
         color: '#ffffff',
-          fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif'
-        }}>
+        fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+        position: 'relative',
+      }}>
+        {/* Racing stripe decoration */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '4px',
+          background: 'linear-gradient(90deg, #DC0000 0%, #DC0000 33%, #ffffff 33%, #ffffff 66%, #DC0000 66%, #DC0000 100%)',
+        }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Hero Section */}
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
@@ -1349,23 +1375,23 @@ const ProjectsPage: React.FC = () => {
               letterSpacing: '0.08em',
               textTransform: 'uppercase',
               fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-              background: 'linear-gradient(135deg, #fefefe 0%, #d7e3ff 100%)',
+              background: 'linear-gradient(135deg, #fefefe 0%, #ffd4d4 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
-              textShadow: '0 24px 60px rgba(60, 140, 255, 0.35)'
+              textShadow: '0 24px 60px rgba(220, 0, 0, 0.35)'
             }}>
               My Work & Experience
             </h1>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               <div style={{ 
-                background: 'linear-gradient(150deg, rgba(10, 16, 36, 0.92), rgba(6, 12, 28, 0.9))',
-                border: '1px solid rgba(72, 164, 255, 0.2)',
+                background: 'linear-gradient(150deg, rgba(20, 10, 10, 0.92), rgba(15, 8, 8, 0.9))',
+                border: '1px solid rgba(220, 0, 0, 0.3)',
                 borderRadius: '28px',
                 padding: 'clamp(28px, 7vw, 40px) clamp(20px, 8vw, 48px)',
                 maxWidth: '760px',
                 width: '100%',
-                boxShadow: '0 48px 120px rgba(6, 18, 48, 0.68)',
+                boxShadow: '0 48px 120px rgba(20, 0, 0, 0.68)',
                 backdropFilter: 'blur(12px)',
                 position: 'relative',
                 overflow: 'hidden'
@@ -1374,7 +1400,7 @@ const ProjectsPage: React.FC = () => {
                   position: 'absolute',
                   inset: '-40% 20% auto',
                   height: '160px',
-                  background: 'radial-gradient(circle, rgba(72,164,255,0.35) 0%, rgba(72,164,255,0) 65%)',
+                  background: 'radial-gradient(circle, rgba(220, 0, 0, 0.25) 0%, rgba(220, 0, 0, 0) 65%)',
                   opacity: 0.6,
                   pointerEvents: 'none',
                   zIndex: 0
@@ -1382,13 +1408,13 @@ const ProjectsPage: React.FC = () => {
                 <p style={{ 
                   position: 'relative',
                   zIndex: 1,
-                  color: '#d6dcff',
+                  color: '#ffdddd',
                   fontSize: '1.1rem',
                   marginBottom: '32px',
                   fontWeight: 500,
                   lineHeight: 1.8,
                   letterSpacing: '0.02em',
-                  textShadow: '0 6px 22px rgba(72, 164, 255, 0.25)'
+                  textShadow: '0 6px 22px rgba(220, 0, 0, 0.25)'
                 }}>
                   If you dont wanna read all this, just click the buttons below to take you to where you want to go.
                 </p>
@@ -1407,13 +1433,13 @@ const ProjectsPage: React.FC = () => {
                       style={{ ...navButtonStyle }}
                       onMouseEnter={(e) => {
                         e.currentTarget.style.transform = 'translateY(-2px)';
-                        e.currentTarget.style.boxShadow = '0 28px 60px rgba(48, 142, 240, 0.4), 0 0 30px rgba(80, 170, 255, 0.45)';
-                        e.currentTarget.style.borderColor = 'rgba(120, 190, 255, 0.8)';
+                        e.currentTarget.style.boxShadow = '0 28px 60px rgba(220, 0, 0, 0.4), 0 0 30px rgba(255, 80, 80, 0.45)';
+                        e.currentTarget.style.borderColor = 'rgba(255, 100, 100, 0.8)';
                       }}
                       onMouseLeave={(e) => {
                         e.currentTarget.style.transform = 'translateY(0)';
-                        e.currentTarget.style.boxShadow = '0 18px 36px rgba(28, 108, 218, 0.28), 0 0 24px rgba(72, 160, 255, 0.28)';
-                        e.currentTarget.style.borderColor = 'rgba(80, 170, 255, 0.55)';
+                        e.currentTarget.style.boxShadow = '0 18px 36px rgba(220, 0, 0, 0.28), 0 0 24px rgba(255, 80, 80, 0.28)';
+                        e.currentTarget.style.borderColor = 'rgba(220, 0, 0, 0.55)';
                       }}
                     >
                       {label}

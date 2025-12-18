@@ -9,10 +9,43 @@ const Music: React.FC = () => {
     <Layout>
       <div style={{
         minHeight: '100vh',
-        background: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%)',
+        background: `
+          linear-gradient(135deg, #0a0a0a 0%, #1a0808 50%, #0a0a0a 100%),
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 60px,
+            rgba(220, 0, 0, 0.02) 60px,
+            rgba(220, 0, 0, 0.02) 61px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 60px,
+            rgba(220, 0, 0, 0.02) 60px,
+            rgba(220, 0, 0, 0.02) 61px
+          )
+        `,
         padding: '2rem 1rem',
         fontFamily: 'system-ui, -apple-system, sans-serif',
+        position: 'relative',
       }}>
+        {/* Racing kerb decoration at top */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '6px',
+          background: `repeating-linear-gradient(
+            90deg,
+            #DC0000 0px,
+            #DC0000 20px,
+            #ffffff 20px,
+            #ffffff 40px
+          )`,
+          opacity: 0.6,
+        }} />
         <div style={{
           maxWidth: '1400px',
           margin: '0 auto',

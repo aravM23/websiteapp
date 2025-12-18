@@ -104,13 +104,46 @@ const Client: React.FC = () => {
     <Layout title="Awards & Recognition - Arav Mathur">
       <section
         style={{
-          backgroundColor: '#0a0a0a',
+          background: `
+            linear-gradient(135deg, #0a0a0a 0%, #1a0808 50%, #0a0a0a 100%),
+            repeating-linear-gradient(
+              0deg,
+              transparent,
+              transparent 80px,
+              rgba(220, 0, 0, 0.02) 80px,
+              rgba(220, 0, 0, 0.02) 81px
+            ),
+            repeating-linear-gradient(
+              90deg,
+              transparent,
+              transparent 80px,
+              rgba(220, 0, 0, 0.02) 80px,
+              rgba(220, 0, 0, 0.02) 81px
+            )
+          `,
           color: '#ffffff',
           padding: 'clamp(80px, 15vw, 120px) clamp(16px, 4vw, 24px) clamp(48px, 10vw, 80px)',
           minHeight: '100vh',
           fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+          position: 'relative',
         }}
       >
+        {/* Checkered racing stripe at top */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '6px',
+          background: `repeating-linear-gradient(
+            90deg,
+            #DC0000 0px,
+            #DC0000 15px,
+            #1a1a1a 15px,
+            #1a1a1a 30px
+          )`,
+          opacity: 0.7,
+        }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           {/* Hero Section */}
           <div

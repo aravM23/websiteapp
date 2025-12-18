@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Layout from '../src/components/Layout';
 import Link from 'next/link';
+import F1RacingGame from '../src/components/F1RacingGame';
 
 const Home: React.FC = () => {
   useEffect(() => {
@@ -298,7 +299,23 @@ const Home: React.FC = () => {
       <section className="hero-section" style={{
         minHeight: '100vh',
         padding: 'clamp(80px, 12vw, 120px) 20px 60px',
-        background: '#0a0a0a',
+        background: `
+          linear-gradient(135deg, #0a0a0a 0%, #1a0808 50%, #0a0a0a 100%),
+          repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 50px,
+            rgba(220, 0, 0, 0.03) 50px,
+            rgba(220, 0, 0, 0.03) 51px
+          ),
+          repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 50px,
+            rgba(220, 0, 0, 0.03) 50px,
+            rgba(220, 0, 0, 0.03) 51px
+          )
+        `,
         display: 'flex',
         alignItems: 'center',
         position: 'relative'
@@ -311,26 +328,26 @@ const Home: React.FC = () => {
                 style={{
                   backgroundColor: '#1e1e1e',
                   borderRadius: '16px',
-                  border: '2px solid #333',
+                  border: '2px solid #DC0000',
                   overflow: 'hidden',
                   marginBottom: '32px',
                   width: '100%',
                   maxWidth: 'none',
-                  boxShadow: '0 20px 60px rgba(0,0,0,0.4)',
+                  boxShadow: '0 20px 60px rgba(220, 0, 0, 0.2), 0 0 100px rgba(220, 0, 0, 0.05)',
                   minHeight: 'min(500px, 75vh)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                   cursor: 'default'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'translateY(-10px) scale(1.02)';
-                  e.currentTarget.style.boxShadow = '0 40px 100px rgba(0,0,0,0.8)';
-                  e.currentTarget.style.borderColor = '#00ff00';
+                  e.currentTarget.style.boxShadow = '0 40px 100px rgba(220, 0, 0, 0.4), 0 0 150px rgba(220, 0, 0, 0.1)';
+                  e.currentTarget.style.borderColor = '#ff3333';
                   e.currentTarget.style.backgroundColor = '#232323';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.transform = 'translateY(0px) scale(1)';
-                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(0,0,0,0.4)';
-                  e.currentTarget.style.borderColor = '#333';
+                  e.currentTarget.style.boxShadow = '0 20px 60px rgba(220, 0, 0, 0.2), 0 0 100px rgba(220, 0, 0, 0.05)';
+                  e.currentTarget.style.borderColor = '#DC0000';
                   e.currentTarget.style.backgroundColor = '#1e1e1e';
                 }}
               >
@@ -1820,10 +1837,36 @@ const Home: React.FC = () => {
       {/* Call to Action Section */}
       <section style={{ 
         padding: '80px 20px', 
-        backgroundColor: '#111111', 
+        background: `
+          linear-gradient(180deg, #111111 0%, #0a0a0a 100%),
+          repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(220, 0, 0, 0.02) 10px,
+            rgba(220, 0, 0, 0.02) 20px
+          )
+        `, 
         color: 'white',
-        textAlign: 'center'
+        textAlign: 'center',
+        position: 'relative',
       }}>
+        {/* Checkered border at top */}
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '8px',
+          background: `repeating-linear-gradient(
+            90deg,
+            #DC0000 0px,
+            #DC0000 20px,
+            #1a1a1a 20px,
+            #1a1a1a 40px
+          )`,
+          opacity: 0.6,
+        }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <div 
             className="scroll-animate scale-in"
@@ -1831,22 +1874,23 @@ const Home: React.FC = () => {
               backgroundColor: '#1a1a1a',
               borderRadius: '12px',
               padding: '40px',
-              border: '1px solid #333',
+              border: '2px solid #DC0000',
               transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
               transform: 'translateY(20px)',
               opacity: '0',
-              animation: 'slideInRight 0.8s ease-out 0.6s forwards'
+              animation: 'slideInRight 0.8s ease-out 0.6s forwards',
+              boxShadow: '0 10px 40px rgba(220, 0, 0, 0.15)',
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = 'translateY(-18px) scale(1.04)';
-              e.currentTarget.style.boxShadow = '0 30px 70px rgba(0, 255, 0, 0.2)';
-              e.currentTarget.style.borderColor = '#00ff00';
-              e.currentTarget.style.backgroundColor = '#1f2f1f';
+              e.currentTarget.style.boxShadow = '0 30px 70px rgba(220, 0, 0, 0.3)';
+              e.currentTarget.style.borderColor = '#ff3333';
+              e.currentTarget.style.backgroundColor = '#1f1515';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.transform = 'translateY(0px) scale(1)';
-              e.currentTarget.style.boxShadow = 'none';
-              e.currentTarget.style.borderColor = '#333';
+              e.currentTarget.style.boxShadow = '0 10px 40px rgba(220, 0, 0, 0.15)';
+              e.currentTarget.style.borderColor = '#DC0000';
               e.currentTarget.style.backgroundColor = '#1a1a1a';
             }}
           >
@@ -1870,7 +1914,7 @@ const Home: React.FC = () => {
               target="_blank"
               rel="noopener noreferrer"
               style={{ 
-                background: 'linear-gradient(135deg, #0077b5 0%, #005885 100%)',
+                background: 'linear-gradient(135deg, #DC0000 0%, #8B0000 100%)',
                 color: '#ffffff', 
                 padding: '16px 32px', 
                 borderRadius: '12px', 
@@ -1884,25 +1928,32 @@ const Home: React.FC = () => {
                 letterSpacing: '0.025em',
                 transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                 transform: 'translateY(0)',
-                boxShadow: '0 8px 25px rgba(0, 119, 181, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
+                boxShadow: '0 8px 25px rgba(220, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
                 border: '1px solid rgba(255, 255, 255, 0.1)'
               }}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-3px) scale(1.02)';
-                e.currentTarget.style.boxShadow = '0 15px 40px rgba(0, 119, 181, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
-                e.currentTarget.style.background = 'linear-gradient(135deg, #005885 0%, #004466 100%)';
+                e.currentTarget.style.boxShadow = '0 15px 40px rgba(220, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.3)';
+                e.currentTarget.style.background = 'linear-gradient(135deg, #ff3333 0%, #DC0000 100%)';
               }}
               onMouseLeave={(e) => {
                 e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 119, 181, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
-                e.currentTarget.style.background = 'linear-gradient(135deg, #0077b5 0%, #005885 100%)';
+                e.currentTarget.style.boxShadow = '0 8px 25px rgba(220, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
+                e.currentTarget.style.background = 'linear-gradient(135deg, #DC0000 0%, #8B0000 100%)';
               }}
             >
               <span>GET IN TOUCH</span>
-              <span style={{ fontSize: '16px', lineHeight: '1' }}>🙂</span>
+              <span style={{ fontSize: '16px', lineHeight: '1' }}>🏎️</span>
             </Link>
           </div>
         </div>
+      </section>
+
+      {/* F1 Racing Game Section */}
+      <section className="scroll-animate" style={{
+        background: 'linear-gradient(180deg, #111111 0%, #0a0a0a 100%)',
+      }}>
+        <F1RacingGame />
       </section>
     </Layout>
   );
